@@ -1,0 +1,12 @@
+/*HEIGHT FLEXIBLE SIDEBAR & STAY HORIZONTAL WHEN COLLAPSING*/
+
+#sidebar {
+    height: auto;
+    width: 282px !important;
+}
+
+#sidebar.collapsed #sidebar-tabs {
+    flex-direction: row;
+}
+
+/*********************************/
