@@ -10,3 +10,11 @@
 }
 
 /*********************************/
+
+/*SIDEBAR ITEMS FULL WIDTH NO SPACING*/
+
+#sidebar-tabs > .item {
+    flex: 1 0 var(--sidebar-tab-width);
+}
+
+/********************************/
