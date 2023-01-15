@@ -1,0 +1,5 @@
+/*BIGGER CLOSE ICON*/
+.fa-close:before, .fa-multiply:before, .fa-remove:before, .fa-times:before, .fa-xmark:before {
+    content: "\e59b";
+}
+/**********/
