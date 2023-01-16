@@ -1,0 +1,79 @@
+/*UI FIX*/
+:root {
+    --spacing: 8px;
+    --font-size-14: 14px;
+    --font-size-12: 12px;
+    --font-size-16: 16px;
+}
+
+.window-app .window-content {
+    padding: var(--spacing);
+}
+
+.chat-message {
+    margin: 8px;
+    padding: 8px;
+    font-size: var(--font-size-14);
+}
+
+.package-configuration aside.sidebar {
+    padding: var(--spacing);
+}
+
+#sidebar .directory .action-buttons {
+    padding: 0px;
+    margin: 0 0 8px;
+}
+
+.directory .directory-header {
+    padding: 8px;
+    margin: 0px;
+}
+
+#sidebar-tabs {
+    margin: 0 0 var(--spacing);
+    box-shadow: 0px;
+}
+
+
+
+.package-configuration aside.sidebar nav.tabs .category-tab {
+    padding: var(--spacing) 0;
+
+}
+
+.playlists-sidebar .global-control .playlist-header h4 {
+    text-decoration: none;
+}
+
+.compendium-sidebar ol.compendium-list {
+    padding: var(--spacing);
+}
+
+.directory .directory-list {
+    padding: var(--spacing);
+}
+
+.playlists-sidebar .global-control {
+    padding: var(--spacing);
+}
+
+.settings-sidebar #game-details {
+    padding: var(--spacing);
+}
+
+h4 {
+    font-size: var(--font-size-16);
+}
+
+h4.playlist-name {
+    font-size: var(--font-size-14);
+    text-decoration: none;
+    text-shadow: 0 0 4px black;
+}
+
+h4.sound-name {
+    font-size: var(--font-size-12);
+}
+
+/********************/
