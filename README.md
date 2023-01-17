@@ -17,5 +17,5 @@ Misc.css contains:
 UIDesignFix.css:
  - The padding and margins across the UI are inconsistent. This makes the spacing consistent across the UI and extracts it into a variable. It was a nightmare dealing with this, in vanilla foundry all of those seem random, and all of them were magic numbers... I also adjusted some of the text hierachy to make it readable, specially on the playlist tab.
  - I'm using this with Simple Worldbuilding System, so I don't know if it can break on other systems, although it shouldn't.
- -
+ 
 
