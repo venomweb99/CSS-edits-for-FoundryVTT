@@ -6,7 +6,13 @@
     --font-size-16: 16px;
 }
 
+.window-app .window-content,
+.sheet.journal-entry .journal-entry-content {
+    background-size: 100% 100%;
+}
+
 .window-app .window-content {
+    background-size: 100% 100%;
     padding: var(--spacing);
 }
 
@@ -14,20 +20,13 @@
     margin: 8px;
     padding: 8px;
     font-size: var(--font-size-14);
-}
-
-.package-configuration aside.sidebar {
-    padding: var(--spacing);
+    border-radius: 6px;
+    background-size: 100% 100%;
 }
 
 #sidebar .directory .action-buttons {
     padding: 0px;
-    margin: 0 0 8px;
-}
-
-.directory .directory-header {
-    padding: 8px;
-    margin: 0px;
+    margin: 0 0 var(--spacing);
 }
 
 #sidebar-tabs {
@@ -35,7 +34,25 @@
     box-shadow: 0px;
 }
 
+.directory .directory-header {
+    padding: var(--spacing);
+    margin: 0px;
+}
 
+h4.playlist-name {
+    font-size: var(--font-size-14);
+    text-decoration: none;
+    text-shadow: 0 0 4px black;
+}
+
+h4.sound-name {
+    font-size: var(--font-size-12);
+    color: var(--app-dialog-background-shaded);
+}
+
+.package-configuration aside.sidebar {
+    padding: var(--spacing);
+}
 
 .package-configuration aside.sidebar nav.tabs .category-tab {
     padding: var(--spacing) 0;
@@ -44,6 +61,7 @@
 
 .playlists-sidebar .global-control .playlist-header h4 {
     text-decoration: none;
+    text-shadow: 0 0 4px black;
 }
 
 .compendium-sidebar ol.compendium-list {
@@ -62,18 +80,35 @@
     padding: var(--spacing);
 }
 
+.compendium-sidebar li.compendium-pack .compendium-footer {
+    font-size: var(--font-size-12);
+    color: var(--app-dialog-background-shaded);
+}
+
+.compendium-sidebar li.compendium-pack .status-icons {
+    size: 4px;
+}
+
+
+.package-configuration .categories .scrollable {
+    padding: var(--spacing);
+}
+
+
 h4 {
     font-size: var(--font-size-16);
+    text-align: center;
+    text-shadow: 0px 0px 4px black;
 }
 
-h4.playlist-name {
-    font-size: var(--font-size-14);
-    text-decoration: none;
-    text-shadow: 0 0 4px black;
+i {
+    text-shadow: 0px 0px 4px black;
 }
 
-h4.sound-name {
-    font-size: var(--font-size-12);
+button {
+    text-shadow: 0px 0px 4px black;
 }
 
-/********************/
+strong {
+    text-shadow: 0px 0px 4px black;
+}
