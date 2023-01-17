@@ -112,3 +112,6 @@ button {
 strong {
     text-shadow: 0px 0px 4px black;
 }
+.playlists-sidebar li.sound .sound-playback .sound-timer {
+    flex: 1;
+}
