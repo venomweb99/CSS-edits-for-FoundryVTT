@@ -141,3 +141,7 @@ a.item.category-tab.category-all {
 }
 
 /**/
+
+.package-configuration .categories footer {
+    margin: var(--spacing);
+}
