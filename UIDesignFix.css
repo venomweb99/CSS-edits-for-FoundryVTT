@@ -145,3 +145,9 @@ a.item.category-tab.category-all {
 .package-configuration .categories footer {
     margin: var(--spacing);
 }
+
+
+h3.document-name.noborder {
+    text-align: center !important;
+    text-shadow: 0 0 4px black;
+}
