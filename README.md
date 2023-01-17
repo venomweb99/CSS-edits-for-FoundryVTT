@@ -12,8 +12,10 @@ Right Sidebar.css contains:
  
 Misc.css contains:
  - Fullscreen pause screen: No reason to use this other than aesthetics... I like it though.
+ - Out of the way resize box: Just makes the resize button transparent and moves the icon slightly so it doesn't clip that much. I added a drop shadow too to make it readable.
 
 UIDesignFix.css:
- - The padding and margins across the UI are inconsistent. This makes the spacing consistent across the UI and extracts it into a variable. It was a nightmare dealing with this, in vanilla foundry all of those seem random, and all of them were magic numbers...
+ - The padding and margins across the UI are inconsistent. This makes the spacing consistent across the UI and extracts it into a variable. It was a nightmare dealing with this, in vanilla foundry all of those seem random, and all of them were magic numbers... I also adjusted some of the text hierachy to make it readable, specially on the playlist tab.
  - I'm using this with Simple Worldbuilding System, so I don't know if it can break on other systems, although it shouldn't.
+ 
 
