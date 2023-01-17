@@ -1,11 +1,14 @@
 /*UI FIX*/
 :root {
     --spacing: 8px;
+    --shadow-color: black;
+    --shadow-size: 4px;
     --font-size-14: 14px;
     --font-size-12: 12px;
     --font-size-16: 16px;
     --font-size-18: 18px;
     --font-size-11: 11px;
+
 }
 
 .window-app .window-content,
@@ -19,8 +22,8 @@
 }
 
 .chat-message {
-    margin: 8px;
-    padding: 8px;
+    margin: var(--spacing);
+    padding: var(--spacing);
     font-size: var(--font-size-14);
     border-radius: 6px;
     background-size: 100% 100%;
@@ -44,7 +47,7 @@
 h4.playlist-name {
     font-size: var(--font-size-14);
     text-decoration: none;
-    text-shadow: 0 0 4px black;
+    text-shadow: 0 0 var(--shadow-size) var(--shadow-color);
 }
 
 h4.sound-name {
@@ -62,7 +65,7 @@ h4.sound-name {
 
 .playlists-sidebar .global-control .playlist-header h4 {
     text-decoration: none;
-    text-shadow: 0 0 4px black;
+    text-shadow: 0 0 var(--shadow-size) var(--shadow-color);
 }
 
 .compendium-sidebar ol.compendium-list {
@@ -99,19 +102,19 @@ h4.sound-name {
 h4 {
     font-size: var(--font-size-16);
     text-align: center;
-    text-shadow: 0px 0px 4px black;
+    text-shadow: 0px 0px var(--shadow-size) var(--shadow-color);
 }
 
 i {
-    text-shadow: 0px 0px 4px black;
+    text-shadow: 0px 0px var(--shadow-size) var(--shadow-color);
 }
 
 button {
-    text-shadow: 0px 0px 4px black;
+    text-shadow: 0px 0px var(--shadow-size) var(--shadow-color);
 }
 
 strong {
-    text-shadow: 0px 0px 4px black;
+    text-shadow: 0px 0px var(--shadow-size) var(--shadow-color);
 }
 
 .playlists-sidebar li.sound .sound-playback .sound-timer {
@@ -149,5 +152,5 @@ a.item.category-tab.category-all {
 
 h3.document-name.noborder {
     text-align: center !important;
-    text-shadow: 0 0 4px black;
+    text-shadow: 0 0 var(--shadow-size) var(--shadow-color);
 }
