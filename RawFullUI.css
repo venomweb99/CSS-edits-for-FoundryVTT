@@ -1,0 +1,331 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***V11 STYLES***/
+:root {
+    --font-h2: "Amiri", serif;
+    --font-body: "Signika", "Palatino Linotype", sans-serif;
+    --color-warm-1: #ee9b3a;
+    --color-warm-2: #c9593f;
+    --color-warm-3: #5d142b;
+    --color-cool-3: #584a75;
+    --color-cool-4: #302831;
+    --color-cool-5: #0b0a13;
+    --color-light-1: #f7f3e8;
+    --color-light-2: #efe6d8;
+    --color-light-3: #e7d1b1;
+    --color-light-4: #d0b8a3;
+    --color-light-5: #9f8475;
+    --color-light-6: #816b66;
+    --color-cool-5-25: rgba(11, 10, 19, 0.25);
+    --color-cool-5-50: rgba(11, 10, 19, 0.5);
+    --color-cool-5-75: rgba(11, 10, 19, 0.75);
+    --color-cool-5-90: rgba(11, 10, 19, 0.9);
+    --v11-fx: blur(4px);
+    --spacing: 8px;
+    --shadow-color: black;
+    --sidebar-width: 300px;
+    --shadow-size: 4px;
+    --border-r: 12px;
+    --title-font: var(--font-h2);
+    --title-letter-spacing: 0.02rem;
+    --title-bg: linear-gradient(90deg, var(--color-cool-4) 0%, rgba(0, 212, 255, 0) 100%);
+    --font-size-14: 14px;
+    --font-size-12: 12px;
+    --font-size-16: 16px;
+    --font-size-18: 18px;
+    --font-size-11: 11px;
+    --custom-accent: var(--color-light-3);
+}
+
+.window-app,
+#sidebar {
+    backdrop-filter: blur(4px);
+}
+
+.app,
+#controls>ol.main-controls>li.scene-control,
+#controls>ol.sub-controls>li,
+#hotbar .macro,
+#hotbar #hotbar-directory-controls,
+#hotbar #hotbar-page-controls {
+    color: var(--color-light-3);
+    background: none;
+    background-color: var(--color-cool-5-90);
+}
+
+.window-app .window-content,
+.sheet.journal-entry .journal-entry-content,
+.chat-message,
+.chat-message.whisper {
+    background: none;
+    background-color: var(--color-cool-5-50);
+    color: var(--color-light-2);
+}
+
+button,
+form button {
+    background-color: var(--color-warm-1);
+    border-color: transparent;
+}
+
+input,
+form .form-group .form-fields>*,
+.prosemirror menu button {
+    color: var(--color-light-3) !important;
+}
+
+.window-app .window-header .window-title {
+    text-align: center !important;
+}
+
+form .form-group .form-fields>*,
+.prosemirror menu .pm-dropdown {
+    border-color: transparent;
+    background-color: var(--color-cool-4);
+}
+
+#navigation #scene-list .scene,
+.sheet.journal-entry .journal-sidebar .directory-header .header-search input,
+#chat-controls .roll-type-select {
+    border-color: transparent;
+    background-color: var(--color-cool-4);
+    color: var(--color-light-2);
+}
+
+#chat-form textarea {
+    background: none;
+    background-color: var(--color-cool-4);
+}
+
+
+/*Tweaks*/
+/*BIGGER CLOSE ICON*/
+.fa-close:before,
+.fa-multiply:before,
+.fa-remove:before,
+.fa-times:before,
+.fa-xmark:before {
+    content: "\e59b";
+}
+
+/*Settings "ALL" sticks to top*/
+
+span.count {
+    color: var(--color-text-light-4);
+    font-size: var(--font-size-11);
+    margin-right: var(--spacing);
+}
+
+a.item.category-tab.category-all {
+    font-size: var(--font-size-18);
+    text-transform: uppercase;
+    text-decoration: underline;
+    position: fixed;
+    top: 1;
+    margin-top: -40px;
+}
+
+.package-configuration aside.sidebar nav.tabs {
+    margin-top: 40px;
+    margin-bottom: var(--spacing);
+}
+
+
+/*Spacings*/
+.window-app .window-content,
+.settings-sidebar div,
+.package-configuration aside.sidebar,
+.package-configuration aside.sidebar nav.tabs .category-tab,
+.compendium-sidebar ol.compendium-list,
+.directory .directory-list,
+.playlists-sidebar .global-control,
+.settings-sidebar #game-details,
+.package-configuration .categories .scrollable {
+    padding: var(--spacing);
+}
+
+.package-configuration aside.sidebar .reset-all {
+
+    margin: 0px;
+    margin-right: var(--spacing);
+    padding: 0px;
+}
+
+.chat-message {
+    margin: var(--spacing);
+    padding: var(--spacing);
+}
+
+#sidebar .directory .action-buttons {
+    padding: 0px;
+    margin: 0 0 var(--spacing);
+}
+
+#sidebar-tabs {
+    margin: 0 0 var(--spacing);
+}
+
+.directory .directory-header {
+    padding: var(--spacing);
+    margin: 0px;
+}
+
+/*HEIGHT FLEXIBLE SIDEBAR & STAY HORIZONTAL WHEN COLLAPSING*/
+
+#sidebar {
+    height: auto;
+    width: var(--sidebar-width) !important;
+}
+
+#sidebar.collapsed #sidebar-tabs {
+    flex-direction: row;
+}
+
+/*SIDEBAR ITEMS FULL WIDTH NO SPACING*/
+
+#sidebar-tabs>.item {
+    flex: 1 0 var(--sidebar-tab-width);
+}
+
+/*Chat remake*/
+.chat-message .message-header .message-sender {
+    background: var(--title-bg);
+    border-radius: var(--border-r);
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.8;
+    text-indent: 10px;
+    font-family: var(--title-font);
+    letter-spacing: var(--title-letter-spacing);
+    color: var(--custom-accent);
+}
+
+.chat-message .message-content {
+    padding-top: var(--spacing);
+}
+
+.chat-message .message-header .message-metadata {
+    font-size: var(--font-size-11);
+}
+
+/**/
+
+
+
+/*PLAYLISTS*/
+.playlists-sidebar .global-control .playlist-sounds {
+
+
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    margin: 0px;
+    padding: var(--spacing);
+    background: var(--title-bg);
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.8;
+    text-indent: 10px;
+    font-family: var(--title-font);
+    letter-spacing: var(--title-letter-spacing);
+    color: var(--custom-accent);
+}
+
+.playlists-sidebar .global-control .playlist-header {
+    padding: var(--spacing);
+    border-radius: var(--border-r);
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top: 1px solid var(--color-border-dark);
+    border-bottom: 1px solid var(--color-border-dark);
+    justify-content: space-between;
+    margin: 0px;
+    background: var(--title-bg);
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.8;
+    text-indent: 10px;
+    font-family: var(--title-font);
+    letter-spacing: var(--title-letter-spacing);
+    color: var(--custom-accent);
+}
+
+.playlists-sidebar .global-control .playlist-header h4 i.fa {
+    display: block;
+}
+
+.playlists-sidebar li.sound .sound-playback .sound-timer {
+    flex: initial;
+}
+
+/**Material Scrollbars*/
+::-webkit-scrollbar-thumb {
+    --scrollbar-color: #80868b;
+    background: var(--scrollbar-color);
+    border-color: transparent;
+}
+
+/*Better headers*/
+.window-app .window-header .window-title {
+    text-transform: uppercase;
+    line-height: 1.8;
+    text-indent: 10px;
+    font-family: var(--title-font);
+    letter-spacing: var(--title-letter-spacing);
+    color: var(--custom-accent);
+}
+
+#settings.settings-sidebar h2 {
+    margin: 0px;
+    padding: var(--spacing);
+    background: var(--title-bg);
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.8;
+    text-indent: 10px;
+    font-family: var(--title-font);
+    letter-spacing: var(--title-letter-spacing);
+    color: var(--custom-accent);
+}
+
+.compendium-sidebar h3 {
+    margin: 0px;
+    padding: var(--spacing);
+    background: var(--title-bg);
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.8;
+    text-indent: 10px;
+    font-family: var(--title-font);
+    letter-spacing: var(--title-letter-spacing);
+    color: var(--custom-accent);
+}
+
+/*Invisible Resize Box*/
+.window-app .window-resizable-handle {
+    width: 8px;
+    height: 100%;
+    background: #00000000;
+    padding: 0px;
+    border: 0px;
+}
+.fa-arrows-alt-h:before,
+.fa-left-right:before {
+    content: none;
+}

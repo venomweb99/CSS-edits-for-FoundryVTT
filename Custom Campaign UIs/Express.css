@@ -577,9 +577,6 @@ backdrop-filter: blur(21px);
 color: #FFF2D344;
 
 }
-.chat-message .message-header {
-    
-}
 
 .chat-message .message-header .message-metadata .message-delete{
 text-shadow: 2px 2px 2px #E95044;

@@ -1,5 +1,5 @@
 /*base*/
-:root{
+:root {
     --font-h2: "Amiri", serif;
     --font-body: "Signika", "Palatino Linotype", sans-serif;
     --color-warm-1: #ee9b3a;
@@ -27,7 +27,7 @@
     --border-r: 12px;
     --title-font: var(--font-h2);
     --title-letter-spacing: 0.02rem;
-    --title-bg: linear-gradient(90deg, var(--color-cool-4) 0%, rgba(0,212,255,0) 100%);
+    --title-bg: linear-gradient(90deg, var(--color-cool-4) 0%, rgba(0, 212, 255, 0) 100%);
     --font-size-14: 14px;
     --font-size-12: 12px;
     --font-size-16: 16px;
@@ -38,33 +38,47 @@
 
 /*foundry*/
 
-.window-app, #sidebar{
+.window-app,
+#sidebar {
     backdrop-filter: blur(4px);
-    }
+}
 
-.app, #controls > ol.main-controls > li.scene-control, #controls > ol.sub-controls > li, #hotbar .macro, #hotbar #hotbar-directory-controls, #hotbar #hotbar-page-controls{
+.app,
+#controls>ol.main-controls>li.scene-control,
+#controls>ol.sub-controls>li,
+#hotbar .macro,
+#hotbar #hotbar-directory-controls,
+#hotbar #hotbar-page-controls {
     color: var(--color-light-3);
     background: none;
     background-color: var(--color-cool-5-90);
 }
 
-.window-app .window-content, .sheet.journal-entry .journal-entry-content {
+.window-app .window-content,
+.sheet.journal-entry .journal-entry-content {
     background: none;
-   background-color: var(--color-cool-5-50);
-color: var(--color-light-2);
+    background-color: var(--color-cool-5-50);
+    color: var(--color-light-2);
 }
 
-button, form button {
-background-color: var(--color-warm-1);
-border-color: transparent;
+button,
+form button {
+    background-color: var(--color-warm-1);
+    border-color: transparent;
 }
-input, form .form-group .form-fields > *, .prosemirror menu button{
+
+input,
+form .form-group .form-fields>*,
+.prosemirror menu button {
     color: var(--color-light-3) !important;
 }
+
 .window-app .window-header .window-title {
     text-align: center !important;
 }
-form .form-group .form-fields > * , .prosemirror menu .pm-dropdown{
+
+form .form-group .form-fields>*,
+.prosemirror menu .pm-dropdown {
     border-color: transparent;
-background-color: var(--color-cool-4);
+    background-color: var(--color-cool-4);
 }

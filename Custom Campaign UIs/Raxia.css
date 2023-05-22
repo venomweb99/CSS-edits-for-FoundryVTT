@@ -1,0 +1,426 @@
+/* Custom CSS */
+
+/*UI FIX*/
+:root {
+    --spacing: 8px;
+--shadow-size: 4px;
+--shadow-color: black;
+--active-color: #005577;
+--hex: 15px;
+--clipHex: polygon(var(--hex) 0, calc(100% - var(--hex)) 0, 100% 50%, calc(100% - var(--hex)) 100%, var(--hex) 100%, 0 50%);
+}
+
+.window-app .window-content,
+.sheet.journal-entry .journal-entry-content {
+    background-size: 100% 100%;
+}
+
+.window-app .window-content {
+    background-size: 100% 100%;
+    padding: var(--spacing);
+}
+
+.window-app .window-resizable-handle {
+    width: 22px;
+    height: 23px;
+    background: #00000000;
+    text-shadow: 0 0 var(--shadow-size) var(--shadow-color);
+    padding: 8px;
+    border: 0px;
+}
+
+.chat-message {
+    margin: var(--spacing);
+    padding: var(--spacing);
+    font-size: var(--font-size-14);
+    border-color: #90C1E3;
+    border-radius: 6px;
+    background-size: 100% 100%;
+}
+
+#sidebar .directory .action-buttons {
+    padding: 0px;
+    margin: 0 0 var(--spacing);
+}
+
+#sidebar-tabs {
+    margin: 0 0 var(--spacing);
+    box-shadow: 0px;
+}
+
+.directory .directory-header {
+    padding: var(--spacing);
+    margin: 0px;
+}
+
+h4.playlist-name {
+    font-size: var(--font-size-14);
+    text-decoration: none;
+    text-shadow: 0 0 var(--shadow-size) var(--shadow-color);
+}
+
+h4.sound-name {
+    font-size: var(--font-size-12);
+    color: var(--app-dialog-background-shaded);
+}
+
+.package-configuration aside.sidebar {
+    padding: var(--spacing);
+}
+
+.package-configuration aside.sidebar nav.tabs .category-tab {
+    padding: var(--spacing) 0;
+    border-bottom: 1px solid #00000001;
+
+}
+
+.playlists-sidebar .global-control .playlist-header h4 {
+    text-decoration: none;
+    text-shadow: 0 0 var(--shadow-size) var(--shadow-color);
+}
+
+.compendium-sidebar ol.compendium-list {
+    padding: var(--spacing);
+}
+
+.directory .directory-list {
+    padding: var(--spacing);
+}
+
+.playlists-sidebar .global-control {
+    padding: var(--spacing);
+}
+
+.settings-sidebar #game-details {
+    padding: var(--spacing);
+}
+
+.compendium-sidebar li.compendium-pack .compendium-footer {
+    font-size: var(--font-size-12);
+    color: var(--app-dialog-background-shaded);
+}
+
+.compendium-sidebar li.compendium-pack .status-icons {
+    size: 4px;
+}
+
+
+.package-configuration .categories .scrollable {
+    padding: var(--spacing);
+}
+
+
+h4 {
+    font-size: var(--font-size-16);
+    text-align: center;
+    text-shadow: 0px 0px var(--shadow-size) var(--shadow-color);
+}
+
+i {
+    text-shadow: 0px 0px var(--shadow-size) var(--shadow-color);
+}
+
+button {
+    text-shadow: 0px 0px var(--shadow-size) var(--shadow-color);
+}
+
+strong {
+    text-shadow: 0px 0px var(--shadow-size) var(--shadow-color);
+}
+.playlists-sidebar li.sound .sound-playback .sound-timer {
+    flex: 1;
+}
+
+span.count{
+color: var(--color-text-light-4);
+font-size: var(--font-size-11);
+margin-right: var(--spacing);
+}
+
+a.item.category-tab.category-all{
+font-size: var(--font-size-18);
+text-transform: uppercase;
+text-decoration: underline;
+position: fixed;
+    top:1;
+margin-top: -40px;
+}
+.package-configuration aside.sidebar nav.tabs {
+margin-top: 40px;
+margin-bottom: var(--spacing);
+}
+.package-configuration .categories footer {
+    margin: var(--spacing);
+}
+
+h3.document-name.noborder{
+text-align: center !important;
+text-shadow: 0 0 var(--shadow-size) var(--shadow-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+.directory .directory-item h3, .directory .directory-item h4 {
+    text-align: left;
+}
+.fa-solid, .fas {
+    font-weight: 400;
+}
+#sidebar-tabs > .item.active {
+    color: var(--active-color);
+    box-shadow: 0 0 10px #B0CFD855;
+}
+#sidebar-tabs > .item.active .fas{
+font-weight: 900;
+font-size: 26;
+text-shadow: 0 0 4px white;
+}
+.settings-sidebar button:focus {
+    text-shadow: 0 0 4px blue;
+    color: white;
+}
+.settings-sidebar button:hover {
+    text-shadow: 0 0 4px blue;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+/*FLEX SIDEBAR & STAY HORIZONTAL*/
+#sidebar{
+height: auto;
+width: 282px !important;
+}
+#sidebar.collapsed #sidebar-tabs {
+flex-direction: row;
+}
+/*********************************/
+
+
+
+/*SIDEBAR ITEMS FULL WIDTH NO SPACING*/
+#sidebar-tabs > .item {
+    flex: 1 0 var(--sidebar-tab-width);
+}
+/********************************/
+
+
+
+/*BIGGER CLOSE ICON*/
+.fa-close:before, .fa-multiply:before, .fa-remove:before, .fa-times:before, .fa-xmark:before {
+    content: "\e59b";
+}
+/********************************/
+
+
+
+/*FULLSCREEN PAUSE*/
+#pause {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    bottom: 0%;
+    margin: 0;
+    background: url(../ui/denim-dark-090.png) repeat 100% 100%;
+}
+#pause figcaption {
+    line-height: 100vh;
+text-shadow: 0px 0px 20px #003fff;
+}
+#pause img {
+    position: absolute;
+    top: 40vh;
+    left: -20%;
+    height: 100vh;
+    width: 100vh;
+}
+/********************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*EXTENSIONS*/
+
+
+.window-app section.window-content.inline-viewer {
+    padding: 0px !important;
+    margin: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #AAAAAA;
+}
+
+#chat-form textarea {
+background:none;
+}
+
+.dice-so-nice .select2-container--open .select2-dropdown--below {
+    background-color: black;
+}
+
+button:hover {
+    text-shadow: 0 0 4px white;
+}
+
+button {
+    backdrop-filter: blur(21px);
+}
+
+.dice-tray button {
+
+border-color: transparent;
+background: var(--palette-primary);
+clip-path: var(--clipHex);
+box-shadow: none;
+}
+
+.dice-tray button:hover {
+    color: var(--active-color);
+    border-color: transparent;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.dice-tray input[type="text"], .dice-tray input[type="text"]:focus, .dice-tray input[type="text"]:hover{
+background-color: var(--palette-primary);
+border-radius: var(--tidy-sidebar-border-radius, 3px);
+    border: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+--cursor-url: url('\/CustomResources\/Cur48\.png');
+--cursorg-url: url('\/CustomResources\/Cur48Glow\.png');
+cursor: var(--cursor-url), auto !important;
+}
+.draggable{
+cursor: var(--cursor-url), auto !important;
+}
+label {
+cursor: var(--cursor-url), auto !important;
+}
+button{
+cursor: var(--cursorg-url), auto !important;
+}
+a{
+cursor: var(--cursorg-url), auto !important;
+}
+#controls ol.control-tools > li {
+cursor: var(--cursorg-url), auto !important;
+}
+#hotbar .macro {
+cursor: var(--cursorg-url), auto !important;
+}
+input{
+cursor: var(--cursorg-url), auto !important;
+}
+select {
+cursor: var(--cursorg-url), auto !important;
+}
+#navigation .nav-item {
+cursor: var(--cursorg-url), auto !important;
+}
+h4{
+cursor: var(--cursor-url), auto !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.chat-message {
+    margin: var(--spacing);
+    padding: var(--spacing);
+    font-size: var(--font-size-14);
+    border-radius: 6px;
+    background-size: 100% 100%;
+}
+.chat-message .message-header {
+    margin: var(--spacing);
+}
+.chat-message .message-header .message-sender {
+    text-align: left;
+
+}
+
+
+.window-app .window-resizable-handle {
+    width: 100%;
+    height: 8px;
+    background: #00000000;
+    padding: 0px;
+    border: 0px;
+}
+.fa-arrows-alt-h:before, .fa-left-right:before {
+    content: none;
+}
+.window-app .window-content {
+    border-bottom-left-radius: 14px;
+border-bottom-right-radius: 14px;
+background-color: transparent;
+}
