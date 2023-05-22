@@ -699,12 +699,36 @@ padding-top: 0px;
     flex: initial;
 }
 
-
+/*Better headers*/
 .window-app .window-header .window-title {
     text-transform: uppercase;
     line-height: 1.8;
     text-indent: 10px;
-    font-family: "GillSansC";
-    letter-spacing: 0.1rem;
+    font-family: var(--title-font);
+    letter-spacing: var(--title-letter-spacing);
+    color: var(--custom-accent);
+}
+#settings.settings-sidebar h2 {
+    margin: 0px;
+    padding: var(--spacing);
+    background: var(--title-bg);
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.8;
+    text-indent: 10px;
+    font-family: var(--title-font);
+    letter-spacing: var(--title-letter-spacing);
+    color: var(--custom-accent);
+}
+.compendium-sidebar h3 {
+    margin: 0px;
+    padding: var(--spacing);
+    background: var(--title-bg);
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.8;
+    text-indent: 10px;
+    font-family: var(--title-font);
+    letter-spacing: var(--title-letter-spacing);
     color: var(--custom-accent);
 }
