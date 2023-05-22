@@ -1,0 +1,41 @@
+/*PLAYLISTS*/
+.playlists-sidebar .global-control .playlist-sounds {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    margin: 0px;
+        padding: var(--spacing);
+        background: var(--title-bg);
+        text-transform: uppercase;
+        text-align: left;
+        line-height: 1.8;
+        text-indent: 10px;
+        font-family: var(--title-font);
+        letter-spacing: var(--title-letter-spacing);
+        color: var(--custom-accent);
+    }
+    
+    .playlists-sidebar .global-control .playlist-header {
+        padding: var(--spacing);
+    border-radius: var(--border-r);
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+        border-top: 1px solid var(--color-border-dark);
+        border-bottom: 1px solid var(--color-border-dark);
+        justify-content: space-between;
+        margin: 0px;
+        background: var(--title-bg);
+        text-transform: uppercase;
+        text-align: left;
+        line-height: 1.8;
+        text-indent: 10px;
+        font-family: var(--title-font);
+        letter-spacing: var(--title-letter-spacing);
+        color: var(--custom-accent);
+    }
+    .playlists-sidebar .global-control .playlist-header h4 i.fa {
+        display: block;
+    }
+    .playlists-sidebar li.sound .sound-playback .sound-timer {
+        flex: initial;
+    }
+    /***/

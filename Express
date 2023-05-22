@@ -1,0 +1,708 @@
+/* Custom CSS */
+
+/*UI FIX*/
+:root {
+    --spacing: 8px;
+--shadow-size: 4px;
+--shadow-color: black;
+--custom-accent: #FFF2D3;
+}
+
+.window-app .window-content,
+.sheet.journal-entry .journal-entry-content {
+    background-size: 100% 100%;
+}
+
+.window-app .window-content {
+    background-size: 100% 100%;
+    padding: var(--spacing);
+}
+
+.window-app .window-resizable-handle {
+    width: 22px;
+    height: 23px;
+    background: #00000000;
+    text-shadow: 0 0 var(--shadow-size) var(--shadow-color);
+    padding: 8px;
+    border: 0px;
+}
+
+.chat-message {
+    margin: var(--spacing);
+    padding: var(--spacing);
+    font-size: var(--font-size-14);
+    border-color: #ffffff25;
+    border-radius: 12px;
+border-width: 1px;
+
+    background-size: 100% 100%;
+}
+
+#sidebar .directory .action-buttons {
+    padding: 0px;
+    margin: 0 0 var(--spacing);
+}
+
+#sidebar-tabs {
+    margin: 0 0 var(--spacing);
+    box-shadow: 0px;
+}
+
+.directory .directory-header {
+    padding: var(--spacing);
+    margin: 0px;
+}
+
+h4.playlist-name {
+    font-size: var(--font-size-14);
+    text-decoration: none;
+    text-shadow: 0 0 var(--shadow-size) var(--shadow-color);
+}
+
+h4.sound-name {
+    font-size: var(--font-size-12);
+    color: var(--app-dialog-background-shaded);
+}
+
+.package-configuration aside.sidebar {
+    padding: var(--spacing);
+}
+
+.package-configuration aside.sidebar nav.tabs .category-tab {
+    padding: var(--spacing) 0;
+    border-bottom: 1px solid #00000001;
+
+}
+
+.playlists-sidebar .global-control .playlist-header h4 {
+    text-decoration: none;
+    text-shadow: 0 0 var(--shadow-size) var(--shadow-color);
+}
+
+.compendium-sidebar ol.compendium-list {
+    padding: var(--spacing);
+}
+
+.directory .directory-list {
+    padding: var(--spacing);
+}
+
+.playlists-sidebar .global-control {
+    padding: var(--spacing);
+}
+
+.settings-sidebar #game-details {
+    padding: var(--spacing);
+}
+
+.compendium-sidebar li.compendium-pack .compendium-footer {
+    font-size: var(--font-size-12);
+    color: var(--app-dialog-background-shaded);
+}
+
+.compendium-sidebar li.compendium-pack .status-icons {
+    size: 4px;
+}
+
+
+.package-configuration .categories .scrollable {
+    padding: var(--spacing);
+}
+
+
+h4 {
+    font-size: var(--font-size-16);
+    text-align: center;
+    text-shadow: 0px 0px var(--shadow-size) var(--shadow-color);
+}
+
+i {
+    text-shadow: 0px 0px var(--shadow-size) var(--shadow-color);
+}
+
+button {
+    text-shadow: 0px 0px var(--shadow-size) var(--shadow-color);
+}
+
+strong {
+    text-shadow: 0px 0px var(--shadow-size) var(--shadow-color);
+}
+.playlists-sidebar li.sound .sound-playback .sound-timer {
+    flex: 1;
+}
+
+span.count{
+color: var(--color-text-light-4);
+font-size: var(--font-size-11);
+margin-right: var(--spacing);
+}
+
+a.item.category-tab.category-all{
+font-size: var(--font-size-18);
+text-transform: uppercase;
+text-decoration: underline;
+position: fixed;
+    top:1;
+margin-top: -40px;
+}
+.package-configuration aside.sidebar nav.tabs {
+margin-top: 40px;
+margin-bottom: var(--spacing);
+}
+.package-configuration .categories footer {
+    margin: var(--spacing);
+}
+
+h3.document-name.noborder{
+text-align: center !important;
+text-shadow: 0 0 var(--shadow-size) var(--shadow-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+.directory .directory-item h3, .directory .directory-item h4 {
+    text-align: left;
+}
+.fa-solid, .fas {
+color: var(--custom-accent);
+    font-weight: 300;
+}
+#sidebar-tabs > .item.active {
+    color: var(--custom-accent);
+    box-shadow: 0 0 10px #FEF1D255;
+backdrop-filter: blur(21px);
+}
+#sidebar-tabs > .item.active .fas{
+font-weight: 900;
+font-size: 26;
+text-shadow: 0 0 4px var(--shadow-color);
+
+}
+.settings-sidebar button:focus {
+    text-shadow: 0 0 4px var(--shadow-color);
+    color: white;
+}
+.settings-sidebar button:hover {
+    text-shadow: 0 0 4px #FFF2D3;
+    color: white;
+}
+#controls > ol.main-controls > li.scene-control, #controls > ol.sub-controls > li {
+    color: var(--custom-accent);
+}
+
+#navigation #scene-list .scene {
+text-shadow: 0px 0px 16px black;
+    backdrop-filter: blur(69px);
+}
+
+li.folder.collapsed > .folder-header {
+border-radius: 333px;
+
+}
+li.folder > .folder-header {
+    border-top-left-radius: 12px;
+border-top-right-radius: 12px;
+background: #00000080;
+backdrop-filter: blur(21px);
+}
+li.folder{
+padding-bottom: var(--spacing);
+}
+
+
+.scenes-sidebar .subdirectory {
+    border: var(--spacing) solid transparent;
+
+    border-top: none;
+backdrop-filter: blur(21px);
+background: #00000080;
+border-bottom-left-radius: 12px;
+border-bottom-right-radius: 12px;
+
+}
+.subdirectory{
+    border: var(--spacing) solid transparent;
+    border-top: none;
+backdrop-filter: blur(21px);
+background: #00000080;
+border-bottom-left-radius: 12px;
+border-bottom-right-radius: 12px;
+
+}
+
+
+
+
+
+
+/*FLEX SIDEBAR & STAY HORIZONTAL*/
+#sidebar{
+height: auto;
+width: 282px !important;
+}
+#sidebar.collapsed #sidebar-tabs {
+flex-direction: row;
+}
+/*********************************/
+
+
+
+/*SIDEBAR ITEMS FULL WIDTH NO SPACING*/
+#sidebar-tabs > .item {
+    flex: 1 0 var(--sidebar-tab-width);
+}
+/********************************/
+
+
+
+/*BIGGER CLOSE ICON*/
+.fa-close:before, .fa-multiply:before, .fa-remove:before, .fa-times:before, .fa-xmark:before {
+    content: "\e59b";
+}
+/********************************/
+
+#context-menu {
+    
+background: #00000080;
+backdrop-filter: blur(12px);
+position: static;
+border-radius: 12px;
+border-color: var(--custom-accent);
+border-top-left-radius: 0px;
+min-width: 100%;
+padding-bottom: var(--spacing);
+box-shadow: 0px -8px 0px 0px var(--custom-accent);
+}
+#context-menu.expand-up {
+border-top-left-radius: 12px;
+border-bottom-left-radius: 0px;
+box-shadow: 0px 8px 0px 0px var(--custom-accent);
+    position: absolute;
+}
+
+
+/*FULLSCREEN PAUSE*/
+#pause {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    bottom: 0%;
+    margin: 0;
+    background: url(../ui/denim-dark-090.png) repeat 100% 100%;
+}
+#pause figcaption {
+    line-height: 100vh;
+text-shadow: 0px 0px 20px #003fff;
+}
+#pause img {
+    position: absolute;
+    top: 40vh;
+    left: -20%;
+    height: 100vh;
+    width: 100vh;
+}
+/********************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*EXTENSIONS*/
+
+
+.window-app section.window-content.inline-viewer {
+    padding: 0px !important;
+    margin: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #AAAAAA;
+}
+
+#chat-form textarea {
+background:none;
+}
+
+.dice-so-nice .select2-container--open .select2-dropdown--below {
+    background-color: black;
+}
+
+button:hover {
+    text-shadow: 0 0 4px white;
+}
+
+button {
+    backdrop-filter: blur(21px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+--cursor-url: url('\/Exalaes\/Custom Resources\/CursorA\.png');
+--cursorg-url: url('\/Exalaes\/Custom Resources\/CursorB\.png');
+cursor: var(--cursor-url), auto !important;
+}
+.draggable{
+cursor: var(--cursor-url), auto !important;
+}
+label {
+cursor: var(--cursor-url), auto !important;
+}
+button{
+cursor: var(--cursorg-url), auto !important;
+}
+a{
+cursor: var(--cursorg-url), auto !important;
+}
+#controls ol.control-tools > li {
+cursor: var(--cursorg-url), auto !important;
+}
+#hotbar .macro {
+cursor: var(--cursorg-url), auto !important;
+}
+input{
+cursor: var(--cursorg-url), auto !important;
+}
+select {
+cursor: var(--cursorg-url), auto !important;
+}
+#navigation .nav-item {
+cursor: var(--cursorg-url), auto !important;
+}
+h4{
+cursor: var(--cursor-url), auto !important;
+}
+
+
+form button {
+border-radius: 18px;
+}
+.journal-sheet .journal-header .title {
+    border-radius: 36px;
+}
+.directory .action-buttons button, .settings-sidebar button {
+ border-radius: 333px;
+}
+input[type="search" i] {
+    border-radius: 333px;
+
+}
+.dice-tray button {
+border-radius: 333px;
+border-color: var(--custom-accent);
+-webkit-box-shadow: none;
+    box-shadow: none;
+background-color: #00000055;
+}
+.dice-tray input[type="text"] {
+    border-radius: 6px;
+border-color: black;
+-webkit-box-shadow: none;
+    box-shadow: none;
+background-color: #00000055;
+}
+textarea {
+    border-color: #00000055;
+}
+
+form .form-group .form-fields > *:last-child {
+border-radius: 333px;
+}
+#chat-controls .roll-type-select {
+    border-radius: 333px;
+}
+#controls > ol.main-controls > li.scene-control, #controls > ol.sub-controls > li {
+    border-radius: 333px;
+border-color: #ffffff33;
+}
+#sidebar-tabs > .item{
+border-radius: 333px;
+
+}
+
+
+.window-app .window-content{
+backdrop-filter: blur(12px);
+}
+.settings-sidebar {
+    backdrop-filter: blur(12px);
+}
+.directory {
+    backdrop-filter: blur(12px);
+}
+li.scene-control{
+backdrop-filter: blur(21px) brightness(0.5);
+}
+
+li.directory-item.document.scene.flexrow{
+background-color: #1f2d52;
+background-blend-mode: soft-light;
+}
+
+#navigation .scene {
+    border-radius: 333px;
+}
+
+
+
+.item-piles-config-container p {
+color: var(--app-dialog-background-shaded);}
+
+.item-piles-even-color:nth-child(even) {
+    background-color: #00000000;
+}
+
+.item-piles-item-row.svelte-1lotooc.svelte-1lotooc.svelte-1lotooc {
+    background-color: #00000000;
+}
+
+#navigation #scene-list .scene.gm {
+    color: white;
+}
+
+.prosemirror menu .pm-dropdown {
+    background: #00000055;
+}
+.prosemirror.menu-dialog form {
+    backdrop-filter: blur(52px);
+    background: #11111555;
+color: white;
+border-radius: 12px;
+}
+
+
+
+p {
+    margin: 0.5em 0;
+    
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+
+}
+.window-app .window-content, .sheet.journal-entry .journal-entry-content {
+    text-shadow: 8px 8px 21px black;
+}
+
+.mce-content-body {
+    color: white;
+}
+.fas.fa-sync {
+    color: inherit;
+}
+.playlists-sidebar .sound-control.inactive{
+    color: var(--color-text-dark-6);
+}
+.playlists-sidebar .sound-control {
+    color: var(--custom-accent);
+}
+
+
+#sidebar .directory .action-buttons button:first-of-type {
+border-top-left-radius: 333px;
+border-bottom-left-radius: 333px;
+}
+#sidebar .directory .action-buttons button:last-of-type {
+border-top-right-radius: 333px;
+border-bottom-right-radius: 333px;
+}
+
+
+
+/*Chat remake*/
+.chat-message .message-header .message-sender{
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,212,255,0) 100%);
+border-radius: 12px;
+text-transform: uppercase;
+text-align: left;
+line-height: 1.8;
+text-indent: 10px;
+font-family: "GillSansC";
+letter-spacing: 0.1rem;
+color: var(--custom-accent);
+}
+
+.chat-message .message-content {
+    padding-top: var(--spacing);
+text-shadow: var(--shadow-size) 0px 8px black;
+letter-spacing: 0.03rem;
+backdrop-filter: blur(21px);
+
+}
+.chat-message .message-header .message-metadata {
+    font-size: var(--font-size-11);
+color: #FFF2D344;
+
+}
+.chat-message .message-header {
+    
+}
+
+.chat-message .message-header .message-metadata .message-delete{
+text-shadow: 2px 2px 2px #E95044;
+}
+
+
+/*Chat sidebar*/
+#sidebar{
+border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+border-color: transparent;
+}
+
+#sidebar-tabs {
+border-color: transparent;
+    border-bottom-color: var(--palette-secondary);
+    box-shadow: 0 0 10px var(--palette-secondary-300);
+}
+#chat-form textarea {
+    background: #00000055;
+border-radius: 12px;
+padding: 8px !important;
+}
+#chat-form {
+margin: 0px;
+    padding: 8px !important;
+}
+
+
+
+/*PLAYLISTS*/
+
+.playlists-sidebar .global-control .playlist-sounds {
+
+background: #00000040;
+border-bottom-left-radius: 12px;
+border-bottom-right-radius: 12px;
+margin: 0px;
+    padding: var(--spacing);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,212,255,0) 100%);
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.8;
+    text-indent: 10px;
+    font-family: "GillSansC";
+    letter-spacing: 0.1rem;
+    color: var(--custom-accent);
+}
+
+.playlists-sidebar .global-control .playlist-header {
+    padding: var(--spacing);
+border-radius: 12px;
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+    border-top: 1px solid var(--color-border-dark);
+    border-bottom: 1px solid var(--color-border-dark);
+    justify-content: space-between;
+margin: 0px;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,212,255,0) 100%);
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.8;
+    text-indent: 10px;
+    font-family: "GillSansC";
+    letter-spacing: 0.1rem;
+    color: var(--custom-accent);
+}
+
+
+
+#sidebar {
+    border-bottom-left-radius: 24px;
+}
+.dice-tray {
+    padding: var(--spacing);
+padding-top: 0px;
+}
+
+#settings.settings-sidebar h2 {
+    margin: 0px;
+    padding: var(--spacing);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,212,255,0) 100%);
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.8;
+    text-indent: 10px;
+    font-family: "GillSansC";
+    letter-spacing: 0.1rem;
+    color: var(--custom-accent);
+}
+.compendium-sidebar h3 {
+    margin: 0px;
+    padding: var(--spacing);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,212,255,0) 100%);
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.8;
+    text-indent: 10px;
+    font-family: "GillSansC";
+    letter-spacing: 0.1rem;
+    color: var(--custom-accent);
+}
+.fa-caret-down:before {
+    content: "\f33d";
+}
+.fa-angle-down:before {
+    content: "\f0d7";
+}
+#sidebar-tabs .fa-caret-right:before {
+    content: "\f0d8";
+}
+.playlists-sidebar .global-control .playlist-header h4 i.fa {
+    
+    display: block;
+}
+.playlists-sidebar li.sound .sound-playback .sound-timer {
+    flex: initial;
+}
+.window-app .window-header .window-title {
+    text-transform: uppercase;
+    line-height: 1.8;
+    text-indent: 10px;
+    font-family: "GillSansC";
+    letter-spacing: 0.1rem;
+    color: var(--custom-accent);
+}
