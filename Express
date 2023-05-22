@@ -698,6 +698,8 @@ padding-top: 0px;
 .playlists-sidebar li.sound .sound-playback .sound-timer {
     flex: initial;
 }
+
+
 .window-app .window-header .window-title {
     text-transform: uppercase;
     line-height: 1.8;

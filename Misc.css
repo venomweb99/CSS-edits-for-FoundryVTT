@@ -32,3 +32,23 @@
     border: 0px;
 }
 /**/
+
+/*Chat Names Are Important*/
+.chat-message .message-header .message-sender{
+    background: var(--title-bg);
+border-radius: var(--border-r);
+text-transform: uppercase;
+text-align: left;
+line-height: 1.8;
+text-indent: 10px;
+font-family: var(--title-font);
+letter-spacing: var(--title-letter-spacing);
+color: var(--custom-accent);
+}
+.chat-message .message-content {
+    padding-top: var(--spacing);
+}
+.chat-message .message-header .message-metadata {
+    font-size: var(--font-size-11);
+}
+/**/
