@@ -1,0 +1,60 @@
+/*base*/
+:root{
+    --font-h2: "Amiri", serif;
+    --font-body: "Signika", "Palatino Linotype", sans-serif;
+    --color-warm-1: #ee9b3a;
+    --color-warm-2: #c9593f;
+    --color-warm-3: #5d142b;
+    --color-cool-3: #584a75;
+    --color-cool-4: #302831;
+    --color-cool-5: #0b0a13;
+    --color-light-1: #f7f3e8;
+    --color-light-2: #efe6d8;
+    --color-light-3: #e7d1b1;
+    --color-light-4: #d0b8a3;
+    --color-light-5: #9f8475;
+    --color-light-6: #816b66;
+    --color-cool-5-25: rgba(11, 10, 19, 0.25);
+    --color-cool-5-50: rgba(11, 10, 19, 0.5);
+    --color-cool-5-75: rgba(11, 10, 19, 0.75);
+    --color-cool-5-90: rgba(11, 10, 19, 0.9);
+    --v11-fx: blur(4px);
+
+    --spacing: 8px;
+    --shadow-color: black;
+    --sidebar-width: 300px;
+    --shadow-size: 4px;
+    --border-r: 12px;
+    --title-font: var(--font-h2);
+    --title-letter-spacing: 0.02rem;
+    --title-bg: linear-gradient(90deg, var(--color-cool-4) 0%, rgba(0,212,255,0) 100%);
+    --font-size-14: 14px;
+    --font-size-12: 12px;
+    --font-size-16: 16px;
+    --font-size-18: 18px;
+    --font-size-11: 11px;
+    --custom-accent: var(--color-light-3);
+}
+
+/*foundry*/
+
+.window-app, #sidebar{
+    backdrop-filter: blur(4px);
+    }
+
+.app{
+    color: var(--color-warm-1);
+    background: none;
+    background-color: var(--color-cool-4);
+}
+
+.window-app .window-content {
+    background: none;
+   background-color: var(--color-light-2);
+}
+
+button, form button {
+    background-color: var(--color-warm-1);
+    border-color: transparent;
+}
+
