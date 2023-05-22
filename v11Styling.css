@@ -42,19 +42,29 @@
     backdrop-filter: blur(4px);
     }
 
-.app{
-    color: var(--color-warm-1);
+.app, #controls > ol.main-controls > li.scene-control, #controls > ol.sub-controls > li, #hotbar .macro, #hotbar #hotbar-directory-controls, #hotbar #hotbar-page-controls{
+    color: var(--color-light-3);
     background: none;
-    background-color: var(--color-cool-4);
+    background-color: var(--color-cool-5-90);
 }
 
-.window-app .window-content {
+.window-app .window-content, .sheet.journal-entry .journal-entry-content {
     background: none;
-   background-color: var(--color-light-2);
+   background-color: var(--color-cool-5-50);
+color: var(--color-light-2);
 }
 
 button, form button {
-    background-color: var(--color-warm-1);
-    border-color: transparent;
+background-color: var(--color-warm-1);
+border-color: transparent;
 }
-
+input, form .form-group .form-fields > *, .prosemirror menu button{
+    color: var(--color-light-3) !important;
+}
+.window-app .window-header .window-title {
+    text-align: center !important;
+}
+form .form-group .form-fields > * , .prosemirror menu .pm-dropdown{
+    border-color: transparent;
+background-color: var(--color-cool-4);
+}
