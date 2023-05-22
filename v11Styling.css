@@ -36,11 +36,9 @@
     --custom-accent: var(--color-light-3);
 }
 
-/*foundry*/
-
 .window-app,
 #sidebar {
-    backdrop-filter: blur(4px);
+    backdrop-filter: var(--v11-fx);
 }
 
 .app,
