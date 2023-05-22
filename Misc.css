@@ -52,3 +52,11 @@ color: var(--custom-accent);
     font-size: var(--font-size-11);
 }
 /**/
+
+/*Material Scrollbars*/
+::-webkit-scrollbar-thumb {
+    --scrollbar-color: #80868b;
+    background: var(--scrollbar-color);
+    border-color: transparent;
+}
+/**/
