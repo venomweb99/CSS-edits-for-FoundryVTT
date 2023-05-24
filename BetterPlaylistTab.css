@@ -12,6 +12,7 @@
         font-family: var(--title-font);
         letter-spacing: var(--title-letter-spacing);
         color: var(--custom-accent);
+        font-size: var(--font-size-11);
     }
     
     .playlists-sidebar .global-control .playlist-header {

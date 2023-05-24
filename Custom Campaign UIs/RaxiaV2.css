@@ -1,10 +1,16 @@
 /***V11 STYLES***/
 :root {
+    --color-underline-header: transparent;
+    --color-border-highlight-alt: var(--color-light-3);
+    --color-border-highlight: var(--color-light-3);
+    --color-shadow-primary: var(--color-light-3);
+--color-text-hyperlink: var(--color-light-3);
     --font-h2: "Albertus";
-    --font-body: "Albertus";
-    --color-warm-1: #1d5668;
-    --color-warm-2: #c9593f;
-    --color-warm-3: #5d142b;
+    --title-letter-spacing: 0.04rem;
+    --font-body: "Myriad";
+    --color-warm-1: rgba(42, 86, 103, 0.75);
+    --color-warm-2: #376285;
+    --color-warm-3: #011E35;
     --color-cool-3: #584a75;
     --color-cool-4: #00253F;
     --color-cool-5: rgba(17, 35, 63, 1);
@@ -18,16 +24,15 @@
     --color-cool-5-50: rgba(17, 35, 63, 0.5);
     --color-cool-5-75: rgba(17, 35, 63, 0.75);
     --color-cool-5-90: rgba(17, 35, 63, 0.9);
-    --v11-fx: blur(4px);
+    --v11-fx: blur(21px);
     --spacing: 8px;
     --shadow-color: var(--color-cool-5);
     --sidebar-width: 300px;
     --shadow-size: 4px;
---titlebar: url(\/CustomResources\/TitlebarBG\.png);
---pattern: url(\/CustomResources\/Pattern\.png);
+    --titlebar: url(\/CustomResources\/TitlebarBG\.png);
+    --pattern: url(\/CustomResources\/Pattern70\.png);
     --border-r: 12px;
     --title-font: var(--font-h2);
-    --title-letter-spacing: 0.05rem;
     --title-bg: linear-gradient(90deg, var(--color-cool-4) 0%, rgba(0, 212, 255, 0) 100%);
     --font-size-14: 14px;
     --font-size-12: 12px;
@@ -35,16 +40,30 @@
     --font-size-18: 18px;
     --font-size-11: 11px;
     --custom-accent: var(--color-light-3);
---color-text-dark-secondary: var(--color-light-3);
---border-color: var(--color-cool-4) !important;
---hex: 15px;
---clipHex: polygon(var(--hex) 0, calc(100% - var(--hex)) 0, 100% 50%, calc(100% - var(--hex)) 100%, var(--hex) 100%, 0 50%);
---font-weight: 400;
+    --color-text-dark-secondary: var(--color-light-3);
+    --border-color: var(--color-cool-4) !important;
+    --hex: 15px;
+    --clipHex: polygon(var(--hex) 0, calc(100% - var(--hex)) 0, 100% 50%, calc(100% - var(--hex)) 100%, var(--hex) 100%, 0 50%);
+    --font-weight: 400;
+    --border-r: 12px;
+}
+#navigation #scene-list .scene,
+#navigation #scene-list .scene.view {
+    background: var(--color-warm-2);
+}
+#navigation #scene-list .scene:hover {
+    text-shadow: 0 0 var(--shadow-size) var(--color-light-3) !important;
 }
 
 .window-app,
 #sidebar {
     backdrop-filter: var(--v11-fx);
+}
+.chat-message .message-header .message-metadata {
+    opacity:0.3;
+}
+.playlists-sidebar .global-control .playlist-sounds{
+font-size: var(--font-size-11);
 }
 
 .app,
@@ -57,10 +76,11 @@
     color: var(--color-light-3);
     background: none;
     background-color: var(--color-cool-5-90);
-border-color: var(--border-color);
-align-self: center;
-font-family: var(--font-body);
-font-weight: var(--font-weight);
+    border-color: var(--border-color);
+    align-self: center;
+    font-family: var(--font-body);
+    font-weight: var(--font-weight);
+    border-radius: var(--border-r);
 }
 
 
@@ -72,41 +92,79 @@ font-weight: var(--font-weight);
     background-size: 100% 100%;
     background-color: var(--color-cool-5-50);
     color: var(--color-light-2);
-border-color: var(--border-color);
-font-family: var(--font-body);
+    border-color: var(--border-color);
+    font-family: var(--font-body);
+    border-radius: var(--border-r);
+}
+
+.chat-message,
+.chat-message.whisper,
+.window-app, 
+textarea:focus {
+    box-shadow: 0 0px var(--shadow-size) var(--color-light-3);
+}
+
+#controls>ol.main-controls>li.scene-control {
+    mix-blend-mode: color-dodge;
+    box-shadow: none;
+    background-color: var(--color-cool-5-50);
+    clip-path: var(--clipHex);
 }
 
 button,
 form button,
-.dice-tray button {
+.dice-tray button,
+.directory .directory-header .header-search input
+ {
     background-color: var(--color-warm-1);
     border-color: transparent;
-clip-path: var(--clipHex);
-color: var(--color-light-3);
-border-color: transparent;
-font-family: var(--font-body);
--webkit-box-shadow: none;
+    clip-path: var(--clipHex);
+    color: var(--color-light-3);
+    border-color: transparent !important;
+    font-family: var(--font-body);
+    -webkit-box-shadow: none;
     box-shadow: none;
     font-weight: var(--font-weight);
-text-shadow: 0 0 var(--shadow-size) var(--shadow-color);
+    text-shadow: 0 0 var(--shadow-size) var(--shadow-color);
+    mix-blend-mode: hard-light;
+}
+
+button:hover,
+form button:hover,
+.dice-tray button:hover {
+    background-color: var(--color-warm-2);
+    color: var(--color-light-1);
+    border-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+
 }
 
 input,
 form .form-group .form-fields>*,
 .prosemirror menu button,
-#module-management .package-list .package-title, #module-management .package-list .package-metadata, #module-management .package-list .package-description {
+#module-management .package-list .package-title,
+#module-management .package-list .package-metadata,
+#module-management .package-list .package-description {
     color: var(--color-light-3) !important;
 }
 
+
 .window-app .window-header .window-title {
     text-align: center !important;
-align-self: center;
+    align-self: center;
 
 }
+
 .window-app .window-header,
-.hide-player-ui-dynamic-sized-sidebar #sidebar-tabs{
-background: var(--titlebar);
-align-self: bottom;
+.hide-player-ui-dynamic-sized-sidebar #sidebar-tabs {
+    background: var(--titlebar);
+    align-self: bottom;
+}
+
+#sidebar{
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
 }
 
 form .form-group .form-fields>*,
@@ -122,14 +180,69 @@ form .form-group .form-fields>*,
     background-color: var(--color-cool-4);
     color: var(--color-light-2);
 }
+.playlists-sidebar .global-control .playlist-header h4 {
+    text-decoration: none;
+}
 
 #chat-form textarea {
     background: none;
     background-color: var(--color-cool-5-25);
-border-color: var(--border-color);
-font-family: var(--font-body);
-color: var(--color-light-2);
+    border-color: var(--border-color);
+    font-family: var(--font-body);
+    color: var(--color-light-2);
 }
+
+.playlists-sidebar .global-control .playlist-header,
+.playlists-sidebar .global-control .playlist-sounds,
+.playlists-sidebar .global-control{
+    border-color: var(--color-warm-3) !important;
+    font-family: var(--font-body);
+    color: var(--color-light-2);
+}
+
+.package-configuration aside.sidebar,
+.package-configuration aside.sidebar nav.tabs .category-tab,
+.directory .directory-item.document {
+    border: none;
+}
+
+.package-configuration aside.sidebar nav.tabs .category-tab.active {
+    border-bottom: 2px solid var(--color-light-3);
+}
+
+.package-configuration aside.sidebar nav.tabs .category-tab:hover{
+    border: none;
+    text-shadow: 0 0 var(--shadow-size) var(--color-light-3);
+}
+
+
+#navigation .nav-item {
+    padding: 0 16px;
+    clip-path: var(--clipHex);
+}
+
+.window-app,
+#sidebar {
+    padding: 0px;
+    margin: 0px;
+    font-weight: var(--font-weight);
+}
+
+#sidebar-tabs>.item i,
+.fa-solid,
+.fas {
+    font-weight: var(--font-weight);
+    text-shadow: 0 0 var(--shadow-size) var(--shadow-color);
+}
+
+#sidebar-tabs>.item.active {
+    font-weight: 900 !important;
+}
+#sidebar-tabs > .item i[class^=fa] {
+    font-weight: inherit;
+}
+
+
 
 
 /*Tweaks*/
@@ -174,7 +287,8 @@ a.item.category-tab.category-all {
 .directory .directory-list,
 .playlists-sidebar .global-control,
 .settings-sidebar #game-details,
-.package-configuration .categories .scrollable {
+.package-configuration .categories .scrollable,
+.dice-tray {
     padding: var(--spacing);
 }
 
@@ -306,7 +420,7 @@ a.item.category-tab.category-all {
     font-family: var(--title-font);
     letter-spacing: var(--title-letter-spacing);
     color: var(--custom-accent);
-text-shadow: 0 0 var(--shadow-size) var(--shadow-color);
+    text-shadow: 0 0 var(--shadow-size) var(--shadow-color);
 }
 
 #settings.settings-sidebar h2 {
@@ -343,56 +457,78 @@ text-shadow: 0 0 var(--shadow-size) var(--shadow-color);
     padding: 0px;
     border: 0px;
 }
+
 .fa-arrows-alt-h:before,
 .fa-left-right:before {
     content: none;
 }
 
-.window-app, #sidebar {
-    padding: 0px;
-margin: 0px;
-font-weight: var(--font-weight);
-}
-#sidebar-tabs>.item i, .fa-solid, .fas {
-    font-weight: var(--font-weight);
-text-shadow: 0 0 var(--shadow-size) var(--shadow-color);
-}
-#sidebar-tabs>.item i {
-    font-weight: 900;
+/*Custom Cursor*/
+:root {
+    --cursor-url: url('\/CustomResources\/Cur48\.png');
+    --cursorg-url: url('\/CustomResources\/Cur48Glow\.png');
+    cursor: var(--cursor-url), auto !important;
 }
 
-:root {
---cursor-url: url('\/CustomResources\/Cur48\.png');
---cursorg-url: url('\/CustomResources\/Cur48Glow\.png');
-cursor: var(--cursor-url), auto !important;
+.draggable {
+    cursor: var(--cursor-url), auto !important;
 }
-.draggable{
-cursor: var(--cursor-url), auto !important;
-}
+
 label {
-cursor: var(--cursor-url), auto !important;
+    cursor: var(--cursor-url), auto !important;
 }
-button{
-cursor: var(--cursorg-url), auto !important;
+
+button {
+    cursor: var(--cursorg-url), auto !important;
 }
-a{
-cursor: var(--cursorg-url), auto !important;
+
+a {
+    cursor: var(--cursorg-url), auto !important;
 }
-#controls ol.control-tools > li {
-cursor: var(--cursorg-url), auto !important;
+
+#controls ol.control-tools>li {
+    cursor: var(--cursorg-url), auto !important;
 }
+
 #hotbar .macro {
-cursor: var(--cursorg-url), auto !important;
+    cursor: var(--cursorg-url), auto !important;
 }
-input{
-cursor: var(--cursorg-url), auto !important;
+
+input {
+    cursor: var(--cursorg-url), auto !important;
 }
+
 select {
-cursor: var(--cursorg-url), auto !important;
+    cursor: var(--cursorg-url), auto !important;
 }
+
 #navigation .nav-item {
-cursor: var(--cursorg-url), auto !important;
+    cursor: var(--cursorg-url), auto !important;
 }
-h4{
-cursor: var(--cursor-url), auto !important;
+
+h4 {
+    cursor: var(--cursor-url), auto !important;
+}
+
+/**/
+
+/*FULLSCREEN PAUSE*/
+#pause {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    bottom: 0%;
+    margin: 0;
+    background: url(../ui/denim-dark-090.png) repeat 100% 100%;
+}
+#pause figcaption {
+    line-height: 100vh;
+text-shadow: 0px 0px 20px #003fff;
+}
+#pause img {
+    position: absolute;
+    top: 40vh;
+    left: -20%;
+    height: 100vh;
+    width: 100vh;
 }
