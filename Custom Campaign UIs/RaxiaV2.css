@@ -5,6 +5,7 @@
     --color-border-highlight: var(--color-light-3);
     --color-shadow-primary: var(--color-light-3);
 --color-text-hyperlink: var(--color-light-3);
+--color-bg-option: var(--color-cool-5);
     --font-h2: "Albertus";
     --title-letter-spacing: 0.04rem;
     --font-body: "Myriad";
@@ -54,7 +55,10 @@
 #navigation #scene-list .scene:hover {
     text-shadow: 0 0 var(--shadow-size) var(--color-light-3) !important;
 }
-
+#navigation #scene-list .scene li.scene-player{
+margin-left: 28px;
+padding: var(--padding);
+}
 .window-app,
 #sidebar {
     backdrop-filter: var(--v11-fx);
@@ -145,7 +149,8 @@ form .form-group .form-fields>*,
 .prosemirror menu button,
 #module-management .package-list .package-title,
 #module-management .package-list .package-metadata,
-#module-management .package-list .package-description {
+#module-management .package-list .package-description,
+.dice-so-nice .form-group select {
     color: var(--color-light-3) !important;
 }
 
@@ -517,13 +522,13 @@ h4 {
     width: 100%;
     height: 100%;
     position: fixed;
-    bottom: 0%;
+    bottom: 0;
     margin: 0;
     background: url(../ui/denim-dark-090.png) repeat 100% 100%;
 }
 #pause figcaption {
     line-height: 100vh;
-text-shadow: 0px 0px 20px #003fff;
+    text-shadow: 0 0 20px #003fff;
 }
 #pause img {
     position: absolute;
