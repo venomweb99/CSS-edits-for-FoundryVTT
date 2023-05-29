@@ -48,6 +48,8 @@
     --font-weight: 400;
     --border-r: 12px;
 }
+
+
 #navigation #scene-list .scene,
 #navigation #scene-list .scene.view {
     background: var(--color-warm-2);
@@ -69,6 +71,8 @@ padding: var(--padding);
 .playlists-sidebar .global-control .playlist-sounds{
 font-size: var(--font-size-11);
 }
+
+
 
 .app,
 #sidebar,
@@ -143,7 +147,6 @@ form button:hover,
     box-shadow: none;
 
 }
-
 input,
 form .form-group .form-fields>*,
 .prosemirror menu button,
@@ -223,7 +226,7 @@ form .form-group .form-fields>*,
 
 #navigation .nav-item {
     padding: 0 16px;
-    clip-path: var(--clipHex);
+border-radius: var(--border-r);
 }
 
 .window-app,
@@ -522,13 +525,13 @@ h4 {
     width: 100%;
     height: 100%;
     position: fixed;
-    bottom: 0;
+    bottom: 0%;
     margin: 0;
     background: url(../ui/denim-dark-090.png) repeat 100% 100%;
 }
 #pause figcaption {
     line-height: 100vh;
-    text-shadow: 0 0 20px #003fff;
+text-shadow: 0px 0px 20px #003fff;
 }
 #pause img {
     position: absolute;
@@ -536,4 +539,47 @@ h4 {
     left: -20%;
     height: 100vh;
     width: 100vh;
+}
+
+/*Centered top tabs*/
+#navigation {
+    margin: 0;
+
+}
+#ui-top.offset {
+    margin: 0px;
+padding: var(--spacing);
+background: radial-gradient(circle farthest-corner at 50% 100%, var(--color-cool-5-50) 0%, transparent 100%);
+border-bottom: 2px solid;
+  border-image: linear-gradient(to left, transparent, var(--color-warm-2), transparent) 1;
+width:100%;
+}
+#navigation #scene-list {
+    margin-right: var(--navixmg);
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#navigation.collapsed #scene-list {
+    display:none !important;
+}
+#ui-left {
+    width: 300px;
+}
+
+/*No useless shit in settings tab*/
+#settings.settings-sidebar h2,
+#settings-documentation,
+#game-details,
+button[data-action="tours"] {
+display: none;
+}
+#settings-access{
+border-top: 2px solid var(--color-light-3);
+}
+
+/*Webviewer*/
+.window-app section.window-content.inline-viewer {
+   padding: 0;
 }
