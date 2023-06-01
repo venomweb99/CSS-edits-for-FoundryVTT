@@ -478,45 +478,22 @@ a.item.category-tab.category-all {
     cursor: var(--cursor-url), auto !important;
 }
 
-.draggable {
-    cursor: var(--cursor-url), auto !important;
-}
-
-label {
-    cursor: var(--cursor-url), auto !important;
-}
-
-button {
-    cursor: var(--cursorg-url), auto !important;
-}
-
-a {
-    cursor: var(--cursorg-url), auto !important;
-}
-
-#controls ol.control-tools>li {
-    cursor: var(--cursorg-url), auto !important;
-}
-
-#hotbar .macro {
-    cursor: var(--cursorg-url), auto !important;
-}
-
-input {
-    cursor: var(--cursorg-url), auto !important;
-}
-
-select {
-    cursor: var(--cursorg-url), auto !important;
-}
-
-#navigation .nav-item {
-    cursor: var(--cursorg-url), auto !important;
-}
-
+.draggable,
+label,
 h4 {
     cursor: var(--cursor-url), auto !important;
 }
+
+button,
+a,
+input,
+select,
+#navigation .nav-item,
+#controls ol.control-tools>li,
+#hotbar .macro{
+    cursor: var(--cursorg-url), auto !important;
+}
+
 
 /**/
 
@@ -563,7 +540,13 @@ width:100%;
 }
 #navigation.collapsed #scene-list {
     display:none !important;
+
 }
+#navigation.collapsed {
+    opacity: 0.1;
+position: absolute;
+}
+
 #ui-left {
     width: 300px;
 }
@@ -582,4 +565,9 @@ border-top: 2px solid var(--color-light-3);
 /*Webviewer*/
 .window-app section.window-content.inline-viewer {
    padding: 0;
+}
+
+/*No loading bar*/
+#loading {
+    display: none !important;
 }
