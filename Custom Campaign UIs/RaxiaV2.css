@@ -26,7 +26,7 @@
     --color-cool-5-75: rgba(17, 35, 63, 0.75);
     --color-cool-5-90: rgba(17, 35, 63, 0.9);
     --v11-fx: blur(21px);
-    --spacing: 8px;
+    --spacing: 8px;i
     --shadow-color: var(--color-cool-5);
     --sidebar-width: 300px;
     --shadow-size: 4px;
@@ -153,7 +153,10 @@ form .form-group .form-fields>*,
 #module-management .package-list .package-title,
 #module-management .package-list .package-metadata,
 #module-management .package-list .package-description,
-.dice-so-nice .form-group select {
+.dice-so-nice .form-group select,
+p,
+.macro-sheet .form-group.command textarea,
+select {
     color: var(--color-light-3) !important;
 }
 
@@ -565,9 +568,22 @@ border-top: 2px solid var(--color-light-3);
 /*Webviewer*/
 .window-app section.window-content.inline-viewer {
    padding: 0;
+opacity: 0.7;
+}
+#inline-viewer-settings .settingsContainer #newEntry, #inline-viewer-settings .buttonContainer,
+.worldbuilding .attributes-header {
+    background: none;
 }
 
 /*No loading bar*/
 #loading {
     display: none !important;
+}
+
+/*No notifications*/
+#notifications {
+    display:none;
+}
+.notification-pip {
+    display:none;
 }
