@@ -29,7 +29,7 @@
     --v11-fx: blur(21px);
     --spacing: 8px;
     --shadow-color: var(--color-cool-5);
-    --sidebar-width: 300px;
+    --sidebar-width: 304px;
     --shadow-size: 4px;
     --titlebar: url(\/CustomResources\/TitlebarBG\.png);
     --pattern: url(\/CustomResources\/Pattern70\.png);
@@ -575,7 +575,7 @@ position: absolute;
 }
 
 #ui-left {
-    width: 300px;
+    width: var(--sidebar-width);
 }
 
 /*No useless shit in settings tab*/
