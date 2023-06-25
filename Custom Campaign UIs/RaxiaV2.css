@@ -52,7 +52,9 @@
 
 a.header-button:hover,
 #sidebar-tabs>.item:hover,
-#controls>ol.main-controls>li.scene-control:hover {
+#controls>ol.main-controls>li.scene-control:hover,
+#controls>ol.main-controls>li.scene-control.active,
+#controls ol.control-tools > li.active, #controls ol.control-tools > li:hover {
     background: linear-gradient(180deg, rgba(0,0,0,0) 0%, var(--active-color) 100%);
 }
 
@@ -125,7 +127,9 @@ textarea:focus {
     box-shadow: 0 0px var(--shadow-size) var(--color-light-3);
 }
 
-#controls>ol.main-controls>li.scene-control {
+#controls>ol.main-controls>li.scene-control,
+#controls ol.control-tools.sub-controls > li
+ {
     mix-blend-mode: color-dodge;
     box-shadow: none;
     background-color: var(--color-cool-5-50);
