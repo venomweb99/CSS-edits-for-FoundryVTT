@@ -274,9 +274,15 @@ border-radius: var(--border-r);
 
 
 /*Tweaks*/
+/*No Journal border*/
+.sheet.journal-entry .pages-list .directory-item {
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+}
+
 /*Consistent buttons*/
 .window-app .window-header a {
-    margin: none;
+    margin: 0;
     padding-left: 8px;
     padding-right: 6px;
 }
