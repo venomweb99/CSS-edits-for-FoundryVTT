@@ -50,7 +50,9 @@
     --border-r: 12px;
 }
 
-a.header-button:hover {
+a.header-button:hover,
+#sidebar-tabs>.item:hover,
+#controls>ol.main-controls>li.scene-control:hover {
     background: linear-gradient(180deg, rgba(0,0,0,0) 0%, var(--active-color) 100%);
 }
 
