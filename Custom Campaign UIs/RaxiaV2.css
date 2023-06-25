@@ -4,8 +4,8 @@
     --color-border-highlight-alt: var(--color-light-3);
     --color-border-highlight: var(--color-light-3);
     --color-shadow-primary: var(--color-light-3);
---color-text-hyperlink: var(--color-light-3);
---color-bg-option: var(--color-cool-5);
+    --color-text-hyperlink: var(--color-light-3);
+    --color-bg-option: var(--color-cool-5);
     --font-h2: "Albertus";
     --title-letter-spacing: 0.04rem;
     --font-body: "Myriad";
@@ -25,6 +25,7 @@
     --color-cool-5-50: rgba(17, 35, 63, 0.5);
     --color-cool-5-75: rgba(17, 35, 63, 0.75);
     --color-cool-5-90: rgba(17, 35, 63, 0.9);
+    --active-color: #FEB027;
     --v11-fx: blur(21px);
     --spacing: 8px;
     --shadow-color: var(--color-cool-5);
@@ -48,6 +49,12 @@
     --font-weight: 400;
     --border-r: 12px;
 }
+
+a.header-button:hover {
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, var(--active-color) 100%);
+}
+
+
 
 
 #navigation #scene-list .scene,
@@ -89,6 +96,10 @@ font-size: var(--font-size-11);
     font-family: var(--font-body);
     font-weight: var(--font-weight);
     border-radius: var(--border-r);
+}
+
+#hotbar #macro-list{
+    border: none;
 }
 
 
@@ -257,6 +268,13 @@ border-radius: var(--border-r);
 
 
 /*Tweaks*/
+/*Consistent buttons*/
+.window-app .window-header a {
+    margin: none;
+    padding-left: 8px;
+    padding-right: 6px;
+}
+
 /*BIGGER CLOSE ICON*/
 .fa-close:before,
 .fa-multiply:before,
