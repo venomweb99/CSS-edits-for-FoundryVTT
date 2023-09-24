@@ -1,41 +1,360 @@
-/* Custom CSS */
-
-/*UI FIX*/
+/***V11 STYLES***/
 :root {
+    --color-underline-header: transparent;
+    --color-border-highlight-alt: var(--color-light-3);
+    --color-border-highlight: var(--color-light-3);
+    --color-shadow-primary: var(--color-light-3);
+    --color-text-hyperlink: var(--color-light-3);
+    --color-bg-option: var(--color-cool-5);
+    --font-h2: "Albertus";
+    --title-letter-spacing: 0.04rem;
+    --font-body: "Myriad";
+    --color-warm-1: rgba(42, 86, 103, 0.75);
+    --color-warm-2: #376285;
+    --color-warm-3: #011E35;
+    --color-cool-3: #584a75;
+    --color-cool-4: #00253F;
+    --color-cool-5: rgba(17, 35, 63, 1);
+    --color-light-1: #f7f3e8;
+    --color-light-2: #efe6d8;
+    --color-light-3: #e7d1b1;
+    --color-light-4: #00253F;
+    --color-light-5: #9f8475;
+    --color-light-6: #816b66;
+    --color-cool-5-25: rgba(17, 35, 63, 0.25);
+    --color-cool-5-50: rgba(17, 35, 63, 0.5);
+    --color-cool-5-75: rgba(17, 35, 63, 0.75);
+    --color-cool-5-90: rgba(17, 35, 63, 0.9);
+    --active-color: #FEB027;
+    --v11-fx: blur(21px);
     --spacing: 8px;
---shadow-size: 4px;
---shadow-color: black;
---active-color: #005577;
---hex: 15px;
---clipHex: polygon(var(--hex) 0, calc(100% - var(--hex)) 0, 100% 50%, calc(100% - var(--hex)) 100%, var(--hex) 100%, 0 50%);
+    --shadow-color: var(--color-cool-5);
+    --sidebar-width: 304px;
+    --shadow-size: 4px;
+    --titlebar: url(\/CustomResources\/TitlebarBG\.png);
+    --pattern: url(\/CustomResources\/Pattern70\.png);
+    --border-r: 12px;
+    --title-font: var(--font-h2);
+    --title-bg: linear-gradient(90deg, var(--color-cool-4) 0%, rgba(0, 212, 255, 0) 100%);
+    --font-size-14: 14px;
+    --font-size-12: 12px;
+    --font-size-16: 16px;
+    --font-size-18: 18px;
+    --font-size-11: 11px;
+    --custom-accent: var(--color-light-3);
+    --color-text-dark-secondary: var(--color-light-3);
+    --border-color: var(--color-cool-4) !important;
+    --hex: 15px;
+    --clipHex: polygon(var(--hex) 0, calc(100% - var(--hex)) 0, 100% 50%, calc(100% - var(--hex)) 100%, var(--hex) 100%, 0 50%);
+    --font-weight: 400;
+    --border-r: 12px;
+    --logoh: inherit;
+    --logow: 188px;
+
 }
+
+a.header-button:hover,
+#sidebar-tabs>.item:hover,
+#controls>ol.main-controls>li.scene-control:hover,
+#controls>ol.main-controls>li.scene-control.active,
+#controls ol.control-tools > li.active, #controls ol.control-tools > li:hover {
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, var(--active-color) 100%);
+}
+
+/*WebviewerExcelCut*/
+.window-app section.window-content.inline-viewer {
+    width: 105%;
+    position: absolute;
+    left: -5%;
+    top: 6px;
+    height: 99.5%;
+    clip-path: inset(24px 0 0 48px);
+}
+
+
+#navigation #scene-list .scene,
+#navigation #scene-list .scene.view {
+    background: var(--color-warm-2);
+}
+#navigation #scene-list .scene:hover {
+    text-shadow: 0 0 var(--shadow-size) var(--color-light-3) !important;
+}
+#navigation #scene-list .scene li.scene-player{
+margin-left: 28px;
+padding: var(--padding);
+}
+.window-app,
+#sidebar {
+    backdrop-filter: var(--v11-fx);
+}
+.chat-message .message-header .message-metadata {
+    opacity:0.3;
+}
+.playlists-sidebar .global-control .playlist-sounds{
+font-size: var(--font-size-11);
+}
+
+
+
+.app,
+#sidebar,
+#controls>ol.main-controls>li.scene-control,
+#controls>ol.sub-controls>li,
+#hotbar .macro,
+#hotbar #hotbar-directory-controls,
+#hotbar #hotbar-page-controls {
+    color: var(--color-light-3);
+    background: none;
+    background-color: var(--color-cool-5-90);
+    border-color: var(--border-color);
+    align-self: center;
+    font-family: var(--font-body);
+    font-weight: var(--font-weight);
+    border-radius: var(--border-r);
+}
+
+#hotbar #macro-list{
+    border: none;
+}
+
 
 .window-app .window-content,
-.sheet.journal-entry .journal-entry-content {
+.sheet.journal-entry .journal-entry-content,
+.chat-message,
+.chat-message.whisper {
+    background: var(--pattern);
     background-size: 100% 100%;
+    background-color: var(--color-cool-5-50);
+    color: var(--color-light-2);
+    border-color: var(--border-color);
+    font-family: var(--font-body);
+    border-radius: var(--border-r);
 }
 
-.window-app .window-content {
-    background-size: 100% 100%;
+.chat-message,
+.chat-message.whisper,
+.window-app, 
+textarea:focus {
+    box-shadow: 0 0px var(--shadow-size) var(--color-light-3);
+}
+
+#controls>ol.main-controls>li.scene-control,
+#controls ol.control-tools.sub-controls > li
+ {
+    mix-blend-mode: color-dodge;
+    box-shadow: none;
+    background-color: var(--color-cool-5-50);
+    clip-path: var(--clipHex);
+}
+
+button,
+form button,
+.dice-tray button,
+.directory .directory-header .header-search input
+ {
+    background-color: var(--color-warm-1);
+    border-color: transparent;
+    clip-path: var(--clipHex);
+    color: var(--color-light-3);
+    border-color: transparent !important;
+    font-family: var(--font-body);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    font-weight: var(--font-weight);
+    text-shadow: 0 0 var(--shadow-size) var(--shadow-color);
+    mix-blend-mode: hard-light;
+}
+
+button:hover,
+form button:hover,
+.dice-tray button:hover {
+    background-color: var(--color-warm-2);
+    color: var(--color-light-1);
+    border-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+
+}
+input,
+form .form-group .form-fields>*,
+.prosemirror menu button,
+#module-management .package-list .package-title,
+#module-management .package-list .package-metadata,
+#module-management .package-list .package-description,
+.dice-so-nice .form-group select,
+p,
+.macro-sheet .form-group.command textarea,
+select {
+    color: var(--color-light-3) !important;
+}
+
+
+.window-app .window-header .window-title {
+    text-align: center !important;
+    align-self: center;
+
+}
+
+.window-app .window-header,
+.hide-player-ui-dynamic-sized-sidebar #sidebar-tabs {
+    background: var(--titlebar);
+    align-self: bottom;
+}
+
+#sidebar{
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+form .form-group .form-fields>*,
+.prosemirror menu .pm-dropdown {
+    border-color: transparent;
+    background-color: var(--color-cool-4);
+}
+
+#navigation #scene-list .scene,
+.sheet.journal-entry .journal-sidebar .directory-header .header-search input,
+#chat-controls .roll-type-select {
+    border-color: transparent;
+    background-color: var(--color-cool-4);
+    color: var(--color-light-2);
+}
+.playlists-sidebar .global-control .playlist-header h4 {
+    text-decoration: none;
+}
+
+#chat-form textarea {
+    background: none;
+    background-color: var(--color-cool-5-25);
+    border-color: var(--border-color);
+    font-family: var(--font-body);
+    color: var(--color-light-2);
+}
+
+.playlists-sidebar .global-control .playlist-header,
+.playlists-sidebar .global-control .playlist-sounds,
+.playlists-sidebar .global-control{
+    border-color: var(--color-warm-3) !important;
+    font-family: var(--font-body);
+    color: var(--color-light-2);
+}
+
+.package-configuration aside.sidebar,
+.package-configuration aside.sidebar nav.tabs .category-tab,
+.directory .directory-item.document {
+    border: none;
+}
+
+.package-configuration aside.sidebar nav.tabs .category-tab.active {
+    border-bottom: 2px solid var(--color-light-3);
+}
+
+.package-configuration aside.sidebar nav.tabs .category-tab:hover{
+    border: none;
+    text-shadow: 0 0 var(--shadow-size) var(--color-light-3);
+}
+
+
+#navigation .nav-item {
+    padding: 0 16px;
+    border-radius: var(--border-r);
+    min-inline-size: max-content;
+}
+
+.window-app,
+#sidebar {
+    padding: 0px;
+    margin: 0px;
+    font-weight: var(--font-weight);
+}
+
+#sidebar-tabs>.item i,
+.fa-solid,
+.fas {
+    font-weight: var(--font-weight);
+    text-shadow: 0 0 var(--shadow-size) var(--shadow-color);
+}
+
+#sidebar-tabs>.item.active {
+    font-weight: 900 !important;
+}
+#sidebar-tabs > .item i[class^=fa] {
+    font-weight: inherit;
+}
+
+
+
+
+/*Tweaks*/
+/*No Journal border*/
+.sheet.journal-entry .pages-list .directory-item {
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+}
+
+/*Consistent buttons*/
+.window-app .window-header a {
+    margin: 0;
+    padding-left: 8px;
+    padding-right: 6px;
+}
+
+/*BIGGER CLOSE ICON*/
+.fa-close:before,
+.fa-multiply:before,
+.fa-remove:before,
+.fa-times:before,
+.fa-xmark:before {
+    content: "\e59b";
+}
+
+/*Settings "ALL" sticks to top*/
+
+span.count {
+    color: var(--color-text-light-4);
+    font-size: var(--font-size-11);
+    margin-right: var(--spacing);
+}
+
+a.item.category-tab.category-all {
+    font-size: var(--font-size-18);
+    text-transform: uppercase;
+    text-decoration: underline;
+    position: fixed;
+    top: 1;
+    margin-top: -40px;
+}
+
+.package-configuration aside.sidebar nav.tabs {
+    margin-top: 40px;
+    margin-bottom: var(--spacing);
+}
+
+
+/*Spacings*/
+.window-app .window-content,
+.settings-sidebar div,
+.package-configuration aside.sidebar,
+.package-configuration aside.sidebar nav.tabs .category-tab,
+.compendium-sidebar ol.compendium-list,
+.directory .directory-list,
+.playlists-sidebar .global-control,
+.settings-sidebar #game-details,
+.package-configuration .categories .scrollable,
+.dice-tray {
     padding: var(--spacing);
 }
 
-.window-app .window-resizable-handle {
-    width: 22px;
-    height: 23px;
-    background: #00000000;
-    text-shadow: 0 0 var(--shadow-size) var(--shadow-color);
-    padding: 8px;
-    border: 0px;
+.package-configuration aside.sidebar .reset-all {
+
+    margin: 0px;
+    margin-right: var(--spacing);
+    padding: 0px;
 }
 
 .chat-message {
     margin: var(--spacing);
     padding: var(--spacing);
-    font-size: var(--font-size-14);
-    border-color: #90C1E3;
-    border-radius: 6px;
-    background-size: 100% 100%;
 }
 
 #sidebar .directory .action-buttons {
@@ -45,7 +364,6 @@
 
 #sidebar-tabs {
     margin: 0 0 var(--spacing);
-    box-shadow: 0px;
 }
 
 .directory .directory-header {
@@ -53,180 +371,176 @@
     margin: 0px;
 }
 
-h4.playlist-name {
-    font-size: var(--font-size-14);
-    text-decoration: none;
-    text-shadow: 0 0 var(--shadow-size) var(--shadow-color);
+/*HEIGHT FLEXIBLE SIDEBAR & STAY HORIZONTAL WHEN COLLAPSING*/
+
+#sidebar {
+    height: auto;
+    width: var(--sidebar-width) !important;
 }
 
-h4.sound-name {
-    font-size: var(--font-size-12);
-    color: var(--app-dialog-background-shaded);
-}
-
-.package-configuration aside.sidebar {
-    padding: var(--spacing);
-}
-
-.package-configuration aside.sidebar nav.tabs .category-tab {
-    padding: var(--spacing) 0;
-    border-bottom: 1px solid #00000001;
-
-}
-
-.playlists-sidebar .global-control .playlist-header h4 {
-    text-decoration: none;
-    text-shadow: 0 0 var(--shadow-size) var(--shadow-color);
-}
-
-.compendium-sidebar ol.compendium-list {
-    padding: var(--spacing);
-}
-
-.directory .directory-list {
-    padding: var(--spacing);
-}
-
-.playlists-sidebar .global-control {
-    padding: var(--spacing);
-}
-
-.settings-sidebar #game-details {
-    padding: var(--spacing);
-}
-
-.compendium-sidebar li.compendium-pack .compendium-footer {
-    font-size: var(--font-size-12);
-    color: var(--app-dialog-background-shaded);
-}
-
-.compendium-sidebar li.compendium-pack .status-icons {
-    size: 4px;
-}
-
-
-.package-configuration .categories .scrollable {
-    padding: var(--spacing);
-}
-
-
-h4 {
-    font-size: var(--font-size-16);
-    text-align: center;
-    text-shadow: 0px 0px var(--shadow-size) var(--shadow-color);
-}
-
-i {
-    text-shadow: 0px 0px var(--shadow-size) var(--shadow-color);
-}
-
-button {
-    text-shadow: 0px 0px var(--shadow-size) var(--shadow-color);
-}
-
-strong {
-    text-shadow: 0px 0px var(--shadow-size) var(--shadow-color);
-}
-.playlists-sidebar li.sound .sound-playback .sound-timer {
-    flex: 1;
-}
-
-span.count{
-color: var(--color-text-light-4);
-font-size: var(--font-size-11);
-margin-right: var(--spacing);
-}
-
-a.item.category-tab.category-all{
-font-size: var(--font-size-18);
-text-transform: uppercase;
-text-decoration: underline;
-position: fixed;
-    top:1;
-margin-top: -40px;
-}
-.package-configuration aside.sidebar nav.tabs {
-margin-top: 40px;
-margin-bottom: var(--spacing);
-}
-.package-configuration .categories footer {
-    margin: var(--spacing);
-}
-
-h3.document-name.noborder{
-text-align: center !important;
-text-shadow: 0 0 var(--shadow-size) var(--shadow-color);
-}
-
-
-
-
-
-
-
-
-
-
-
-.directory .directory-item h3, .directory .directory-item h4 {
-    text-align: left;
-}
-.fa-solid, .fas {
-    font-weight: 400;
-}
-#sidebar-tabs > .item.active {
-    color: var(--active-color);
-    box-shadow: 0 0 10px #B0CFD855;
-}
-#sidebar-tabs > .item.active .fas{
-font-weight: 900;
-font-size: 26;
-text-shadow: 0 0 4px white;
-}
-.settings-sidebar button:focus {
-    text-shadow: 0 0 4px blue;
-    color: white;
-}
-.settings-sidebar button:hover {
-    text-shadow: 0 0 4px blue;
-    color: white;
-}
-
-
-
-
-
-
-
-
-
-/*FLEX SIDEBAR & STAY HORIZONTAL*/
-#sidebar{
-height: auto;
-width: 282px !important;
-}
 #sidebar.collapsed #sidebar-tabs {
-flex-direction: row;
+    flex-direction: row;
 }
-/*********************************/
-
-
 
 /*SIDEBAR ITEMS FULL WIDTH NO SPACING*/
-#sidebar-tabs > .item {
+
+#sidebar-tabs>.item {
     flex: 1 0 var(--sidebar-tab-width);
 }
-/********************************/
 
-
-
-/*BIGGER CLOSE ICON*/
-.fa-close:before, .fa-multiply:before, .fa-remove:before, .fa-times:before, .fa-xmark:before {
-    content: "\e59b";
+/*Chat remake*/
+.chat-message .message-header .message-sender {
+    background: var(--title-bg);
+    border-radius: var(--border-r);
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.8;
+    text-indent: 10px;
+    font-family: var(--title-font);
+    letter-spacing: var(--title-letter-spacing);
+    color: var(--custom-accent);
 }
-/********************************/
+
+.chat-message .message-content {
+    padding-top: var(--spacing);
+}
+
+.chat-message .message-header .message-metadata {
+    font-size: var(--font-size-11);
+}
+
+/**/
 
 
+
+/*PLAYLISTS*/
+.playlists-sidebar .global-control .playlist-sounds {
+
+
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    margin: 0px;
+    padding: var(--spacing);
+    background: var(--title-bg);
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.8;
+    text-indent: 10px;
+    font-family: var(--title-font);
+    letter-spacing: var(--title-letter-spacing);
+    color: var(--custom-accent);
+}
+
+.playlists-sidebar .global-control .playlist-header {
+    padding: var(--spacing);
+    border-radius: var(--border-r);
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top: 1px solid var(--color-border-dark);
+    border-bottom: 1px solid var(--color-border-dark);
+    justify-content: space-between;
+    margin: 0px;
+    background: var(--title-bg);
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.8;
+    text-indent: 10px;
+    font-family: var(--title-font);
+    letter-spacing: var(--title-letter-spacing);
+    color: var(--custom-accent);
+}
+
+.playlists-sidebar .global-control .playlist-header h4 i.fa {
+    display: block;
+}
+
+.playlists-sidebar li.sound .sound-playback .sound-timer {
+    flex: initial;
+}
+
+/**Material Scrollbars*/
+::-webkit-scrollbar-thumb {
+    --scrollbar-color: #80868b;
+    background: var(--scrollbar-color);
+    border-color: transparent;
+}
+
+/*Better headers*/
+.window-app .window-header .window-title {
+    text-transform: uppercase;
+    line-height: 1.8;
+    text-indent: 10px;
+    font-family: var(--title-font);
+    letter-spacing: var(--title-letter-spacing);
+    color: var(--custom-accent);
+    text-shadow: 0 0 var(--shadow-size) var(--shadow-color);
+}
+
+#settings.settings-sidebar h2 {
+    margin: 0px;
+    padding: var(--spacing);
+    background: var(--title-bg);
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.8;
+    text-indent: 10px;
+    font-family: var(--title-font);
+    letter-spacing: var(--title-letter-spacing);
+    color: var(--custom-accent);
+}
+
+.compendium-sidebar h3 {
+    margin: 0px;
+    padding: var(--spacing);
+    background: var(--title-bg);
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.8;
+    text-indent: 10px;
+    font-family: var(--title-font);
+    letter-spacing: var(--title-letter-spacing);
+    color: var(--custom-accent);
+}
+
+/*Invisible Resize Box*/
+.window-app .window-resizable-handle {
+    width: 8px;
+    height: 100%;
+    background: #00000000;
+    padding: 0px;
+    border: 0px;
+}
+
+.fa-arrows-alt-h:before,
+.fa-left-right:before {
+    content: none;
+}
+
+/*Custom Cursor*/
+:root {
+    --cursor-url: url('\/CustomResources\/Cur48\.png');
+    --cursorg-url: url('\/CustomResources\/Cur48Glow\.png');
+    cursor: var(--cursor-url), auto !important;
+}
+
+.draggable,
+label,
+h4 {
+    cursor: var(--cursor-url), auto !important;
+}
+
+button,
+a,
+input,
+select,
+#navigation .nav-item,
+#controls ol.control-tools>li,
+#hotbar .macro{
+    cursor: var(--cursorg-url), auto !important;
+}
+
+
+/**/
 
 /*FULLSCREEN PAUSE*/
 #pause {
@@ -248,179 +562,71 @@ text-shadow: 0px 0px 20px #003fff;
     height: 100vh;
     width: 100vh;
 }
-/********************************/
 
+/*Centered top tabs*/
+#navigation {
+    margin: 0;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*EXTENSIONS*/
-
-
-.window-app section.window-content.inline-viewer {
-    padding: 0px !important;
+}
+#ui-top.offset {
     margin: 0px;
+padding: var(--spacing);
+background: radial-gradient(circle farthest-corner at 50% 100%, var(--color-cool-5-50) 0%, transparent 100%);
+border-bottom: 2px solid;
+  border-image: linear-gradient(to left, transparent, var(--color-warm-2), transparent) 1;
+width:100%;
 }
-
-::-webkit-scrollbar-thumb {
-    background: #AAAAAA;
+#navigation #scene-list {
+    margin-right: var(--navixmg);
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-height: 2.75rem;
 }
-
-#chat-form textarea {
-background:none;
-}
-
-.dice-so-nice .select2-container--open .select2-dropdown--below {
-    background-color: black;
-}
-
-button:hover {
-    text-shadow: 0 0 4px white;
-}
-
-button {
-    backdrop-filter: blur(21px);
-}
-
-.dice-tray button {
-
-border-color: transparent;
-background: var(--palette-primary);
-clip-path: var(--clipHex);
-box-shadow: none;
-}
-
-.dice-tray button:hover {
-    color: var(--active-color);
-    border-color: transparent;
-    box-shadow: none;
-    -webkit-box-shadow: none;
-}
-.dice-tray input[type="text"], .dice-tray input[type="text"]:focus, .dice-tray input[type="text"]:hover{
-background-color: var(--palette-primary);
-border-radius: var(--tidy-sidebar-border-radius, 3px);
-    border: transparent;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-:root {
---cursor-url: url('\/CustomResources\/Cur48\.png');
---cursorg-url: url('\/CustomResources\/Cur48Glow\.png');
-cursor: var(--cursor-url), auto !important;
-}
-.draggable{
-cursor: var(--cursor-url), auto !important;
-}
-label {
-cursor: var(--cursor-url), auto !important;
-}
-button{
-cursor: var(--cursorg-url), auto !important;
-}
-a{
-cursor: var(--cursorg-url), auto !important;
-}
-#controls ol.control-tools > li {
-cursor: var(--cursorg-url), auto !important;
-}
-#hotbar .macro {
-cursor: var(--cursorg-url), auto !important;
-}
-input{
-cursor: var(--cursorg-url), auto !important;
-}
-select {
-cursor: var(--cursorg-url), auto !important;
-}
-#navigation .nav-item {
-cursor: var(--cursorg-url), auto !important;
-}
-h4{
-cursor: var(--cursor-url), auto !important;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.chat-message {
-    margin: var(--spacing);
-    padding: var(--spacing);
-    font-size: var(--font-size-14);
-    border-radius: 6px;
-    background-size: 100% 100%;
-}
-.chat-message .message-header {
-    margin: var(--spacing);
-}
-.chat-message .message-header .message-sender {
-    text-align: left;
+#navigation.collapsed #scene-list {
+    display:none !important;
 
 }
-
-
-.window-app .window-resizable-handle {
-    width: 100%;
-    height: 8px;
-    background: #00000000;
-    padding: 0px;
-    border: 0px;
+#navigation.collapsed {
+    opacity: 0.1;
+position: absolute;
 }
-.fa-arrows-alt-h:before, .fa-left-right:before {
-    content: none;
+
+#ui-left {
+    width: var(--sidebar-width);
 }
-.window-app .window-content {
-    border-bottom-left-radius: 14px;
-border-bottom-right-radius: 14px;
-background-color: transparent;
+
+/*No useless shit in settings tab*/
+#settings.settings-sidebar h2,
+#settings-documentation,
+#game-details,
+button[data-action="tours"] {
+display: none;
+}
+#settings-access{
+border-top: 2px solid var(--color-light-3);
+}
+
+/*Webviewer*/
+.window-app section.window-content.inline-viewer {
+   padding: 0;
+opacity: 0.7;
+}
+#inline-viewer-settings .settingsContainer #newEntry, #inline-viewer-settings .buttonContainer,
+.worldbuilding .attributes-header {
+    background: none;
+}
+
+/*No loading bar*/
+#loading {
+    display: none !important;
+}
+
+/*No notifications*/
+#notifications {
+    display:none;
+}
+.notification-pip {
+    display:none;
 }
