@@ -1,0 +1,488 @@
+/***V11 STYLES***/
+:root {
+    --font-h2: "BlenderH", serif;
+    --font-body: "Blender" !important;
+	--font-primary: var(--font-body);
+	--cp-playerui-color: #fa4449;
+    --cp-transparent-playerui: color-mix(in srgb, var(--cp-playerui-color) 50%, #00000099);
+    --cp-boxshadow: 4px 4px 11px var(--cp-transparent-playerui);
+    --cp-font-light: #1bffe3;
+    --cp-textshadow: 2px 2px 4px color-mix(in srgb, var(--cp-font-light) 50%, #00000099);
+    --cp-font-dark: black;
+    --cp-cutradius: 8px;
+    --color-warm-1: #ee9b3a;
+    --color-warm-2: #c9593f;
+    --color-warm-3: #5d142b;
+    --color-cool-3: #584a75;
+    --color-cool-4: var(--color-cool-5-25);
+    --color-cool-5: #0b0a13;
+    --color-light-1: var(--cp-font-light);
+    --color-light-2: var(--cp-font-light);
+    --color-light-3: var(--cp-font-light);
+    --color-light-4: var(--cp-font-light);
+    --color-light-5: var(--cp-font-light);
+    --color-light-6: var(--cp-font-light);
+    --color-cool-5-25: rgba(11, 10, 19, 0.25);
+    --color-cool-5-50: rgba(11, 10, 19, 0.5);
+    --color-cool-5-75: rgba(11, 10, 19, 0.75);
+    --color-cool-5-90: rgba(11, 10, 19, 0.8);
+    --v11-fx: blur(4px);
+    --spacing: 8px;
+    --shadow-color: black;
+    --sidebar-width: 300px;
+    --shadow-size: 4px;
+    --border-r: 0px;
+    --title-font: var(--font-h2);
+    --title-letter-spacing: 0.02rem;
+    --title-bg: var(--cp-playerui-color);
+    --font-size-14: 14px;
+    --font-size-12: 12px;
+    --font-size-16: 16px;
+    --font-size-18: 18px;
+    --font-size-11: 11px;
+    --custom-accent: var(--color-light-3);
+    --headerheight: 2.5rem;
+    --color-underline-header: var(--cp-playerui-color);
+    --color-text-dark-secondary: var(--cp-font-light);
+    scrollbar-color: var(--cp-playerui-color) var(--color-cool-4);
+}
+h2{
+    text-transform: uppercase;
+    text-shadow: var(--cp-textshadow);
+}
+.window-app,
+#sidebar {
+    backdrop-filter: var(--v11-fx);
+    box-shadow: var(--cp-boxshadow);
+}
+
+.app,
+#controls>ol.main-controls>li.scene-control,
+#controls>ol.sub-controls>li,
+#hotbar .macro,
+#hotbar #hotbar-directory-controls,
+#hotbar #hotbar-page-controls {
+    color: var(--color-light-3);
+    background: none;
+    background-color: var(--color-cool-5-90);
+}
+
+.window-app .window-content,
+.sheet.journal-entry .journal-entry-content,
+.chat-message,
+.chat-message.whisper {
+    background: none;
+    background-color: var(--color-cool-5-50);
+    color: var(--color-light-2);
+}
+
+button,
+form button {
+    background-color: var(--cp-playerui-color);
+    border-color: transparent;
+    border-radius: 0px;
+    border-bottom-left-radius: var(--cp-cutradius);
+    box-shadow: var(--cp-boxshadow);
+}
+
+select{
+    background-color: var(--color-cool-4);
+    border-color: transparent;
+    border-radius: 0px;
+    border-bottom-left-radius: var(--cp-cutradius);
+    color: var(--cp-font-light);
+}
+
+input,
+form .form-group .form-fields>*,
+.prosemirror menu button {
+    color: var(--cp-playerui-color) !important;
+}
+
+.window-app .window-header .window-title {
+    text-align: left !important;
+}
+
+form .form-group .form-fields>*,
+.prosemirror menu .pm-dropdown {
+    border-color: transparent;
+    background-color: var(--color-cool-4);
+}
+
+#navigation #scene-list .scene,
+.sheet.journal-entry .journal-sidebar .directory-header .header-search input,
+#chat-controls .roll-type-select {
+    border-color: transparent;
+    background-color: var(--color-cool-4);
+    color: var(--color-light-2);
+}
+
+#chat-form textarea {
+    background: none;
+    background-color: var(--color-cool-4);
+    border: 1px solid var(--cp-playerui-color);
+    border-radius: 0;
+    border-bottom-left-radius: var(--cp-cutradius);
+    color: var(--cp-font-light);
+    font-family: var(--font-body);
+}
+
+#chat-form textarea:focus,
+#chat-controls .roll-type-select:focus {
+    box-shadow: inset 0 0 8px var(--cp-playerui-color);
+}
+
+
+/*Tweaks*/
+/*BIGGER CLOSE ICON*/
+.fa-close:before,
+.fa-multiply:before,
+.fa-remove:before,
+.fa-times:before,
+.fa-xmark:before {
+    content: "\e59b";
+}
+
+/*Settings "ALL" sticks to top*/
+
+span.count {
+    color: var(--color-text-light-4);
+    font-size: var(--font-size-11);
+    margin-right: var(--spacing);
+}
+
+a.item.category-tab.category-all {
+    font-size: var(--font-size-18);
+    text-transform: uppercase;
+    text-decoration: underline;
+    position: fixed;
+    top: 1;
+    margin-top: -40px;
+}
+
+.package-configuration aside.sidebar nav.tabs {
+    margin-top: 40px;
+    margin-bottom: var(--spacing);
+}
+
+
+/*Spacings*/
+.window-app .window-content,
+.settings-sidebar div,
+.package-configuration aside.sidebar,
+.package-configuration aside.sidebar nav.tabs .category-tab,
+.compendium-sidebar ol.compendium-list,
+.directory .directory-list,
+.playlists-sidebar .global-control,
+.settings-sidebar #game-details,
+.package-configuration .categories .scrollable {
+    padding: var(--spacing);
+}
+
+.package-configuration aside.sidebar .reset-all {
+
+    margin: 0px;
+    margin-right: var(--spacing);
+    padding: 0px;
+}
+
+
+
+#sidebar .directory .action-buttons {
+    padding: 0px;
+    margin: 0 0 var(--spacing);
+}
+
+#sidebar-tabs {
+    margin: 0 0 var(--spacing);
+    border:none;
+    border-bottom: 1px solid var(--cp-playerui-color);
+    box-shadow: var(--cp-boxshadow);
+    padding-top: 0.25rem;
+}
+
+#sidebar-tabs > .item.active {
+    color: var(--cp-font-dark);
+    text-shadow: none;
+    border: 1px solid var(--cp-playerui-color);
+    border-radius: 0;
+    box-shadow: var(--cp-boxshadow);
+    background: var(--cp-playerui-color);
+    border-top-left-radius: var(--cp-cutradius);
+}
+
+.directory .directory-header {
+    padding: var(--spacing);
+    margin: 0px;
+}
+
+/*HEIGHT FLEXIBLE SIDEBAR & STAY HORIZONTAL WHEN COLLAPSING*/
+
+#sidebar {
+    width: var(--sidebar-width) !important;
+    border: 1px solid var(--cp-playerui-color);
+    border-radius: 0px;
+    border-bottom-left-radius: var(--cp-cutradius);
+}
+
+#sidebar.collapsed #sidebar-tabs {
+    flex-direction: row;
+}
+
+/*SIDEBAR ITEMS FULL WIDTH NO SPACING*/
+
+#sidebar-tabs>.item {
+    flex: 1 0 var(--sidebar-tab-width);
+}
+
+/*Chat remake*/
+.chat-message .message-header .message-sender {
+    border-radius: var(--border-r);
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.8;
+    font-size: var(--font-size-18);
+    font-family: var(--title-font);
+    letter-spacing: var(--title-letter-spacing);
+}
+
+.chat-message .message-header{
+    background: transparent;
+    padding-left: var(--spacing);
+    padding-right: var(--spacing);
+    margin-top: -32px;
+    color: var(--cp-font-dark);
+}
+
+.chat-message .message-content {
+    padding: var(--spacing);
+}
+
+.chat-message .message-header .message-metadata {
+    font-size: var(--font-size-11);
+    align-self: center;
+}
+
+.chat-message {
+    margin: var(--spacing);
+    border: 2px solid var(--cp-playerui-color);
+    border-top: 32px solid;
+    border-color: var(--cp-playerui-color);
+    border-radius: 0;
+    border-bottom-left-radius: var(--cp-cutradius);
+    box-shadow: var(--cp-boxshadow);
+    padding: 0;
+}
+
+/**/
+
+
+
+/*PLAYLISTS*/
+.playlists-sidebar .global-control .playlist-sounds {
+
+    border: 1px solid var(--cp-font-light);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: var(--border-r);
+    margin: 0px;
+    padding: var(--spacing);
+    background: var(--color-cool-5-90);
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.8;
+    text-indent: 10px;
+    font-family: var(--title-font);
+    letter-spacing: var(--title-letter-spacing);
+    color: var(--custom-accent);
+    box-shadow: var(--cp-textshadow);
+}
+
+.playlists-sidebar .global-control .playlist-header {
+    padding: var(--spacing);
+    border: 1px solid var(--cp-font-light);
+    border-radius: var(--border-r);
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    justify-content: space-between;
+    margin: 0px;
+    background: var(--color-cool-5-90);
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: left;
+    text-indent: 10px;
+    font-family: var(--title-font);
+    font-size: var(--font-size-16);
+    letter-spacing: var(--title-letter-spacing);
+    color: var(--custom-accent);
+    align-self: center;
+    box-shadow: var(--cp-textshadow);
+}
+
+.playlists-sidebar .global-control .playlist-header h4 i.fa {
+    display: block;
+}
+
+.playlists-sidebar li.sound .sound-playback .sound-timer {
+    flex: initial;
+}
+
+
+/**Material Scrollbars*/
+::-webkit-scrollbar-thumb {
+    background: var(--cp-playerui-color);
+    border-color: transparent;
+    border-radius: 0;
+    border-left: var(--cp-cutradius);
+}
+
+/*Better headers*/
+.window-app .window-header .window-title {
+    text-transform: uppercase;
+    line-height: inherit;
+    
+    text-indent: 10px;
+    font-family: var(--title-font);
+    letter-spacing: var(--title-letter-spacing);
+}
+.window-app .window-header {
+    height: var(--headerheight);
+    background: var(--cp-playerui-color);
+    flex: initial;
+    padding-top: 0.25rem;
+    font-size: var(--font-size-18);
+    color: var(--cp-font-dark);
+    border: none;
+}
+
+.window-app {
+    border: 1px solid var(--cp-playerui-color);
+    border-radius: 0px;
+    border-bottom-left-radius: var(--cp-cutradius);
+}
+
+#settings.settings-sidebar h2 {
+    margin: 0px;
+    padding: var(--spacing);
+    background: var(--title-bg);
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.8;
+    text-indent: 10px;
+    font-family: var(--title-font);
+    letter-spacing: var(--title-letter-spacing);
+    color: var(--cp-font-dark);
+}
+
+.compendium-sidebar h3 {
+    margin: 0px;
+    padding: var(--spacing);
+    background: var(--title-bg);
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.8;
+    text-indent: 10px;
+    font-family: var(--title-font);
+    letter-spacing: var(--title-letter-spacing);
+    color: var(--custom-accent);
+}
+
+/*Invisible Resize Box*/
+.window-app .window-resizable-handle {
+    width: 8px;
+    height: 100%;
+    background: #00000000;
+    padding: 0px;
+    border: 0px;
+}
+.fa-arrows-alt-h:before,
+.fa-left-right:before {
+    content: none;
+}
+
+/*No useless shit in settings tab*/
+#settings.settings-sidebar h2,
+#settings-documentation,
+#game-details,
+button[data-action="tours"] {
+display: none;
+}
+#settings-access{
+border-top: 2px solid var(--color-light-3);
+}
+
+/*CPSTYLINGS*/
+.window-app .window-content{
+    border:none;
+}
+
+.app{
+    
+    margin: 0;
+}
+
+.app.sidebar-popout .window-content {
+    border: 1px solid var(--cp-playerui-color);
+}
+
+a.header-button:hover,
+#sidebar-tabs>.item:hover,
+#controls>ol.main-controls>li.scene-control:hover,
+#controls>ol.main-controls>li.scene-control.active,
+#controls ol.control-tools > li.active, #controls ol.control-tools > li:hover,
+button:hover,
+form button:hover,
+.dice-tray button:hover {
+    text-shadow: 0px 0px 4px var(--cp-font-dark);
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    color: var(--cp-font-light);
+}
+
+button:hover,
+form button:hover{
+    box-shadow: var(--cp-boxshadow);
+}
+
+.package-configuration aside.sidebar,
+.package-configuration aside.sidebar nav.tabs .category-tab,
+.directory .directory-item.document {
+    border: none;
+}
+
+.package-configuration aside.sidebar nav.tabs .category-tab.active {
+    border-bottom: 2px solid var(--color-light-3);
+}
+
+.package-configuration aside.sidebar nav.tabs .category-tab:hover{
+    border: none;
+    text-shadow: 0 0 var(--shadow-size) var(--color-light-3);
+}
+
+#module-management .package-list .package-title .title-group .title {
+    text-decoration: none;
+    color: var(--cp-font-light);
+}
+
+.package-list .package {
+    padding: var(--spacing);
+    border-bottom: none;
+}
+
+.dialog .dialog-buttons button.default,
+.dialog .dialog-buttons button,
+option, optgroup,
+.directory .directory-header .header-search input{
+    background: var(--color-cool-4);
+    border: 1px solid var(--cp-playerui-color);
+    color: var(--cp-font-light);
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="time"]:focus, input[type="search"]:focus {
+    box-shadow: var(--cp-boxshadow);
+    border-color: var(--cp-playerui-color);
+}
+
+.notification-pip {
+    color: var(--cp-font-light);
+    text-shadow: 1px 1px 3px var(--cp-font-light);
+}
