@@ -348,7 +348,7 @@ a.item.category-tab.category-all {
     height: var(--headerheight);
     background: var(--cp-playerui-color);
     flex: initial;
-    padding-top: 0.25rem;
+    align-content: center;
     font-size: var(--font-size-18);
     color: var(--cp-font-dark);
     border: none;
@@ -477,7 +477,7 @@ option, optgroup,
     color: var(--cp-font-light);
 }
 
-input[type="text"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="time"]:focus, input[type="search"]:focus {
+input[type="text"]:focus, select:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="time"]:focus, input[type="search"]:focus {
     box-shadow: var(--cp-boxshadow);
     border-color: var(--cp-playerui-color);
 }
