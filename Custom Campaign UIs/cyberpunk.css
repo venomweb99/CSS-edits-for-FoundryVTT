@@ -117,7 +117,8 @@ form .form-group .form-fields>*,
     color: var(--color-light-2);
 }
 
-#chat-form textarea {
+#chat-form textarea,
+.prosemirror.editing-source textarea {
     background: none;
     background-color: var(--color-cool-4);
     border: 1px solid var(--cp-playerui-color);
@@ -425,17 +426,20 @@ border-top: 2px solid var(--color-light-3);
 }
 
 a.header-button:hover,
+a:hover,
 #sidebar-tabs>.item:hover,
 #controls>ol.main-controls>li.scene-control:hover,
 #controls>ol.main-controls>li.scene-control.active,
 #controls ol.control-tools > li.active, #controls ol.control-tools > li:hover,
 button:hover,
 form button:hover,
-.dice-tray button:hover {
+.dice-tray button:hover,
+button:focus {
     text-shadow: 0px 0px 4px var(--cp-font-dark);
     box-shadow: none;
     -webkit-box-shadow: none;
     color: var(--cp-font-light);
+    font-weight: bold;
 }
 
 button:hover,
@@ -472,12 +476,13 @@ form button:hover{
 .dialog .dialog-buttons button,
 option, optgroup,
 .directory .directory-header .header-search input{
-    background: var(--color-cool-4);
+    background: var(--color-cool-5);
     border: 1px solid var(--cp-playerui-color);
     color: var(--cp-font-light);
 }
 
-input[type="text"]:focus, select:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="time"]:focus, input[type="search"]:focus {
+input[type="text"]:focus, select:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="time"]:focus, input[type="search"]:focus,
+.worldbuilding .sheet-header .profile-img {
     box-shadow: var(--cp-boxshadow);
     border-color: var(--cp-playerui-color);
 }
@@ -485,4 +490,99 @@ input[type="text"]:focus, select:focus, input[type="number"]:focus, input[type="
 .notification-pip {
     color: var(--cp-font-light);
     text-shadow: 1px 1px 3px var(--cp-font-light);
+}
+
+.worldbuilding .attributes-header {
+    background: var(--cp-playerui-color);
+    border: none;
+    border-radius: var(--border-r);
+    color: var(--cp-font-dark);
+}
+
+.notification{
+    width: 20%;
+    border: none !important;
+    border-radius: var(--border-r);
+    box-shadow: none;
+    background: var(--color-cool-5-90) !important;
+    color: var(--cp-font-light);
+}
+
+#notifications{
+        top: 92.5%;
+        left: 5%;
+}
+
+.sheet nav.sheet-tabs{
+    display:none;
+}
+
+.worldbuilding .sheet-header h1.charname input,
+.worldbuilding .resource input {
+    border-color: transparent;
+    
+}
+.worldbuilding .sheet-header h1.charname input {
+    padding-left: var(--spacing);
+}
+.worldbuilding .resource input{
+    width: 3rem;
+    font-weight: bold;
+}
+
+.worldbuilding .resource{
+    border: 1px solid var(--cp-playerui-color);
+    border-top: 16px solid var(--cp-playerui-color);
+    margin-right: var(--spacing);
+    margin-top: 0;
+    border-radius: var(--border-r);
+    border-bottom-left-radius: var(--cp-cutradius);
+    font-size: var(--font-size-18);
+	width: 8rem;
+    padding-top: var(--spacing);
+    padding-bottom: var(--spacing);
+    height: auto;
+}
+
+.sheet header.sheet-header {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
+    min-height: 8rem;
+    align-items: flex-end;
+}
+
+.worldbuilding .sheet-header .profile-img{
+    margin-bottom: var(--spacing);
+    margin-top: var(--spacing);
+    height: 6rem;
+}
+
+.prosemirror menu .pm-dropdown,
+.prosemirror menu button:focus,
+.prosemirror menu button:hover,
+.prosemirror menu button:active,
+.prosemirror menu .pm-dropdown ul {
+    background: black;
+    border-color: var(--cp-playerui-color);
+    border-bottom-left-radius: var(--cp-cutradius);
+    backdrop-filter: var(--v11-fx);
+
+}
+
+table,
+.dice-roll .dice-formula, .dice-roll .dice-total{
+    border: 1px solid var(--cp-playerui-color);
+    border-radius: var(--border-r);
+    border-bottom-left-radius: var(--cp-cutradius);
+    box-shadow: var(--cp-boxshadow);
+}
+
+table tr:nth-child(even) {
+    background-color: var(--color-cool-5-50);
+}
+
+p {
+    text-transform: uppercase;
+    font-size: var(--font-size-16);
 }
