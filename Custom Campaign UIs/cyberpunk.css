@@ -44,8 +44,22 @@
     --headerheight: 2.5rem;
     --color-underline-header: var(--cp-playerui-color);
     --color-text-dark-secondary: var(--cp-font-light);
+    --cursor-url: url('\/Custom\/Cursor\.png');
+    --cursorg-url: url('\/Custom\/CursorA\.png');
+    cursor: var(--cursor-url), auto !important;
     scrollbar-color: var(--cp-playerui-color) var(--color-cool-4);
 }
+
+button,
+a,
+input,
+select,
+#navigation .nav-item,
+#controls ol.control-tools>li,
+#hotbar .macro{
+    cursor: var(--cursorg-url), auto !important;
+}
+
 h2{
     text-transform: uppercase;
     text-shadow: var(--cp-textshadow);
