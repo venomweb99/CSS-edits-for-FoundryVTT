@@ -1,0 +1,228 @@
+:root{
+    --margin : 1px;
+    --padding : 4px;
+    --border-radius : 8px;
+    --border-universal : 1px solid #000000;
+
+    --font-title : Arial;
+    --font-subtitle : Arial;
+    --font-body : Arial;
+
+    --font-size-title : var(--font-size-32);
+    --font-size-subtitle : var(--font-size-24);
+    --font-size-body : var(--font-size-12);
+
+    --color-info : #00d4ff;
+    --color-warning : #ffbb00;
+    --color-error : #ff0000;
+    --color-success : #00ff00;
+
+    --color-text-light : #ffffff;
+    --color-text-light-soft : #aaaaaa;
+    --color-text-dark-soft : #555555;
+    --color-text-dark : #000000;
+
+    --color-accent : #ff00ff;
+    --color-accent-hover : #ff22ff;
+
+    --color-background-primary : #000000;
+    --color-background-secondary : #222222;
+    --color-background-tertiary : #444444;
+
+    --box-shadow : none;
+    --text-shadow : none;
+    --background-image : none;
+}
+
+/* Buttons */
+button,
+.combat-sidebar .combat-tracker-header a.combat-button,
+#client-settings .submenu button,
+.package-configuration aside.sidebar .reset-all,
+#controls ol.control-tools > li,
+.customCssSettings button,
+form button,
+.dialog .dialog-buttons button.default,
+.directory .action-buttons button,
+#navigation #nav-toggle,
+#hotbar .macro,
+.filepicker .favorites .path,
+.dialog .dialog-buttons button,
+.settings-sidebar button,
+.prosemirror menu .pm-dropdown {
+    background-color: var(--color-background-secondary);
+    color: var(--color-text-light);
+    border: var(--border-universal);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: var(--padding);
+    margin: var(--margin);
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    text-shadow: var(--text-shadow);
+    height: auto;
+}
+#controls ol.control-tools > li.active,
+.filepicker .display-modes a.active,
+#navigation #nav-toggle.active,
+#hotbar .macro.active,
+.directory .action-buttons button.active, 
+.prosemirror menu button.active
+{
+    background-color: var(--color-accent);
+    color: var(--color-text-light);
+    border: var(--border-universal);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: var(--padding);
+    margin: var(--margin);
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    text-shadow: var(--text-shadow);
+
+}
+
+#controls ol.control-tools > li:hover,
+.filepicker .display-modes a:hover,
+.filepicker .favorites .path:hover,
+#navigation #nav-toggle:hover,
+#hotbar .macro:hover,
+.directory .action-buttons button:hover,
+button:hover, button:focus,
+.prosemirror menu button:hover
+{
+    background-color: var(--color-accent-hover);
+    color: var(--color-text-light);
+    border: var(--border-universal);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: var(--padding);
+    margin: var(--margin);
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    text-shadow: var(--text-shadow);
+}
+
+
+
+
+/* Text fields */
+input,
+input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"], input[type="search"],
+form .form-group .form-fields > *,
+.directory .directory-header .header-search input,
+#chat-controls .roll-type-select{
+    background-color: var(--color-background-secondary);
+    color: var(--color-text-light);
+    border: var(--border-universal);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: var(--padding);
+    margin: var(--margin);
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    text-shadow: var(--text-shadow);
+
+}
+
+/* tabs */
+.package-configuration aside.sidebar nav.tabs .category-tab,
+#sidebar-tabs > .item,
+#navigation #scene-list .scene.view, #navigation #scene-list .scene.context{
+    background-color: var(--color-background-secondary);
+    color: var(--color-text-light);
+    border: var(--border-universal);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: var(--padding);
+    margin: var(--margin);
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    text-shadow: var(--text-shadow);
+
+}
+
+.package-configuration aside.sidebar nav.tabs .category-tab.active,
+#sidebar-tabs > .item.active{
+    background-color: var(--color-background-tertiary);
+    color: var(--color-text-light);
+    border: var(--border-universal);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: var(--padding);
+    margin: var(--margin);
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    text-shadow: var(--text-shadow);
+}
+/*List*/
+.filepicker .directory > li{
+    background-color: var(--color-background-secondary);
+    color: var(--color-text-light);
+    border: var(--border-universal);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: var(--padding);
+    margin: var(--margin);
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    text-shadow: var(--text-shadow);
+}
+
+.filepicker .directory > li:hover{
+    background-color: var(--color-accent-hover);
+    color: var(--color-text-light);
+    border: var(--border-universal);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: var(--padding);
+    margin: var(--margin);
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    text-shadow: var(--text-shadow);
+}
+
+.filepicker .directory > li.picked{
+    background-color: var(--color-accent);
+    color: var(--color-text-light);
+    border: var(--border-universal);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: var(--padding);
+    margin: var(--margin);
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    text-shadow: var(--text-shadow);
+}
+
+/*Backgrounds*/
+.app,
+.prosemirror menu .pm-dropdown > ul{
+    background: var(--background-image);
+    background-color: var(--color-background-primary);
+    color: var(--color-text-light);
+    border: var(--border-universal);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: var(--padding);
+    margin: var(--margin);
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    text-shadow: var(--text-shadow);
+
+}
+
+.window-app .window-content,
+#chat-form textarea,
+.chat-message,
+.chat-message.whisper{
+    background: var(--background-image);
+    background-color: var(--color-background-secondary);
+    color: var(--color-text-light);
+    border: var(--border-universal);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: var(--padding);
+    margin: var(--margin);
+
+}

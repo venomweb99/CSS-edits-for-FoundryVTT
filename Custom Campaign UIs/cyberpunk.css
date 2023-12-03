@@ -111,13 +111,13 @@ input,
 form .form-group .form-fields>*,
 .prosemirror menu button {
     color: var(--cp-playerui-color) !important;
+    
 }
 
 .window-app .window-header .window-title {
     text-align: left !important;
 }
 
-form .form-group .form-fields>*,
 .prosemirror menu .pm-dropdown {
     border-color: transparent;
     background-color: var(--color-cool-4);
@@ -351,7 +351,8 @@ a.item.category-tab.category-all {
 }
 
 /*Better headers*/
-.window-app .window-header .window-title {
+.window-app .window-header .window-title,
+label {
     text-transform: uppercase;
     line-height: inherit;
     
@@ -375,7 +376,7 @@ a.item.category-tab.category-all {
     border-bottom-left-radius: var(--cp-cutradius);
 }
 
-#settings.settings-sidebar h2 {
+#settings.settings-sidebar h2  {
     margin: 0px;
     padding: var(--spacing);
     background: var(--title-bg);
@@ -388,7 +389,7 @@ a.item.category-tab.category-all {
     color: var(--cp-font-dark);
 }
 
-.compendium-sidebar h3 {
+.compendium-sidebar h3{
     margin: 0px;
     padding: var(--spacing);
     background: var(--title-bg);
@@ -499,6 +500,10 @@ input[type="text"]:focus, select:focus, input[type="number"]:focus, input[type="
 .worldbuilding .sheet-header .profile-img {
     box-shadow: var(--cp-boxshadow);
     border-color: var(--cp-playerui-color);
+}
+input[type="text"], select, input[type="number"], input[type="password"], input[type="date"], input[type="time"], input[type="search"]{
+    border: 1px solid var(--cp-font-light);
+    border-bottom-left-radius: var(--cp-cutradius);
 }
 
 .notification-pip {
