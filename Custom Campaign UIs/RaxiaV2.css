@@ -6,7 +6,7 @@
     --color-shadow-primary: var(--color-light-3);
     --color-text-hyperlink: var(--color-light-3);
     --color-bg-option: var(--color-cool-5);
-    --font-h2: "Albertus";
+    --font-h2: "sinoalice";
     --title-letter-spacing: 0.04rem;
     --font-body: "Myriad";
     --color-warm-1: rgba(42, 86, 103, 0.75);
@@ -15,6 +15,7 @@
     --color-cool-3: #584a75;
     --color-cool-4: #00253F;
     --color-cool-5: rgba(17, 35, 63, 1);
+    --backgrounduitop: radial-gradient(circle farthest-corner at 50% 100%, var(--color-cool-5-50) 0%, transparent 100%);
     --color-light-1: #f7f3e8;
     --color-light-2: #efe6d8;
     --color-light-3: #e7d1b1;
@@ -48,17 +49,29 @@
     --clipHex: polygon(var(--hex) 0, calc(100% - var(--hex)) 0, 100% 50%, calc(100% - var(--hex)) 100%, var(--hex) 100%, 0 50%);
     --font-weight: 400;
     --border-r: 12px;
+    --logoh: inherit;
+    --logow: 188px;
+
 }
 
 a.header-button:hover,
 #sidebar-tabs>.item:hover,
 #controls>ol.main-controls>li.scene-control:hover,
 #controls>ol.main-controls>li.scene-control.active,
-#controls ol.control-tools > li.active, #controls ol.control-tools > li:hover {
+#controls ol.control-tools > li.active, #controls ol.control-tools > li:hover,
+.dice-tray button.active {
     background: linear-gradient(180deg, rgba(0,0,0,0) 0%, var(--active-color) 100%);
 }
 
-
+/*WebviewerExcelCut*/
+.window-app section.window-content.inline-viewer {
+    width: 105%;
+    position: absolute;
+    left: -5%;
+    top: 6px;
+    height: 99.5%;
+    clip-path: inset(24px 0 0 48px);
+}
 
 
 #navigation #scene-list .scene,
@@ -90,6 +103,7 @@ font-size: var(--font-size-11);
 #controls>ol.main-controls>li.scene-control,
 #controls>ol.sub-controls>li,
 #hotbar .macro,
+#hotbar #hotbar-lock,
 #hotbar #hotbar-directory-controls,
 #hotbar #hotbar-page-controls {
     color: var(--color-light-3);
@@ -105,6 +119,17 @@ font-size: var(--font-size-11);
 #hotbar #macro-list{
     border: none;
 }
+
+ol.directory-list{
+    color: var(--color-light-3);
+    background: none;
+    background-color: var(--color-cool-5-90);
+    border-color: var(--border-color);
+    font-family: var(--font-body);
+    font-weight: var(--font-weight);
+    border-radius: var(--border-r);
+}
+
 
 
 .window-app .window-content,
@@ -139,7 +164,8 @@ textarea:focus {
 button,
 form button,
 .dice-tray button,
-.directory .directory-header .header-search input
+.directory .directory-header .header-search input,
+.dice-tray input[type='text']
  {
     background-color: var(--color-warm-1);
     border-color: transparent;
@@ -193,6 +219,12 @@ select {
 #sidebar{
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
+    background: linear-gradient(270deg, var(--color-cool-5-75) 0%, rgba(0,0,0,0) 100%);
+    box-shadow: none;
+    border: none;
+}
+#players{
+    display:none;
 }
 
 form .form-group .form-fields>*,
@@ -214,10 +246,14 @@ form .form-group .form-fields>*,
 
 #chat-form textarea {
     background: none;
-    background-color: var(--color-cool-5-25);
+    background-color: var(--color-cool-5-75);
     border-color: var(--border-color);
     font-family: var(--font-body);
     color: var(--color-light-2);
+}
+#chat-log{
+    -webkit-mask-image: linear-gradient(to top, black 75%, transparent 100%);
+    mask-image: linear-gradient(to top, black 75%, transparent 100%);
 }
 
 .playlists-sidebar .global-control .playlist-header,
@@ -246,7 +282,8 @@ form .form-group .form-fields>*,
 
 #navigation .nav-item {
     padding: 0 16px;
-border-radius: var(--border-r);
+    border-radius: var(--border-r);
+    min-inline-size: max-content;
 }
 
 .window-app,
@@ -343,6 +380,29 @@ a.item.category-tab.category-all {
 .chat-message {
     margin: var(--spacing);
     padding: var(--spacing);
+}
+
+.dice-roll .dice-total{
+        flex: 0;
+        font-size: var(--font-size-20);
+        font-weight: bold;
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        left: calc(50% - 1.5rem);
+        border-radius: 50%;
+        box-shadow: 0 0 var(--shadow-size) var(--active-color);
+        font-family: var(--title-font);
+        color: var(--color-light-3);
+}
+.dice-roll .dice-formula{
+    border: none;
+    background: none;
+    box-shadow: none;
+    color: var(--color-light-3);
 }
 
 #sidebar .directory .action-buttons {
@@ -554,30 +614,45 @@ text-shadow: 0px 0px 20px #003fff;
 /*Centered top tabs*/
 #navigation {
     margin: 0;
-
+    left: auto;
+    position: sticky;
+    width: auto;
 }
 #ui-top.offset {
     margin: 0px;
-padding: var(--spacing);
-background: radial-gradient(circle farthest-corner at 50% 100%, var(--color-cool-5-50) 0%, transparent 100%);
-border-bottom: 2px solid;
-  border-image: linear-gradient(to left, transparent, var(--color-warm-2), transparent) 1;
-width:100%;
+    padding: var(--spacing);
+    background: var(--backgrounduitop);
+    border-bottom: 2px solid;
+    border-image: linear-gradient(to left, transparent, var(--color-warm-2), transparent) 1;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center
+}
+#navigation #nav-toggle{
+    top: 0;
+    margin: 0;
+    margin-right : var(--spacing);
+    align-self: center;
+    background: var(--color-cool-4);
+}
+.jump-to-bottom {
+    bottom: auto;
+    background: var(--color-cool-5-90);
 }
 #navigation #scene-list {
     margin-right: var(--navixmg);
-    display: flex !important;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
 }
 #navigation.collapsed #scene-list {
     display:none !important;
 
 }
 #navigation.collapsed {
-    opacity: 0.1;
-position: absolute;
+    --backgrounduitop: transparent !important;
+    position: absolute;
 }
 
 #ui-left {

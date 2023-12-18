@@ -9,7 +9,7 @@
     --font-body : Arial;
 
     --font-size-title : var(--font-size-32);
-    --font-size-subtitle : var(--font-size-24);
+    --font-size-subtitle : var(--font-size-18);
     --font-size-body : var(--font-size-12);
 
     --color-info : #00d4ff;
@@ -36,10 +36,12 @@
 
 /* Buttons */
 button,
+.window-app .window-header .window-title .document-id-link,
+header-button control,
+message-delete,
 .combat-sidebar .combat-tracker-header a.combat-button,
 #client-settings .submenu button,
 .package-configuration aside.sidebar .reset-all,
-#controls ol.control-tools > li,
 .customCssSettings button,
 form button,
 .dialog .dialog-buttons button.default,
@@ -62,7 +64,7 @@ form button,
     text-shadow: var(--text-shadow);
     height: auto;
 }
-#controls ol.control-tools > li.active,
+
 .filepicker .display-modes a.active,
 #navigation #nav-toggle.active,
 #hotbar .macro.active,
@@ -82,7 +84,7 @@ form button,
 
 }
 
-#controls ol.control-tools > li:hover,
+
 .filepicker .display-modes a:hover,
 .filepicker .favorites .path:hover,
 #navigation #nav-toggle:hover,
@@ -103,7 +105,43 @@ button:hover, button:focus,
     text-shadow: var(--text-shadow);
 }
 
-
+/*Controls on the left panel*/
+#controls ol.control-tools > li{
+    background-color: var(--color-background-tertiary);
+    color: var(--color-text-light-soft);
+    border: var(--border-universal);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: var(--padding);
+    margin: var(--margin);
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    text-shadow: var(--text-shadow);
+}
+#controls ol.control-tools > li:hover{
+    background-color: var(--color-accent-hover);
+    color: var(--color-text-light-soft);
+    border: var(--border-universal);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: var(--padding);
+    margin: var(--margin);
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    text-shadow: var(--text-shadow);
+}
+#controls ol.control-tools > li.active{
+    background-color: var(--color-accent);
+    color: var(--color-text-light-soft);
+    border: var(--border-universal);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: var(--padding);
+    margin: var(--margin);
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    text-shadow: var(--text-shadow);
+}
 
 
 /* Text fields */
@@ -128,7 +166,10 @@ form .form-group .form-fields > *,
 /* tabs */
 .package-configuration aside.sidebar nav.tabs .category-tab,
 #sidebar-tabs > .item,
-#navigation #scene-list .scene.view, #navigation #scene-list .scene.context{
+#navigation #scene-list .scene,
+#navigation #scene-list .scene.view, #navigation #scene-list .scene.context,
+#navigation #scene-list .scene.gm,
+.sheet nav.sheet-tabs .item{
     background-color: var(--color-background-secondary);
     color: var(--color-text-light);
     border: var(--border-universal);
@@ -225,4 +266,31 @@ form .form-group .form-fields > *,
     padding: var(--padding);
     margin: var(--margin);
 
+}
+
+/*Text styles*/
+h1{
+    font-family: var(--font-title);
+    font-size: var(--font-size-title);
+    color: var(--color-text-light);
+    text-shadow: var(--text-shadow);
+
+}
+h2{
+    font-family: var(--font-title);
+    font-size: var(--font-size-title);
+    color: var(--color-text-light);
+    text-shadow: var(--text-shadow);
+}
+h3{
+    font-family: var(--font-subtitle);
+    font-size: var(--font-size-subtitle);
+    color: var(--color-text-light);
+    text-shadow: var(--text-shadow);
+}
+h4{
+    font-family: var(--font-subtitle);
+    font-size: var(--font-size-subtitle);
+    color: var(--color-text-light);
+    text-shadow: var(--text-shadow);
 }
