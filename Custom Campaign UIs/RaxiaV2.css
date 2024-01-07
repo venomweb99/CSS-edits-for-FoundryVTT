@@ -1,5 +1,6 @@
 /***V11 STYLES***/
 :root {
+    --huemod: 0deg;
     --color-underline-header: transparent;
     --color-border-highlight-alt: var(--color-light-3);
     --color-border-highlight: var(--color-light-3);
@@ -26,6 +27,10 @@
     --color-cool-5-50: rgba(17, 35, 63, 0.5);
     --color-cool-5-75: rgba(17, 35, 63, 0.75);
     --color-cool-5-90: rgba(17, 35, 63, 0.9);
+    --patterncolor-1: #2B6577CC;
+    --patterncolor-2: #2D628ACC;
+    --patterncolor-3: #152F4ECC;
+    --patterncolor-4: #163258CC;
     --active-color: #FEB027;
     --v11-fx: blur(21px);
     --spacing: 8px;
@@ -33,7 +38,8 @@
     --sidebar-width: 304px;
     --shadow-size: 4px;
     --titlebar: url(\/CustomResources\/TitlebarBG\.png);
-    --pattern: url(\/CustomResources\/Pattern70\.png);
+    --pattern: url(\/CustomResources\/PatternBW70\.png);
+    --patterncolor: linear-gradient(0deg, var(--patterncolor-1) 0%, var(--patterncolor-2) 32%, var(--patterncolor-3) 45%, var(--patterncolor-4) 50%, var(--patterncolor-3) 72%);
     --border-r: 12px;
     --title-font: var(--font-h2);
     --title-bg: linear-gradient(90deg, var(--color-cool-4) 0%, rgba(0, 212, 255, 0) 100%);
@@ -49,11 +55,13 @@
     --clipHex: polygon(var(--hex) 0, calc(100% - var(--hex)) 0, 100% 50%, calc(100% - var(--hex)) 100%, var(--hex) 100%, 0 50%);
     --font-weight: 400;
     --border-r: 12px;
-    --logoh: inherit;
-    --logow: 188px;
-
+    --logoh: auto;
+    --logow: 10rem;
+    scrollbar-color: gray transparent;
 }
-
+#ui-right, #ui-left, #ui-middle {
+    filter: hue-rotate(var(--huemod));
+}
 a.header-button:hover,
 #sidebar-tabs>.item:hover,
 #controls>ol.main-controls>li.scene-control:hover,
@@ -61,6 +69,7 @@ a.header-button:hover,
 #controls ol.control-tools > li.active, #controls ol.control-tools > li:hover,
 .dice-tray button.active {
     background: linear-gradient(180deg, rgba(0,0,0,0) 0%, var(--active-color) 100%);
+    scale: 1.1;
 }
 
 /*WebviewerExcelCut*/
@@ -79,7 +88,11 @@ a.header-button:hover,
     background: var(--color-warm-2);
 }
 #navigation #scene-list .scene:hover {
-    text-shadow: 0 0 var(--shadow-size) var(--color-light-3) !important;
+    text-shadow: 0 0 var(--shadow-size) var(--active-color) !important;
+}
+#navigation #scene-list .scene.active{
+    box-shadow: inset 0 0 var(--shadow-size) var(--active-color);
+    border-color: var(--active-color);
 }
 #navigation #scene-list .scene li.scene-player{
 margin-left: 28px;
@@ -136,9 +149,10 @@ ol.directory-list{
 .sheet.journal-entry .journal-entry-content,
 .chat-message,
 .chat-message.whisper {
-    background: var(--pattern);
+    background: var(--pattern), var(--patterncolor);
+    background-blend-mode: luminosity;
     background-size: 100% 100%;
-    background-color: var(--color-cool-5-50);
+    background-color: var(--patterncolor);
     color: var(--color-light-2);
     border-color: var(--border-color);
     font-family: var(--font-body);
@@ -188,7 +202,7 @@ form button:hover,
     border-color: transparent;
     -webkit-box-shadow: none;
     box-shadow: none;
-
+    transition: 0.0375s;
 }
 input,
 form .form-group .form-fields>*,
@@ -250,10 +264,37 @@ form .form-group .form-fields>*,
     border-color: var(--border-color);
     font-family: var(--font-body);
     color: var(--color-light-2);
+    font-size: var(--font-size-16);
+    height: 1rem;
+    border-radius: var(--border-r);
+    border: 1px solid var(--border-color);
+}
+#chat-form {
+    height: 1rem;
+    flex: 0 0 3rem;
+    margin: 0 var(--spacing);
+}
+#chat-controls{
+    flex:auto;
+}
+#chat-controls .roll-type-select,
+#chat-controls .chat-control-icon{
+    display: none;
+}
+#chat-controls .control-buttons{
+    flex-basis: var(--sidebar-width) !important;
+}
+#chat-controls .control-buttons a{
+    width: 19%;
+    margin: var(--spacing) 0 var(--spacing) 0 !important;
 }
 #chat-log{
-    -webkit-mask-image: linear-gradient(to top, black 75%, transparent 100%);
-    mask-image: linear-gradient(to top, black 75%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to top, black 85%, transparent 100%);
+    mask-image: linear-gradient(to top, black 85%, transparent 100%);
+}
+#sidebar{
+    -webkit-mask-image: linear-gradient(to left, black 97%, transparent 100%);
+    mask-image: linear-gradient(to left, black 97%, transparent 100%);
 }
 
 .playlists-sidebar .global-control .playlist-header,
@@ -292,6 +333,12 @@ form .form-group .form-fields>*,
     margin: 0px;
     font-weight: var(--font-weight);
 }
+.window-app{
+    filter: opacity(0.85);
+}
+.window-app:active, .window-app:focus, .window-app:hover{
+    filter: opacity(1);
+}
 
 #sidebar-tabs>.item i,
 .fa-solid,
@@ -306,8 +353,28 @@ form .form-group .form-fields>*,
 #sidebar-tabs > .item i[class^=fa] {
     font-weight: inherit;
 }
+a.message-delete:hover{
+    color: var(--active-color);
+    scale: 1.1;
+}
+section#chat {
+    opacity: 0.75;
+    transition: 0.3s;
+}
+section#chat:hover {
+    opacity: 1;
+    transition: 0.15s;
+}
 
-
+button.dice-tray__roll{
+    flex-basis: content;
+}
+.dice-tray .dice-tray__stacked{
+    display: none;
+}
+.theatre-control-chat-cover{
+    display: none;
+}
 
 
 /*Tweaks*/
@@ -383,6 +450,7 @@ a.item.category-tab.category-all {
 }
 
 .dice-roll .dice-total{
+        transition: 0.15s;
         flex: 0;
         font-size: var(--font-size-20);
         font-weight: bold;
@@ -397,6 +465,13 @@ a.item.category-tab.category-all {
         box-shadow: 0 0 var(--shadow-size) var(--active-color);
         font-family: var(--title-font);
         color: var(--color-light-3);
+}
+.dice-roll .dice-total:hover{
+        transition: 0.15s;
+        box-shadow: 0 0 var(--shadow-size) var(--active-color),
+        0 0 21px var(--active-color) inset;
+        scale: 1.1;
+        border: 1px solid var(--active-color);
 }
 .dice-roll .dice-formula{
     border: none;
@@ -424,6 +499,7 @@ a.item.category-tab.category-all {
 #sidebar {
     height: auto;
     width: var(--sidebar-width) !important;
+    transition: 0s !important;
 }
 
 #sidebar.collapsed #sidebar-tabs {
@@ -451,6 +527,7 @@ a.item.category-tab.category-all {
 
 .chat-message .message-content {
     padding-top: var(--spacing);
+    font-size: var(--font-size-16);
 }
 
 .chat-message .message-header .message-metadata {
@@ -552,11 +629,18 @@ a.item.category-tab.category-all {
 
 /*Invisible Resize Box*/
 .window-app .window-resizable-handle {
-    width: 8px;
-    height: 100%;
-    background: #00000000;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: radial-gradient(circle farthest-corner at 100% 100%, var(--color-light-3) 0%, transparent 70%);
     padding: 0px;
     border: 0px;
+    border-radius: 0;
+    border-bottom-right-radius: var(--border-r);
+    bottom: 0px;
+}
+
+.window-app .window-resizable-handle:hover {
+    background: radial-gradient(circle farthest-corner at 100% 100%, var(--active-color) 0%, transparent 70%);
 }
 
 .fa-arrows-alt-h:before,
@@ -583,7 +667,9 @@ input,
 select,
 #navigation .nav-item,
 #controls ol.control-tools>li,
-#hotbar .macro{
+#hotbar .macro,
+#logo,
+.window-app .window-resizable-handle{
     cursor: var(--cursorg-url), auto !important;
 }
 
@@ -658,6 +744,10 @@ text-shadow: 0px 0px 20px #003fff;
 #ui-left {
     width: var(--sidebar-width);
 }
+#logo {
+    width: var(--logow);
+    height: var(--logoh);
+}
 
 /*No useless shit in settings tab*/
 #settings.settings-sidebar h2,
@@ -691,4 +781,52 @@ opacity: 0.7;
 }
 .notification-pip {
     display:none;
+}
+
+@media only screen and (max-width: 790px) {
+    /* Styles for mobile */
+    #navigation{
+        width: 0px;
+        display: none;
+    }
+
+    #logo,
+    #ui-left{
+        width: 7rem;
+        min-width: 7rem;
+        margin: 0;
+    }
+    #ui-right{
+        width: 100%;
+    }
+    #players,
+    #action-bar,
+    #hotbar
+    {
+        display:none !important;
+    }
+    #ui-middle{
+        opacity: 0;
+        width: auto;
+        min-width: calc(100% - 24rem);
+    }
+    #sidebar {
+        width: 17rem !important;
+        margin: 0;
+        height: 100%;
+    }
+    #chat-controls {
+        flex: initial;
+    }
+    section#chat {
+        opacity: 1;
+    }
+    .window-app {
+        filter: opacity(1);
+        max-width: 100% !important;
+        width: 100% !important;
+        min-width: 100% !important;
+        min-height: 100% !important;
+    }
+
 }
