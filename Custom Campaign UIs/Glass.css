@@ -10,12 +10,12 @@
     --font-h2: "sinoalice";
     --title-letter-spacing: 0.04rem;
     --font-body: "Myriad";
-    --color-warm-1: rgba(42, 86, 103, 0.75);
-    --color-warm-2: #376285;
-    --color-warm-3: #011E35;
+    --color-warm-1: rgba(86, 86, 86, 0.75);
+    --color-warm-2: #888888;
+    --color-warm-3: #303030;
     --color-cool-3: #584a75;
-    --color-cool-4: #00253F;
-    --color-cool-5: rgba(17, 35, 63, 1);
+    --color-cool-4: #3d3d3d;
+    --color-cool-5: rgb(58, 58, 58);
     --backgrounduitop: radial-gradient(circle farthest-corner at 50% 100%, var(--color-cool-5-50) 0%, transparent 100%);
     --color-light-1: #f7f3e8;
     --color-light-2: #efe6d8;
@@ -23,22 +23,22 @@
     --color-light-4: #00253F;
     --color-light-5: #9f8475;
     --color-light-6: #816b66;
-    --color-cool-5-25: rgba(17, 35, 63, 0.25);
-    --color-cool-5-50: rgba(17, 35, 63, 0.5);
-    --color-cool-5-75: rgba(17, 35, 63, 0.75);
-    --color-cool-5-90: rgba(17, 35, 63, 0.9);
-    --patterncolor-1: #2B6577CC;
-    --patterncolor-2: #2D628ACC;
-    --patterncolor-3: #152F4ECC;
-    --patterncolor-4: #163258CC;
-    --active-color: #FEB027;
+    --color-cool-5-25: rgba(35, 35, 35, 0.25);
+    --color-cool-5-50: rgba(35, 35, 35, 0.5);
+    --color-cool-5-75: rgba(35, 35, 35, 0.75);
+    --color-cool-5-90: rgba(35, 35, 35, 0.9);
+    --patterncolor-1: #526d63cc;
+    --patterncolor-2: #798f8acc;
+    --patterncolor-3: #424e52cc;
+    --patterncolor-4: #383441cc;
+    --active-color: #efff89;
     --v11-fx: blur(21px);
     --spacing: 8px;
     --shadow-color: var(--color-cool-5);
     --sidebar-width: 304px;
     --shadow-size: 4px;
-    --titlebar: url(\/CustomResources\/TitlebarBG\.png);
-    --pattern: url(\/CustomResources\/PatternBW70\.png);
+    --titlebar: none;
+    --pattern: none;
     --patterncolor: linear-gradient(0deg, var(--patterncolor-1) 0%, var(--patterncolor-2) 32%, var(--patterncolor-3) 45%, var(--patterncolor-4) 50%, var(--patterncolor-3) 72%);
     --border-r: 12px;
     --title-font: var(--font-h2);
@@ -290,8 +290,8 @@ form .form-group .form-fields>*,
     margin: var(--spacing) 0 var(--spacing) 0 !important;
 }
 #chat-log{
-    -webkit-mask-image: linear-gradient(to top, black 85%, transparent 100%);
-    mask-image: linear-gradient(to top, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to top, black 95%, transparent 100%);
+    mask-image: linear-gradient(to top, black 95%, transparent 100%);
 }
 #sidebar{
     -webkit-mask-image: linear-gradient(to left, black 97%, transparent 100%);
@@ -335,7 +335,7 @@ form .form-group .form-fields>*,
     font-weight: var(--font-weight);
 }
 .window-app{
-    filter: opacity(0.85);
+    //filter: opacity(0.85);
 }
 .window-app:active, .window-app:focus, .window-app:hover{
     filter: opacity(1);
@@ -359,7 +359,7 @@ a.message-delete:hover{
     scale: 1.1;
 }
 section#chat {
-    opacity: 0.75;
+    //opacity: 0.75;
     transition: 0.3s;
 }
 section#chat:hover {

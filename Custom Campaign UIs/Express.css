@@ -363,7 +363,36 @@ button {
 }
 
 
-
+/*Cool Rolls*/
+.dice-roll .dice-total{
+    transition: 0.15s;
+    flex: 0;
+    font-size: var(--font-size-20);
+    font-weight: bold;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    left: calc(50% - 1.5rem);
+    border-radius: 50%;
+    box-shadow: none;
+    font-family: var(--title-font);
+    color: var(--custom-accent);
+}
+.dice-roll .dice-total:hover{
+    transition: 0.15s;
+    box-shadow: none;
+    scale: 1.1;
+    border: 1px solid var(--custom-accent);
+}
+.dice-roll .dice-formula{
+border: none;
+background: none;
+box-shadow: none;
+color: var(--custom-accent);
+}
 
 
 
@@ -459,6 +488,9 @@ border-radius: 333px;
 
 }
 
+.window-app{
+    backdrop-filter: blur(12px);
+}
 
 .window-app .window-content{
 backdrop-filter: blur(12px);
@@ -577,13 +609,16 @@ backdrop-filter: blur(21px);
 color: #FFF2D344;
 
 }
+.chat-message .message-header {
+    
+}
 
 .chat-message .message-header .message-metadata .message-delete{
 text-shadow: 2px 2px 2px #E95044;
 }
+.chat-message{
 
-
-/*Chat sidebar*/
+}
 #sidebar{
 border-bottom-left-radius: 0px;
     border-top-left-radius: 0px;
@@ -604,10 +639,6 @@ padding: 8px !important;
 margin: 0px;
     padding: 8px !important;
 }
-
-
-
-/*PLAYLISTS*/
 
 .playlists-sidebar .global-control .playlist-sounds {
 
@@ -644,9 +675,6 @@ margin: 0px;
     letter-spacing: 0.1rem;
     color: var(--custom-accent);
 }
-
-
-
 #sidebar {
     border-bottom-left-radius: 24px;
 }
@@ -695,37 +723,62 @@ padding-top: 0px;
 .playlists-sidebar li.sound .sound-playback .sound-timer {
     flex: initial;
 }
-
-/*Better headers*/
 .window-app .window-header .window-title {
     text-transform: uppercase;
     line-height: 1.8;
     text-indent: 10px;
-    font-family: var(--title-font);
-    letter-spacing: var(--title-letter-spacing);
+    font-family: "GillSansC";
+    letter-spacing: 0.1rem;
     color: var(--custom-accent);
 }
-#settings.settings-sidebar h2 {
-    margin: 0px;
-    padding: var(--spacing);
-    background: var(--title-bg);
-    text-transform: uppercase;
-    text-align: left;
-    line-height: 1.8;
-    text-indent: 10px;
-    font-family: var(--title-font);
-    letter-spacing: var(--title-letter-spacing);
-    color: var(--custom-accent);
+
+.dice-tray button .dice-tray__flag {
+    position: absolute;
+    bottom: 100%;
+    left: auto;
+    right: auto;
+    font-size: 14px;
+    height: 20px;
+    line-height: 1;
+    background-color: #00000055 !important;
+	border: 1px solid var(--color-border-light-primary);
+    color: #fff;
+    width: 50%;
 }
-.compendium-sidebar h3 {
-    margin: 0px;
-    padding: var(--spacing);
-    background: var(--title-bg);
-    text-transform: uppercase;
-    text-align: left;
-    line-height: 1.8;
-    text-indent: 10px;
-    font-family: var(--title-font);
-    letter-spacing: var(--title-letter-spacing);
-    color: var(--custom-accent);
+
+/*No useless shit in settings tab*/
+#settings.settings-sidebar h2,
+#settings-documentation,
+#game-details,
+button[data-action="tours"] {
+display: none;
+}
+#settings-access{
+border-top: 2px solid var(--color-light-3);
+}
+
+/*Webviewer*/
+.window-app section.window-content.inline-viewer {
+   padding: 0;
+opacity: 0.7;
+}
+#inline-viewer-settings .settingsContainer #newEntry, #inline-viewer-settings .buttonContainer,
+.worldbuilding .attributes-header {
+    background: none;
+    backdrop-filter: blur(21px);
+}
+
+/*No loading bar*/
+#loading {
+    display: none !important;
+}
+
+/*WebviewerExcelCut*/
+.window-app section.window-content.inline-viewer {
+    width: 105%;
+    position: absolute;
+    left: -5%;
+    top: 6px;
+    height: 99.5%;
+    clip-path: inset(24px 0 0 48px);
 }

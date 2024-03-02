@@ -1,21 +1,23 @@
 /*Variables*/
 :root{
     --font-title: Cinzel;
-    --font-subtitle: Rochester;
+    --font-subtitle: BeauRivage;
     --font-small-header: Rochester;
     --font-text: OldStandardTT;
 
     --color-accent: rgb(54 18 22);
     --color-highlight: rgb(88, 223, 230);
     --color-background-lighter: 30, 42, 51;
-    --color-background-medium: 16, 21, 24;
+    --color-background-medium: 16, 24, 30;
     --color-background-darker: 7, 11, 15;
     --color-text-light: rgb(209, 209, 209);
     --color-text-dark: rgb(0, 0, 0);
     --color-text-tinted: rgb(154 129 83);
     --color-border: rgb(255, 0, 0);
     --color-border-golden: rgb(154 129 83);
+    --color-button-background-big: #7e693094;
     --color-sidebar: linear-gradient(270deg, rgb(var(--color-background-lighter)) 0%, transparent 100%);
+    --color-sidebar-left: linear-gradient(90deg, rgb(var(--color-background-lighter)) 0%, transparent 100%);
     --color-success: rgb(154 129 83);
     --color-failure: rgb(235, 135, 135);
     
@@ -39,7 +41,7 @@
     --blur-medium: blur(11px);
     --blur-weak: blur(5px);
 
-    --box-shadow-style: 0 0 4px #ffffff99;
+    --box-shadow-style: 0 0 4px #ffffff55;
     --box-shadow-glow: 0 0 4px var(--color-border-golden);
 
     --card-height: 100px;
@@ -85,6 +87,30 @@
     height: calc(100vh - 1px);
     background: var(--color-sidebar);
     box-shadow: none;
+}
+#sidebar-tabs{
+    background: linear-gradient(180deg, rgb(var(--color-background-medium)) 0%, transparent 100%);
+    border: none;
+    box-shadow: none;
+    backdrop-filter: var(--blur-strong);
+    margin: 0;
+    padding-top: 2px;
+    padding-left: var(--spacing);
+}
+
+/*Sidebar LEFT*/
+#controls ol.control-tools.main-controls {
+    height: fit-content;
+}
+#controls{
+    padding: var(--spacing);
+    background: var(--color-sidebar-left);
+    height: fit-content;
+    border-top: 1px solid rgb(var(--color-background-lighter));
+    border-bottom: 1px solid rgb(var(--color-background-lighter));
+    flex-basis: fit-content;
+    flex:none;
+    width: 50%;
 }
 
 /*Headers*/
@@ -145,7 +171,7 @@ form button{
     text-transform: uppercase;
     color: var(--color-text-light);
     /*make the background a 3 gradient of dark green, green and dark green, vertical*/
-    background: #77e4ff0f;
+    background: var(--color-button-background-big);
     box-shadow: inset 2px 2px 4px #ffffff22;
 
     border: var(--border-style-button-big);
@@ -154,6 +180,65 @@ form button{
     background-blend-mode: overlay;
     opacity: 1;
 
+}
+
+#controls ol.control-tools > li{
+    color: var(--color-border-golden);
+    background: transparent;
+    border:none;
+    box-shadow: none;
+    backdrop-filter: var(--blur-strong);
+}
+
+#controls ol.control-tools > li.toggle{
+    color: var(--color-text-tinted);
+    background: var(--color-button-background-big);
+    border: var(--border-style-button-big);
+    border-radius: var(--border-radius-global);
+    box-shadow: inset 2px 2px 4px #ffffff22;
+    backdrop-filter: var(--blur-medium);
+    background-blend-mode: overlay;
+    opacity: 1;
+}
+
+#controls ol.control-tools > li.toggle.active, #controls ol.control-tools > li.toggle:hover{
+    color: var(--color-text-light);
+    background: var(--color-button-background-big);
+    border-radius: var(--border-radius-global);
+    box-shadow: inset 2px 2px 4px #ffffff22;
+    border: 1px solid var(--color-text-light);
+    backdrop-filter: var(--blur-medium);
+    background-blend-mode: overlay;
+    opacity: 1;
+}
+
+#controls ol.control-tools > li.active, #controls ol.control-tools > li:hover{
+    color: var(--color-text-light);
+    background: var(--color-button-background-big);
+    border-radius: var(--border-radius-global);
+    border: none;
+    box-shadow: inset 2px 2px 4px #ffffff22;
+    backdrop-filter: var(--blur-medium);
+    background-blend-mode: overlay;
+    opacity: 1;
+}
+
+#sidebar-tabs > .item{
+    background: transparent;
+    border-radius: 20px;
+    box-shadow: none;
+    color: var(--color-border-golden);
+    text-shadow: 0 0 11px rgb(var(--color-background-darker));
+}
+
+#sidebar-tabs > .item.active,
+#sidebar-tabs > .item:hover{
+    color: var(--color-text-light);
+    background: none;
+    border: none;
+    box-shadow: none;
+    text-shadow: 0 0 11px rgb(var(--color-background-darker));
+    scale: 1.2;
 }
 
 /*Dice&Chat*/
@@ -176,8 +261,7 @@ form button{
     font-size: var(--font-size-24);
 }
 .dice-tooltip .dice-rolls .roll.success, .dice-tooltip .dice-rolls .roll.max {
-    color: var(--color-failure) !important;
-    filter: grayscale(1) contrast(1.1);
+    filter: none;
 }
 .dice-tooltip .dice-rolls .roll.failure, .dice-tooltip .dice-rolls .roll.min {
     color: var(--color-success) !important;
@@ -224,4 +308,17 @@ form button{
 .chat-message{
     box-shadow: var(--box-shadow-style);
     color: var(--color-text-light);
+}
+#chat-log{
+    -webkit-mask-image: linear-gradient(to top, black 95%, transparent 100%);
+    mask-image: linear-gradient(to top, black 95%, transparent 100%);
+}
+.jump-to-bottom {
+    background: var(--color-button-background-big);
+    padding: var(--spacing);
+    border: var(--border-style-button-big);
+    border-bottom-left-radius: var(--border-radius-global);
+    border-bottom-right-radius: var(--border-radius-global);
+    width: auto;
+    align-self: center;
 }
