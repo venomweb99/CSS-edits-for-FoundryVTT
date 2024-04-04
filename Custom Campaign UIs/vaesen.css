@@ -44,6 +44,8 @@
     --box-shadow-style: 0 0 4px #ffffff55;
     --box-shadow-glow: 0 0 4px var(--color-border-golden);
 
+    --image-mask: url(/modules/Vaesen-ui/img/Mask.png);
+    --image-card: url(/modules/Vaesen-ui/img/Card.png);
     --card-height: 100px;
     --card-width: calc(var(--card-height) * 0.6);
 
@@ -166,7 +168,16 @@ body,
 }
 
 button,
-form button{
+form button,
+input,
+form .form-group .form-fields>*,
+.prosemirror menu button,
+#module-management .package-list .package-title,
+#module-management .package-list .package-metadata,
+#module-management .package-list .package-description,
+.dice-so-nice .form-group select,
+.macro-sheet .form-group.command textarea,
+select{
     font-family: var(--font-text);
     text-transform: uppercase;
     color: var(--color-text-light);

@@ -391,7 +391,7 @@ button {
 border: none;
 background: none;
 box-shadow: none;
-color: var(--custom-accent);
+color: white;
 }
 
 
@@ -611,6 +611,16 @@ color: #FFF2D344;
 }
 .chat-message .message-header {
     
+}
+#chat-log{
+    -webkit-mask-image: linear-gradient(to top, black 95%, transparent 100%);
+    mask-image: linear-gradient(to top, black 95%, transparent 100%);
+}
+#sidebar{
+    -webkit-mask-image: linear-gradient(to left, black 97%, transparent 100%);
+    mask-image: linear-gradient(to left, black 97%, transparent 100%);
+    background: linear-gradient(to left, #1c2031 0%, transparent 110%);
+    backdrop-filter: blur(21px);
 }
 
 .chat-message .message-header .message-metadata .message-delete{

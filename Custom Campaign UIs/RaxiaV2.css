@@ -128,6 +128,11 @@ font-size: var(--font-size-11);
     font-family: var(--font-body);
     font-weight: var(--font-weight);
     border-radius: var(--border-r);
+    
+}
+
+#soundscapes .window-content{
+    width: 100%;
 }
 
 #hotbar #macro-list{
