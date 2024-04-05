@@ -53,6 +53,7 @@
     --border-color: var(--color-cool-4) !important;
     --hex: 15px;
     --clipHex: polygon(var(--hex) 0, calc(100% - var(--hex)) 0, 100% 50%, calc(100% - var(--hex)) 100%, var(--hex) 100%, 0 50%);
+    --clipSidewaysHex: polygon(0 var(--hex), 50% 0, 100% var(--hex), 100% calc(100% - var(--hex)), 50% 100%, 0 calc(100% - var(--hex)));
     --font-weight: 400;
     --border-r: 12px;
     --logoh: auto;
@@ -789,6 +790,86 @@ opacity: 0.7;
     display:none;
 }
 
+/* Combat carousel */
+#combat-dock{
+    opacity: 0.6;
+    position: fixed;
+    top: 12rem;
+    background: linear-gradient(90deg, transparent 7%, var(--color-cool-5-25) 12%, var(--color-cool-5-25) 20%,  transparent 30%);
+    --combatant-portrait-size: 5.5rem;
+    --combatant-portrait-border-radius: var(--border-r);
+    -webkit-mask-image: linear-gradient(to right, black 10%, transparent 12%);
+    mask-image: linear-gradient(to right, black 10%, transparent 12%);
+}
+#combat-dock:hover{
+
+    opacity: 1;
+    -webkit-mask-image: none;
+    mask-image: none;
+}
+#tooltip, .locked-tooltip {
+    background: var(--color-cool-5-90);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-16);
+    line-height: var(--font-size-16);
+    color: var(--color-light-3);
+    border: 1px solid var(--color-cool-4);
+    border-radius: var(--border-r);
+    box-shadow: 0 0 4px var(--shadow-color);
+    backdrop-filter: var(--v11-fx);
+}
+#tooltip.combat-dock-tooltip{
+    background: var(--color-cool-5-90);
+    box-shadow: none;
+    backdrop-filter: var(--v11-fx);
+}
+#combat-dock .combatant-wrapper, #combat-dock .combatant-wrapper .overlay-ui-container, #combat-dock .combatant-portrait{
+    border-radius: var(--border-r);
+    border-top-left-radius: var(--border-r);
+    border-top-right-radius: var(--border-r);
+}
+#combat-dock .combatant-portrait.active{
+    height: calc(var(--combatant-portrait-size)*var(--combatant-portrait-aspect));
+    width: var(--combatant-portrait-size);
+}
+#combat-dock .combatant-wrapper .overlay-ui-container .tracked-attribute-bar-max {
+    transform: rotate(90deg);
+    width: 1.5rem;
+    height: 15rem;
+    z-index: 10000;
+    position: fixed;
+    top: calc(14rem + order);
+    left: 18rem;
+    background: transparent;
+    border-radius: var(--border-r);
+}
+#combat-dock .combatant-wrapper .overlay-ui-container .tracked-attribute-bar-current{
+    clip-path: var(--clipSidewaysHex);
+    border-radius: var(--border-r);
+    border-left: 2px solid #ffffff4d;
+    box-shadow: inset 2px 8px 1px 0px #ffffff4d;
+    left: -3rem;
+}
+#combat-dock .combatant-wrapper .overlay-ui-container .tracked-attribute-bar-current.secondary-attribute{
+    --size: 0.9rem;
+    width: var(--size);
+    left: calc(var(--size) * -1 - 3.5rem);
+}
+#combat-dock .buttons-container {
+    opacity: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.3rem;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+#combat-dock .combatant-wrapper .portrait-bar{
+    border-radius: var(--border-r);
+}
+
+/* Styles for mobile use*/
 @media only screen and (max-width: 790px) {
     /* Styles for mobile */
     #navigation{
