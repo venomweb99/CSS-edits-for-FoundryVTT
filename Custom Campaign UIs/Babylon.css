@@ -583,17 +583,34 @@ a.item.category-tab.category-all {
     font-size: var(--font-size-11);
 }
 
-/*Always on chat*/
+/*Always on chat. Minichat*/
 div#chat-popout {
+    --margins: 16px;
+    --mcheight: 13%;
+    --spacing: 0;
     position: fixed;
     left: 0 !important;
-    top: 67% !important;
-    height: 33% !important;
-    width: 300px !important;
+    top: calc(100% - var(--margins) - var(--mcheight)) !important;
+    margin-left: var(--margins);
+    height: var(--mcheight) !important;
+    min-height: 0;
+    width: 320px !important;
     background: transparent;
     border: none;
     box-shadow: none;
     backdrop-filter: none;
+    filter: saturate(0.1) opacity(0.6);
+    transition: 0.05s;
+}
+div#chat-popout:hover {
+    transition: 0.05s;
+    --mcheight: 33%;
+    filter: none;
+}
+div#chat-popout #chat-form{
+    height: 1.75rem !important;
+    flex: 0 0 1.75rem !important;
+    min-height: 0;
 }
 div#chat-popout header.window-header.flexrow.draggable, div#chat-popout #chat-controls, div#chat-popout section.dice-tray{
     display: none;
@@ -601,7 +618,9 @@ div#chat-popout header.window-header.flexrow.draggable, div#chat-popout #chat-co
 div#chat-popout {
     background: linear-gradient(to top, var(--background-color) 0%, transparent 100%);
 }
-
+div#chat-popout .jump-to-bottom {
+    bottom: initial;
+}
 
 
 #navigation{
@@ -874,24 +893,92 @@ opacity: 0.7;
 }
 
 /*Macro dice tray*/
+#hotbar .macro .macro-key{
+    display: none;
+}
 #hotbar .macro{
-    
+    --displace: 36px;
+    border-radius: 50%;
+    transition: 0.05s;
+}
+#hotbar .macro:hover{
+    scale: 1.1;
+    transition: 0.05s;
+}
+#hotbar .macro .macro-icon{
+    height: 100%;
+    width: 100%;
 }
 li.macro[data-slot="1"]{
     position: fixed;
-    --size: 75px ;
+    --size: 5rem;
     width: var(--size) !important;
     height: var(--size) !important;
-    left: 50%;
-    bottom: 3rem;
+    left: calc(250px + var(--displace) - var(--size)/2);
+    bottom: 5rem;
 }
 
 
 li.macro[data-slot="2"]{
     position: fixed;
-
+    --size: 2rem;
+    width: var(--size) !important;
+    height: var(--size) !important;
+    left: calc(250px + var(--displace) - 50px - var(--size)/2);
+    bottom: calc(5rem + var(--size)/2);
 }
 
+li.macro[data-slot="3"]{
+    position: fixed;
+    --size: 2rem;
+    width: var(--size) !important;
+    height: var(--size) !important;
+    left: calc(250px + var(--displace) - 100px - var(--size)/2);
+    bottom: calc(2rem - var(--size)/2);
+}
+
+li.macro[data-slot="4"]{
+    position: fixed;
+    --size: 3.5rem;
+    width: var(--size) !important;
+    height: var(--size) !important;
+    left: calc(250px + var(--displace) - 150px - var(--size)/2 - 5rem);
+    bottom: calc(5rem - 0.75rem);
+}
+
+li.macro[data-slot="5"]{
+    position: fixed;
+    --size: 3.5rem;
+    width: var(--size) !important;
+    height: var(--size) !important;
+    left: calc(250px + var(--displace) - 200px - var(--size)/2 - 9rem);
+    bottom: calc(5rem - 0.75rem);
+}
+
+li.macro[data-slot="6"]{
+    position: fixed;
+    --size: 3.5rem;
+    width: var(--size) !important;
+    height: var(--size) !important;
+    left: calc(250px + var(--displace) - 250px - var(--size)/2 + 5rem);
+    bottom: calc(5rem - 0.75rem);
+}
+
+li.macro[data-slot="7"]{
+    position: fixed;
+    --size: 3.5rem;
+    width: var(--size) !important;
+    height: var(--size) !important;
+    left: calc(250px + var(--displace) - 300px - var(--size)/2 + 9rem);
+    bottom: calc(5rem - 0.75rem);
+}
+
+div#hotbar-page-controls, div#hotbar-lock, div#hotbar-directory-controls, #hotbar .macro.inactive{
+    /*display: none;*/
+}
+
+
+/* Improved mobile usability */
 @media only screen and (max-width: 790px) {
     /* Styles for mobile */
     #navigation{
