@@ -22,6 +22,9 @@
     --title-blend-mode: difference;
 
     /*Technical stuff*/
+    --hex: 0.5rem;
+    --clipHex: polygon(var(--hex) 0%, calc(100% - var(--hex)) 0%, 100% 30%, 100% 70%, calc(100% - var(--hex)) 100%, var(--hex) 100%, 0% 70%, 0% 30%);
+    --squareClip: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
     --border-color: var(--background-color) !important;
     --line-height: 2.3;
     --pattern-style: 1;
@@ -39,9 +42,6 @@
     --font-size-18: 18px;
     --font-size-11: 11px;
     --color-text-dark-secondary: var(--text-color);
-    --hex: 0.5rem;
-    --clipHex: polygon(var(--hex) 0%, calc(100% - var(--hex)) 0%, 100% 30%, 100% 70%, calc(100% - var(--hex)) 100%, var(--hex) 100%, 0% 70%, 0% 30%);
-    --squareClip: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
     --font-weight: 400;
     --huemod: 0deg;
 
