@@ -1,0 +1,38 @@
+/*Always on popout chat. Minichat*/
+div#chat-popout {
+    --margins: 16px;
+    --mcheight: 13%;
+    --spacing: 0;
+    position: fixed;
+    left: 0 !important;
+    top: calc(100% - var(--margins) - var(--mcheight)) !important;
+    margin-left: var(--margins);
+    height: var(--mcheight) !important;
+    min-height: 0;
+    width: 320px !important;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    filter: saturate(0.1) opacity(0.6);
+    transition: 0.05s;
+}
+div#chat-popout:hover {
+    transition: 0.05s;
+    --mcheight: 33%;
+    filter: none;
+}
+div#chat-popout #chat-form{
+    height: 1.75rem !important;
+    flex: 0 0 1.75rem !important;
+    min-height: 0;
+}
+div#chat-popout header.window-header.flexrow.draggable, div#chat-popout #chat-controls, div#chat-popout section.dice-tray{
+    display: none;
+}
+div#chat-popout {
+    background: linear-gradient(to top, var(--background-color) 0%, transparent 100%);
+}
+div#chat-popout .jump-to-bottom {
+    bottom: initial;
+}

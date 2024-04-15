@@ -1,0 +1,20 @@
+/*Seamless Resize Box*/
+.window-app .window-resizable-handle {
+    width: 1.5rem;
+    height: 1.5rem;
+    background: radial-gradient(circle farthest-corner at 100% 100%, var(--text-color) 0%, transparent 70%);
+    padding: 0px;
+    border: 0px;
+    border-radius: 0;
+    border-bottom-right-radius: var(--border-r);
+    bottom: 0px;
+}
+
+.window-app .window-resizable-handle:hover {
+    background: radial-gradient(circle farthest-corner at 100% 100%, var(--active-color) 0%, transparent 70%);
+}
+
+.fa-arrows-alt-h:before,
+.fa-left-right:before {
+    content: none;
+}
