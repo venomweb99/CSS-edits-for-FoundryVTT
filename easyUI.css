@@ -67,6 +67,9 @@
 #ui-right, #ui-left, #ui-middle {
     filter: none; /*usehuemod*/
 }
+header.window-header{
+    border-radius: var(--border-r);
+}
 a.header-button:hover,
 #sidebar-tabs>.item:hover,
 #controls>ol.main-controls>li.scene-control:hover,
