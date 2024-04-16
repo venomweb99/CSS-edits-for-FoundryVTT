@@ -186,9 +186,12 @@ form .form-group .form-fields>*,
 }
 .package-configuration aside.sidebar nav.tabs .category-tab.active {
     border-bottom: 2px solid var(--text-color);
+    text-shadow: none;
+    font-size: var(--font-size-16);
 }
 .package-configuration aside.sidebar nav.tabs .category-tab:hover{
     border: none;
+    border-bottom: 2px solid var(--text-color);
     text-shadow: 0 0 var(--shadow-size) var(--hover-color);
 }
 #navigation .nav-item {

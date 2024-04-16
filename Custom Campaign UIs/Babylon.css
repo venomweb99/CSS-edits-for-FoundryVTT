@@ -20,6 +20,7 @@
     --patterncolor-3: #1909aacc;
     --patterncolor-4: #150d8ecc;
     --patterncolor: linear-gradient(0deg, var(--patterncolor-1) 0%, var(--patterncolor-1) 32%, var(--patterncolor-1) 45%, var(--patterncolor-1) 50%, var(--patterncolor-1) 72%);
+    --border-r: 0; /*makes stuff more rounded, you can use px or %*/
     
 
     /*Technical stuff*/
@@ -36,7 +37,6 @@
     --v11-fx: blur(21px);
     --sidebar-width: 304px;
     --shadow-size: 4px;
-    --border-r: 0;
     --font-size-14: 14px;
     --font-size-12: 12px;
     --font-size-16: 16px;
@@ -250,6 +250,7 @@ form button,
     font-weight: var(--font-weight);
     text-shadow: 0 0 var(--shadow-size) var(--shadow-color);
     border-radius: var(--border-r);
+    transition: 0.0375s;
     /*mix-blend-mode: hard-light;*/
 }
 button:hover,
@@ -260,6 +261,7 @@ form button:hover,
     border-color: transparent;
     -webkit-box-shadow: none;
     box-shadow: none;
+    scale: 1.03;
     transition: 0.0375s;
 }
 input,
