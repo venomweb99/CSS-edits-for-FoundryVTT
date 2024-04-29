@@ -830,6 +830,47 @@ div#hotbar {
     clip-path: inset(24px 0 0 48px);
 }
 
+/*Better scene selector*/
+:root{
+    --scene-height: 64px;
+    --folder-height: 32px;
+    --folder-indicator-width: 2px;
+}
+.scenes-sidebar .subdirectory{
+    border-color: transparent;
+    border-radius: var(--border-r);
+    border-left: var(--folder-indicator-width) solid var(--text-color);
+}
+header.folder-header.flexrow{
+    max-height: var(--folder-height);
+    align-content: space-evenly;
+    border-radius: var(--border-r);
+    margin-top: var(--spacing);
+}
+.folder .folder .subdirectory{
+    border-bottom: none;
+}
+.directory .directory-item .subdirectory .folder{
+    border: none;
+}
+li.directory-item.document.scene.flexrow {
+    height: var(--scene-height);
+    align-content: center;
+    margin-top: var(--spacing);
+    border-radius: var(--border-r);
+    box-shadow: 0 0 100px var(--shadow-color) inset;
+    border: 1px solid var(--border-color);
+}
+li.folder.collapsed > .folder-header {
+    background: inherit;
+    border: none;
+}
+.folder .folder .subdirectory {
+    border-bottom: none;
+    margin-left: calc(var(--spacing) * 0.5);
+    padding-left: calc(var(--spacing) * 0.5);
+}
+
 
 
 

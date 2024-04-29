@@ -859,6 +859,10 @@ li.macro[data-slot="1"]{
     bottom: 5rem;
     background: var(--header-color);
 }
+li.macro[data-slot="1"]:hover{
+    rotate: 360deg;
+    transition: ease-in-out 0.1s !important;
+}
 li.macro[data-slot="2"]{
     position: fixed;
     --size: 2rem;

@@ -891,13 +891,16 @@ opacity: 0.7;
 }
 
 /*Better scene selector*/
+:root{
+    --scene-height: 64px;
+    --folder-height: 32px;
+}
 .scenes-sidebar .subdirectory{
     border-color: transparent;
     border-radius: var(--border-r);
     border-left: 2px solid var(--color-light-3);
 }
 header.folder-header.flexrow{
-    --folder-height: 32px;
     max-height: var(--folder-height);
     align-content: space-evenly;
     border-radius: var(--border-r);
@@ -910,16 +913,21 @@ header.folder-header.flexrow{
     border: none;
 }
 li.directory-item.document.scene.flexrow {
-    --scene-height: 64px;
     height: var(--scene-height);
     align-content: center;
     margin-top: var(--spacing);
     border-radius: var(--border-r);
     box-shadow: 0 0 100px var(--shadow-color) inset;
+    border: 1px solid var(--border-color);
 }
 li.folder.collapsed > .folder-header {
     background: inherit;
     border: none;
+}
+.folder .folder .subdirectory {
+    border-bottom: none;
+    margin-left: calc(var(--spacing) * 0.5);
+    padding-left: calc(var(--spacing) * 0.5);
 }
 
 /*Simple Worldbuilding sheet specific*/
