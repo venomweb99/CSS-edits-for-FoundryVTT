@@ -7,26 +7,26 @@
     --pattern: url(\/UI\/pattern\.png-); /*This will replace the background of textured stuff*/
     --pattern-blend-mode: luminosity; /*I usually go for luminosity, difference or color-dodge, try them and pick your poison*/
     --title-blend-mode: difference; /*This just changes how the texture is mixed with the colors*/
-    --active-color: #CDB577;
-    --hover-color: #B78D5B;
-    --header-color: linear-gradient(to right, #CDB577 0%, #B78D5B 100%);
-    --button-color: #150a2fdc;
-    --background-color: #27163fdc;
-    --shadow-color: #B78D5B;
-    --title-text-color: #231f26;
-    --text-color: #e7d1b1;
+    --active-color: #b9d500;
+    --hover-color: #8c9b27;
+    --header-color: linear-gradient(to right, #24252b 0%, #15151a 100%);
+    --button-color: #363636dc;
+    --background-color: #b3b900dc;
+    --shadow-color: #000000;
+    --title-text-color: #cad442;
+    --text-color: #000000;
     --patterncolor-1: #1d188600;
     --patterncolor-2: #1208c7cc;
     --patterncolor-3: #1909aacc;
     --patterncolor-4: #150d8ecc;
     --patterncolor: linear-gradient(0deg, var(--patterncolor-1) 0%, var(--patterncolor-1) 32%, var(--patterncolor-1) 45%, var(--patterncolor-1) 50%, var(--patterncolor-1) 72%);
-    --border-r: 0; /*makes stuff more rounded, you can use px or %*/
+    --border-r: 4; /*makes stuff more rounded, you can use px or %*/
     
 
     /*Technical stuff*/
     --hex: 0.5rem;
-    --clipHex: polygon(var(--hex) 0%, calc(100% - var(--hex)) 0%, 100% 30%, 100% 70%, calc(100% - var(--hex)) 100%, var(--hex) 100%, 0% 70%, 0% 30%);
-    --squareClip: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    --clipHex: none;
+    --squareClip: none;
     --border-color: var(--background-color) !important;
     --line-height: 2.3;
     --pattern-style: 1;
@@ -56,16 +56,19 @@
     --title-letter-spacing: 0.04rem;
 
     /*TWEAKS*/
-    /*
+    
     --logoh: auto;
     --logow: 10rem;
-    --backgrounduitop: radial-gradient(circle farthest-corner at 50% 100%, var(--background-color) 0%, transparent 100%);*/
+    --backgrounduitop: radial-gradient(circle farthest-corner at 50% 100%, var(--background-color) 0%, transparent 100%);
     --spacing: 8px;
     
     
 }
 #ui-right, #ui-left, #ui-middle {
     filter: none; /*usehuemod*/
+}
+header.window-header{
+    border-radius: var(--border-r);
 }
 a.header-button:hover,
 #sidebar-tabs>.item:hover,
@@ -253,19 +256,18 @@ form button,
     font-weight: var(--font-weight);
     text-shadow: 0 0 var(--shadow-size) var(--shadow-color);
     border-radius: var(--border-r);
-    transition: 0.0375s;
     /*mix-blend-mode: hard-light;*/
 }
 button:hover,
 form button:hover,
 .dice-tray button:hover {
     background-color: var(--hover-color);
-    color: var(--title-text-color);
+    color: var(--text-color);
     border-color: transparent;
     -webkit-box-shadow: none;
     box-shadow: none;
-    scale: 1.03;
     transition: 0.0375s;
+    color: var(--title-text-color);
 }
 input,
 form .form-group .form-fields>*,
@@ -570,12 +572,6 @@ div#chat-popout .jump-to-bottom {
     bottom: initial;
 }
 
-/*fully left navigation*/
-#navigation{
-    left: var(--spacing);
-    position: absolute;
-}
-
 
 /*PLAYLISTS*/
 .playlists-sidebar .global-control .playlist-sounds {
@@ -730,7 +726,7 @@ select,
     width: 100vh;
 }
 
-/*Centered top tabs
+/*Centered top tabs*/
 #navigation {
     margin: 0;
     left: auto;
@@ -780,7 +776,7 @@ select,
 #logo {
     width: var(--logow);
     height: var(--logoh);
-}*/
+}
 
 /*No useless shit in settings tab*/
 #settings.settings-sidebar h2,
@@ -817,98 +813,11 @@ opacity: 0.7;
     display:none;
 }
 
-/*Bottom sidebar*/
-#sidebar{
-    flex-direction: column-reverse;
-    position: absolute;
-    bottom: -8px !important;
-    right: 0;
-}
-
 /*CENTER HOTBAR*/
 div#hotbar {
     left: calc(50% - var(--hotbar-width)/2);
     top: calc(100% - var(--hotbar-height));
     position: fixed;
-}
-/*Macro dice tray*/
-#hotbar .macro .macro-key{
-    display: none;
-}
-#hotbar .macro{
-    --displace: 36px;
-    border-radius: 50%;
-    transition: 0.05s;
-}
-#hotbar .macro:hover{
-    scale: 1.1;
-    transition: 0.05s;
-    z-index: 1000;
-    box-shadow: 0 0 var(--shadow-size) var(--active-color);
-}
-#hotbar .macro .macro-icon{
-    height: 100%;
-    width: 100%;
-}
-li.macro[data-slot="1"]{
-    position: fixed;
-    --size: 5rem;
-    width: var(--size) !important;
-    height: var(--size) !important;
-    left: calc(250px + var(--displace) - var(--size)/2);
-    bottom: 5rem;
-    background: var(--header-color);
-}
-li.macro[data-slot="2"]{
-    position: fixed;
-    --size: 2rem;
-    width: var(--size) !important;
-    height: var(--size) !important;
-    left: calc(250px + var(--displace) - 50px - var(--size)/2);
-    bottom: calc(5rem + var(--size)/2);
-}
-li.macro[data-slot="3"]{
-    position: fixed;
-    --size: 2rem;
-    width: var(--size) !important;
-    height: var(--size) !important;
-    left: calc(250px + var(--displace) - 100px - var(--size)/2);
-    bottom: calc(2rem - var(--size)/2);
-}
-li.macro[data-slot="4"]{
-    position: fixed;
-    --size: 3.5rem;
-    width: var(--size) !important;
-    height: var(--size) !important;
-    left: calc(250px + var(--displace) - 150px - var(--size)/2 - 5rem);
-    bottom: calc(5rem - 0.75rem);
-}
-li.macro[data-slot="5"]{
-    position: fixed;
-    --size: 3.5rem;
-    width: var(--size) !important;
-    height: var(--size) !important;
-    left: calc(250px + var(--displace) - 200px - var(--size)/2 - 9rem);
-    bottom: calc(5rem - 0.75rem);
-}
-li.macro[data-slot="6"]{
-    position: fixed;
-    --size: 3.5rem;
-    width: var(--size) !important;
-    height: var(--size) !important;
-    left: calc(250px + var(--displace) - 250px - var(--size)/2 + 5rem);
-    bottom: calc(5rem - 0.75rem);
-}
-li.macro[data-slot="7"]{
-    position: fixed;
-    --size: 3.5rem;
-    width: var(--size) !important;
-    height: var(--size) !important;
-    left: calc(250px + var(--displace) - 300px - var(--size)/2 + 9rem);
-    bottom: calc(5rem - 0.75rem);
-}
-div#hotbar-page-controls, div#hotbar-lock, div#hotbar-directory-controls, #hotbar .macro.inactive{
-    /*display: none;*/
 }
 
 /*WebviewerExcelCut*/
@@ -921,10 +830,7 @@ div#hotbar-page-controls, div#hotbar-lock, div#hotbar-directory-controls, #hotba
     clip-path: inset(24px 0 0 48px);
 }
 
-/*Theme specifics*/
-#logo, #players, .dice-tray .dice-tray__stacked, .theatre-control-chat-cover{
-    display: none;
-}
+
 
 
 /* Improved mobile usability */
