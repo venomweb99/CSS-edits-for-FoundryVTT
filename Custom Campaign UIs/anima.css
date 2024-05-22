@@ -1,31 +1,43 @@
 /***V11 STYLES***/
 :root {
     /*MAIN CUSTOMIZATION*/
-    --font-h2: "albertus"; /*Title font*/
-    --font-body: "myriad"; /*Main font*/
+    --font-h2: "Romantic"; /*Title font*/
+    --font-body: "Garamond"; /*Main font*/
+    --font-chatheader: "Hornbill"; /*Chat header font*/
     --titlebar: url(\/UI\/TitlebarBG\.png-); /*Uses Data as root folder, use this to give a texture to the title bars*/
-    --pattern: url(\/UI\/pattern\.png-); /*This will replace the background of textured stuff*/
+    --pattern: url(\/CustomResources\/PatternTiles\.png-); /*This will replace the background of textured stuff*/
+    --patternSidebar: url(\/CustomResources\/PatternTiles\.png);
+    --sideart: url(\/CustomResources\/TowerMoonS\.png); /*This will replace the background of textured stuff*/
+    --chat-decor: url(\/CustomResources\/TestShape\.png);
     --pattern-blend-mode: luminosity; /*I usually go for luminosity, difference or color-dodge, try them and pick your poison*/
     --title-blend-mode: difference; /*This just changes how the texture is mixed with the colors*/
-    --active-color: #b9d500;
-    --hover-color: #8c9b27;
-    --header-color: linear-gradient(to right, #24252b 0%, #15151a 100%);
-    --button-color: #363636dc;
-    --background-color: #b3b900dc;
+    --sidebar-blend-mode: color-dodge;
+    --active-color: #fffdbf;
+    --active-shadow-color: #1114ad;
+    --hover-color: #257e70;
+    --header-color: transparent;
+    --button-color: #00000075;
+    --background-color: #00000077;
+    --settings-color: linear-gradient(to top, #288858bb 0%, #0a5a78bb 100%);
+    --sidebar-color: radial-gradient(circle at top right, #0a5a78bb 0%, transparent 100%);
     --shadow-color: #000000;
-    --title-text-color: #cad442;
-    --text-color: #000000;
+    --window-shadow-color: #000000;
+    --title-text-color: white;
+    --text-color: #ffffff;
     --patterncolor-1: #1d188600;
     --patterncolor-2: #1208c7cc;
     --patterncolor-3: #1909aacc;
     --patterncolor-4: #150d8ecc;
     --patterncolor: linear-gradient(0deg, var(--patterncolor-1) 0%, var(--patterncolor-1) 32%, var(--patterncolor-1) 45%, var(--patterncolor-1) 50%, var(--patterncolor-1) 72%);
-    --border-r: 4; /*makes stuff more rounded, you can use px or %*/
+    --border-r: 4px; /*makes stuff more rounded, you can use px or %*/
     
 
     /*Technical stuff*/
     --hex: 0.5rem;
-    --clipHex: none;
+    --hex2: 5.5%;
+    --hex3: 2.5%;
+    --clipHex: polygon(var(--hex2) 0, calc(100% - var(--hex)) 0, 100% 50%, calc(100% - var(--hex2)) 100%, var(--hex) 100%, 0 50%);
+    --clipHexAlt: polygon(var(--hex3) 0, calc(100% - var(--hex2)) 0, 100% 50%, calc(100% - var(--hex)) 100%, var(--hex2) 100%, 0 50%);
     --squareClip: none;
     --border-color: var(--background-color) !important;
     --line-height: 2.3;
@@ -33,15 +45,15 @@
     --title-font: var(--font-h2);
     --title-bg: var(--header-color);
     --background-opacity: 0.9;
-    --button-fx: blur(21px);
-    --v11-fx: blur(21px);
-    --sidebar-width: 304px;
+    --button-fx: none;
+    --v11-fx: blur(12px);
+    --sidebar-width: 324px;
     --shadow-size: 4px;
-    --font-size-14: 14px;
-    --font-size-12: 12px;
-    --font-size-16: 16px;
-    --font-size-18: 18px;
-    --font-size-11: 11px;
+    --font-size-14: 0.875rem;
+    --font-size-12: 0.75rem;
+    --font-size-16: 1rem;
+    --font-size-18: 1.125rem;
+    --font-size-11: 0.668rem;
     --color-text-dark-secondary: var(--text-color);
     --font-weight: 400;
     --huemod: 0deg;
@@ -72,13 +84,35 @@ header.window-header{
 }
 a.header-button:hover,
 #sidebar-tabs>.item:hover,
-#controls>ol.main-controls>li.scene-control:hover,
+#controls>ol.main-controls>li.scene-control:hover, 
+.dice-tray input[type='text']:hover,
+#controls ol.control-tools > li:hover,
+button.dice-tray__math.dice-tray__math--add:hover,
+.dice-tray button.dice-tray__math--sub:hover,
+.dice-tray button.dice-tray__roll:hover {
+    background: linear-gradient(to top, rgba(0,0,0,0) 0%, var(--hover-color) 100%);
+    transition: 0.05s;
+    scale: 1.2;
+}
 #controls>ol.main-controls>li.scene-control.active,
-#controls ol.control-tools > li.active, #controls ol.control-tools > li:hover,
-.dice-tray button.active {
-    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, var(--active-color) 100%);
+#controls ol.control-tools > li.active,
+.dice-tray button.active,
+.dice-tray input[type='text']:focus{
+    background: linear-gradient(to top, rgba(0,0,0,0) 0%, var(--active-color) 100%);
+    transition: 0.05s;
     scale: 1.1;
 }
+.dice-tray input[type='text']:hover, .dice-tray input[type='text']:focus,
+.dice-tray button.dice-tray__math--sub:hover,
+button.dice-tray__math.dice-tray__math--add{
+    box-shadow: none;
+
+}
+button.dice-tray__button{
+    border: none !important;
+    box-shadow: none !important;
+}
+
 #navigation #scene-list .scene,
 #navigation #scene-list .scene.view {
     background: var(--background-color);
@@ -165,11 +199,9 @@ ol.directory-list{
 #sidebar{
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
-    background: linear-gradient(270deg, var(--background-color) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(270deg, var(--background-color) 99%, rgba(0,0,0,0) 100%);
     box-shadow: none;
     border: none;
-    -webkit-mask-image: linear-gradient(to left, black 97%, transparent 100%);
-    mask-image: linear-gradient(to left, black 97%, transparent 100%);
 }
 form .form-group .form-fields>*,
 .prosemirror menu .pm-dropdown {
@@ -228,6 +260,10 @@ a.message-delete:hover{
     scale: 1.1;
 }
 
+.window-app{
+    box-shadow: 0 0 var(--shadow-size) var(--window-shadow-color);
+}
+
 /*Buttons*/
 #controls>ol.main-controls>li.scene-control,
 #controls ol.control-tools.sub-controls > li
@@ -256,6 +292,7 @@ form button,
     font-weight: var(--font-weight);
     text-shadow: 0 0 var(--shadow-size) var(--shadow-color);
     border-radius: var(--border-r);
+    transition: 0.15s;
     /*mix-blend-mode: hard-light;*/
 }
 button:hover,
@@ -266,8 +303,9 @@ form button:hover,
     border-color: transparent;
     -webkit-box-shadow: none;
     box-shadow: none;
-    transition: 0.0375s;
+    transition: 0.15s;
     color: var(--title-text-color);
+    clip-path: var(--clipHexAlt);
 }
 input,
 form .form-group .form-fields>*,
@@ -327,9 +365,6 @@ button.dice-tray__roll{
 .chat-message .message-header .message-metadata {
     opacity:0.3;
 }
-.chat-message,
-.chat-message.whisper,
-.window-app, 
 textarea:focus {
     box-shadow: 0 0px var(--shadow-size) var(--active-color);
 }
@@ -360,9 +395,6 @@ textarea:focus {
 #chat-log{
     -webkit-mask-image: linear-gradient(to top, black 95%, transparent 100%);
     mask-image: linear-gradient(to top, black 95%, transparent 100%);
-}
-#chat-log:hover{
-    backdrop-filter: var(--v11-fx);
 }
 section#chat {
     transition: 0.3s;
@@ -492,7 +524,7 @@ a.item.category-tab.category-all {
 /*HEIGHT FLEXIBLE SIDEBAR & STAY HORIZONTAL WHEN COLLAPSING*/
 
 #sidebar {
-    height: auto;
+    height: 100%;
     width: var(--sidebar-width) !important;
     transition: 0s !important;
     border-bottom-right-radius: 0;
@@ -626,7 +658,7 @@ div#chat-popout .jump-to-bottom {
 
 /*Better headers*/
 .window-app .window-header .window-title, .window-app .window-header a {
-    text-transform: uppercase;
+    text-transform: capitalize;
     line-height: var(--line-height);
     text-indent: 10px;
     font-family: var(--title-font);
@@ -724,50 +756,6 @@ select,
     left: -20%;
     height: 100vh;
     width: 100vh;
-}
-
-/*Centered top tabs*/
-#navigation {
-    margin: 0;
-    left: auto;
-    position: sticky;
-    width: auto;
-}
-#ui-top.offset {
-    margin: 0px;
-    padding: var(--spacing);
-    background: var(--backgrounduitop);
-    border-bottom: 2px solid;
-    border-image: linear-gradient(to left, transparent, var(--text-color), transparent) 1;
-    width:100%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center
-}
-#navigation #nav-toggle{
-    top: 0;
-    margin: 0;
-    margin-right : var(--spacing);
-    align-self: center;
-    background: var(--background-color);
-}
-.jump-to-bottom {
-    bottom: auto;
-    background: var(--background-color);
-}
-#navigation #scene-list {
-    margin-right: var(--navixmg);
-}
-#navigation.collapsed #scene-list {
-    display:none !important;
-
-}
-#navigation.collapsed {
-    --backgrounduitop: transparent !important;
-    position: absolute;
 }
 
 #ui-left {
@@ -871,6 +859,252 @@ li.folder.collapsed > .folder-header {
     padding-left: calc(var(--spacing) * 0.5);
 }
 
+/*Fullscreen Settings*/
+div#client-settings {
+    width: 100% !important;
+    height: 100% !important;
+    border : none !important;
+    z-index: 100 !important;
+    background: var(--sideart), var(--settings-color);
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: auto 120%;
+    background-color: var(--settings-color);
+    backdrop-filter: saturate(0) blur(12px) contrast(2.0) brightness(0.4);
+}
+div#client-settings .window-header.flexrow.draggable.resizable{
+    min-height: 140px;
+}
+div#client-settings .window-content{
+    padding: 2rem;
+}
+aside.sidebar.flexcol {
+    padding: 0;
+    margin: 0;
+    border: none;
+    min-width: 20%;
+}
+div#client-settings input[type="search"]{
+    position: fixed;
+    top: -3rem;
+    left: 59vw;
+    height: 2rem;
+    padding: var(--spacing);
+    max-width: 10vw;
+    border-radius: var(--border-r);
+    background: var(--background-color);
+    color: var(--text-color);
+    border: none;
+    font-size: var(--font-size-14);
+}
+div#client-settings .window-resizable-handle,
+div#client-settings span.count,
+div#client-settings form .notes, form .hint {
+    display: none;
+}
+div#client-settings h2{
+    font-size: 2.5rem;
+    margin-left: var(--spacing);
+}
+#client-settings form .form-group > label {
+    font-size: 1.2rem;
+}
+div#client-settings a.item.category-tab{
+    font-size: 1.5rem;
+    align-self: self-end;
+}
+a.item.category-tab.category-all{
+    font-size: 2.5rem !important;
+    top: 0;
+    text-decoration: none;
+}
+div#client-settings button[type="submit"]{
+    position: fixed;
+    right: 3rem;
+    bottom: 2rem;
+    padding: var(--spacing);
+    width: fit-content;
+    /*height: 2rem;*/
+}
+.package-configuration aside.sidebar .reset-all{
+    position: sticky;
+    left: calc(100vw - 16rem);
+    bottom: 1vh;
+    padding: var(--spacing);
+    width: fit-content;
+    /*height: 2rem;*/
+}
+#client-settings .scrollable{
+    -webkit-mask-image: linear-gradient(to top, black 98%, transparent 100%);
+    mask-image: linear-gradient(to top, transparent 0%, black 2%, black 98%, transparent 100%);
+}
+.package-configuration .form-group{
+    margin: var(--spacing);
+    margin-left: 5%;
+    margin-right: 35%;
+    padding: var(--spacing);
+    border-radius: var(--border-r);
+    background: var(--background-color);
+
+}
+div#client-settings form .form-group .form-fields,
+#client-settings .submenu button{
+    max-width: 30%;
+}
+
+.package-configuration aside.sidebar .entry-filter{
+    background: transparent;
+}
+
+/*Hide search in music for users*/
+.directory .directory-header{
+    display: none;
+}
+
+/*AnimaSpecific*/
+:root{
+    --window-header-size: 1.5rem;
+}
+#sidebar-tabs>.item.active{
+    color: var(--active-color);
+    text-shadow: 0 0 var(--shadow-size) var(--active-shadow-color);
+}
+#navigation #scene-list .scene.active {
+    position: fixed;
+    left: 50px;
+    top: 50px;
+    width: 300px;
+    height: 100px;
+    background: transparent;
+    color: var(--title-text-color);
+    box-shadow: none;
+    border: none;
+    font-size: 3rem;
+    font-family: var(--title-font);
+    rotate: 3deg;
+    text-transform: capitalize;
+    text-shadow: 0 0 var(--shadow-size) var(--active-shadow-color);
+}
+#client-settings h4.window-title{
+    left: 50px;
+    top: 40px;
+    height: 100px;
+    background: transparent;
+    color: var(--title-text-color);
+    box-shadow: none;
+    border: none;
+    font-size: 3rem;
+    font-family: var(--title-font);
+    rotate: 2deg;
+}
+time.message-timestamp{
+    display: none;
+}
+.window-app .window-header{
+    border-bottom: none;
+    min-height: 40px;
+}
+.window-app .window-header .window-title {
+    text-align: center !important;
+    align-self: center;
+    top: -12px;
+    position: relative;
+    rotate: -1deg;
+    text-shadow: 12px 8px 0px black;
+}
+.window-title {
+    text-align-last: left;
+    font-size: var(--window-header-size);
+}
+a.header-button.control {
+    z-index: 9999;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+}
+.window-app .window-header i[class^=fa]{
+    position: relative;
+    right: 10px;
+}
+li.scene-control {
+    box-shadow: 4px 4px 0 black;
+}
+aside.sidebar.flexcol {
+    rotate: 1deg;
+}
+div#client-settings input[type="search"]{
+    rotate: -1deg;
+}
+button.reset-all,
+a.item.category-tab {
+    rotate: -2deg;
+}
+form.categories.flexcol {
+    margin-left: 24px;
+}
+#chat-log {
+    --rotateangle: 1deg;
+    rotate: var(--rotateangle);
+    position: relative;
+    left: 12px;
+    margin: -8px;
+    padding: 8px;
+}
+.chat-message {
+    rotate: calc(-1 * var(--rotateangle));
+    border: none !important;
+    --endofblack: calc(100% - 32px);
+    background: linear-gradient(to top, black var(--endofblack), transparent var(--endofblack)) !important;
+    
+}
+.chat-message:hover{
+    rotate: calc(-2 * var(--rotateangle));
+    transition: 0.15s;
+    position:relative;
+    right: var(--spacing);
+}
+header.message-header.flexrow {
+    background-image: var(--chat-decor);
+    background-size: auto 100%;
+    margin-left: calc(-1 * var(--spacing));
+    margin-right: calc(-1 * var(--spacing));
+}
+#sidebar{
+    background: var(--sidebar-color), var(--patternSidebar);
+    background-size: cover;
+    background-blend-mode: var(--sidebar-blend-mode);
+}
+.chat-message .message-content{
+    margin:var(--spacing);
+}
+.chat-message .message-header .message-sender{
+    font-family: var(--font-chatheader);
+    text-transform: capitalize;
+    text-shadow: 0 0 var(--shadow-size) var(--active-shadow-color);
+}
+.fa-bullseye:before{
+    display:none;
+}
+button:hover,
+form button:hover,
+.dice-tray button:hover {
+    scale: 1.1;
+    rotate: -1deg;
+}
+.dice-tray .dice-tray__stacked{
+    display: none;
+}
+.theatre-control-group,
+#chat-controls{
+    display: none;
+}
+h4, h3, h2, h1{
+    font-weight: 1.5;
+    transition: 0.15s;
+}
 
 
 

@@ -3,10 +3,10 @@
     /*MAIN CUSTOMIZATION*/
     --font-h2: "albertus"; /*Title font*/
     --font-body: "myriad"; /*Main font*/
-    --titlebar: url(\/UI\/TitlebarBG\.png-); /*Uses Data as root folder, use this to give a texture to the title bars*/
+    --titlebar: url(\/UI\/GoldTexture\.png); /*Uses Data as root folder, use this to give a texture to the title bars*/
     --pattern: url(\/UI\/pattern\.png-); /*This will replace the background of textured stuff*/
     --pattern-blend-mode: luminosity; /*I usually go for luminosity, difference or color-dodge, try them and pick your poison*/
-    --title-blend-mode: difference; /*This just changes how the texture is mixed with the colors*/
+    --title-blend-mode: normal; /*This just changes how the texture is mixed with the colors*/
     --active-color: #CDB577;
     --hover-color: #B78D5B;
     --header-color: linear-gradient(to right, #CDB577 0%, #B78D5B 100%);
