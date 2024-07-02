@@ -3,7 +3,7 @@
     /*MAIN CUSTOMIZATION*/
     --font-h2: "Romantic"; /*Title font*/
     --font-body: "Garamond"; /*Main font*/
-    --font-chatheader: "Hornbill"; /*Chat header font*/
+    --font-chatheader: "Imbue"; /*Chat header font*/
     --titlebar: url(\/UI\/TitlebarBG\.png-); /*Uses Data as root folder, use this to give a texture to the title bars*/
     --pattern: url(\/CustomResources\/PatternTiles\.png-); /*This will replace the background of textured stuff*/
     --patternSidebar: url(\/CustomResources\/PatternTiles\.png);
@@ -614,11 +614,12 @@ div#chat-popout .jump-to-bottom {
     background: var(--title-bg);
     text-transform: uppercase;
     text-align: left;
-    line-height: var(--line-height);
+    line-height: normal;
     text-indent: 10px;
-    font-family: var(--title-font);
+    font-family: var(--font-chatheader);
     letter-spacing: var(--title-letter-spacing);
     color: var(--title-text-color);
+    font-size: medium;
 }
 .playlists-sidebar .global-control .playlist-header {
     padding: var(--spacing);
@@ -632,11 +633,12 @@ div#chat-popout .jump-to-bottom {
     background: var(--title-bg);
     text-transform: uppercase;
     text-align: left;
-    line-height: var(--line-height);
+    line-height: normal;
     text-indent: 10px;
-    font-family: var(--title-font);
+    font-family: var(--font-chatheader);
     letter-spacing: var(--title-letter-spacing);
     color: var(--title-text-color);
+    font-size: larger;
 }
 .playlists-sidebar .global-control .playlist-header h4 i.fa {
     display: block;
@@ -1084,6 +1086,7 @@ header.message-header.flexrow {
     font-family: var(--font-chatheader);
     text-transform: capitalize;
     text-shadow: 0 0 var(--shadow-size) var(--active-shadow-color);
+    font-size: large;
 }
 .fa-bullseye:before{
     display:none;
@@ -1101,9 +1104,11 @@ form button:hover,
 #chat-controls{
     display: none;
 }
-h4, h3, h2, h1{
-    font-weight: 1.5;
+h4:hover, h3:hover, h2:hover, h1:hover, p:hover{
+    font-weight: 800 !important;
+    scale: 1.005;
     transition: 0.15s;
+    rotate: 0.5deg;
 }
 
 

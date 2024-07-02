@@ -3,7 +3,7 @@
     /*MAIN CUSTOMIZATION*/
     --font-h2: "albertus"; /*Title font*/
     --font-body: "myriad"; /*Main font*/
-    --titlebar: url(\/UI\/GoldTexture\.png); /*Uses Data as root folder, use this to give a texture to the title bars*/
+    --titlebar: url(\/CustomResources\/GoldTextureT\.png); /*Uses Data as root folder, use this to give a texture to the title bars*/
     --pattern: url(\/UI\/pattern\.png-); /*This will replace the background of textured stuff*/
     --pattern-blend-mode: luminosity; /*I usually go for luminosity, difference or color-dodge, try them and pick your poison*/
     --title-blend-mode: normal; /*This just changes how the texture is mixed with the colors*/
@@ -20,7 +20,7 @@
     --patterncolor-3: #1909aacc;
     --patterncolor-4: #150d8ecc;
     --patterncolor: linear-gradient(0deg, var(--patterncolor-1) 0%, var(--patterncolor-1) 32%, var(--patterncolor-1) 45%, var(--patterncolor-1) 50%, var(--patterncolor-1) 72%);
-    --border-r: 0; /*makes stuff more rounded, you can use px or %*/
+    --border-r: 0;
     
 
     /*Technical stuff*/
@@ -46,7 +46,7 @@
     --font-weight: 400;
     --huemod: 0deg;
 
-    /*Native foundry overrides*/
+    /*Native foundry overrides, can't change var names*/
     --color-underline-header: transparent;
     --color-border-highlight-alt: var(--text-color);
     --color-border-highlight: var(--text-color);
@@ -56,11 +56,12 @@
     --title-letter-spacing: 0.04rem;
 
     /*TWEAKS*/
+    --spacing: 8px;
     /*
     --logoh: auto;
     --logow: 10rem;
     --backgrounduitop: radial-gradient(circle farthest-corner at 50% 100%, var(--background-color) 0%, transparent 100%);*/
-    --spacing: 8px;
+    
     
     
 }
@@ -912,7 +913,7 @@ li.macro[data-slot="7"]{
     bottom: calc(5rem - 0.75rem);
 }
 div#hotbar-page-controls, div#hotbar-lock, div#hotbar-directory-controls, #hotbar .macro.inactive{
-    /*display: none;*/
+    display: none;
 }
 
 /*WebviewerExcelCut*/
