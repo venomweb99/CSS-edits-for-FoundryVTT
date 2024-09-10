@@ -139,6 +139,9 @@ font-size: var(--font-size-11);
 #hotbar #macro-list{
     border: none;
 }
+#hotbar{
+    z-index: 99999;
+}
 
 ol.directory-list{
     color: var(--color-light-3);

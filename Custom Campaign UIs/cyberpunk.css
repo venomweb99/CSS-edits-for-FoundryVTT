@@ -605,3 +605,7 @@ p {
     text-transform: uppercase;
     font-size: var(--font-size-16);
 }
+
+.worldbuilding.sheet.actor{
+    min-width: 436px;
+}
