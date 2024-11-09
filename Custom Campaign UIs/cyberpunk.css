@@ -402,11 +402,11 @@ label {
     color: var(--custom-accent);
 }
 
-/*Invisible Resize Box*/
+/*Resize Box*/
 .window-app .window-resizable-handle {
     width: 8px;
     height: 100%;
-    background: #00000000;
+    background: var(--);
     padding: 0px;
     border: 0px;
 }
@@ -617,7 +617,7 @@ p {
     position: fixed;
     bottom: 0%;
     margin: 0;
-    background: var(--color-cool-5-25);
+    background: var(--color-cool-5-50);
 }
 
 #pause figcaption {
@@ -631,4 +631,22 @@ p {
     left: -20%;
     height: 100vh;
     width: 100vh;
+}
+
+#logo{
+    width: 200px;
+    height: 200px;
+    margin: var(--spacing);
+    padding: 0;
+}
+
+#navigation #scene-list .scene,
+#navigation #nav-toggle{
+    background: var(--color-cool-5-75) !important;
+    border: 1px solid var(--cp-font-light) !important;
+    border-radius: var(--border-r);
+    border-bottom-left-radius: var(--cp-cutradius);
+}
+#chat-controls{
+    display: none;
 }
