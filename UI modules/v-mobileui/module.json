@@ -1,0 +1,23 @@
+{
+    "id": "v-mobileui",
+    "title": "V's mobile compatible UI",
+    "version": "0.2.0",
+    "authors": [
+      {
+        "name": "V",
+        "url": "https://github.com/venomweb99/CSS-edits-for-FoundryVTT"
+      }
+    ],
+    "compatibility": {
+      "minimum": "11",
+      "verified": "13"
+    },
+    "styles": [
+      "mobileCompat.css"
+    ],
+    "description": "Mobile UI for Foundry VTT",
+    "url": "https://github.com/venomweb99/CSS-edits-for-FoundryVTT",
+    "bugs": "https://github.com/venomweb99/CSS-edits-for-FoundryVTT/issues",
+    "manifest": "https://github.com/venomweb99/CSS-edits-for-FoundryVTT",
+    "download": "https://github.com/venomweb99/CSS-edits-for-FoundryVTT"
+  }

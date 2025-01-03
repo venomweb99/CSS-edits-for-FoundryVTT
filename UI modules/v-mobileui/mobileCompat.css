@@ -1,0 +1,72 @@
+/* Styles for mobile use*/
+@media only screen and (max-width: 790px) {
+    /* Styles for mobile */
+    :root{
+        --v11-fx: none;
+    }
+    #navigation,
+    #ui-left{
+        width: 0px;
+        display: none;
+    }
+    
+    aside.sidebar.flexcol{
+        width: 1rem !important;
+        max-width: 1rem !important;
+    }
+
+    #logo{
+        width: 7rem;
+        min-width: 0;
+        margin: 0;
+    }
+    #ui-right{
+        width: 100% !important;
+    }
+    #ui-right,
+    section.window-content{
+        padding-bottom: 15dvh !important;
+    }
+    section#chat {
+        padding-bottom: 3dvh !important;
+    }
+
+    #players,
+    #action-bar,
+    #hotbar
+    {
+        display:none !important;
+    }
+    #ui-middle{
+        opacity: 0;
+        width: auto;
+        min-width: calc(100% - 24rem);
+    }
+    #sidebar {
+        width: 100% !important;
+        margin: 0 !important;
+        height: 100% !important;
+        max-width: 100% !important;
+    }
+    #sidebar-tabs > .item i[class^=fa]{
+        scale: 1.2;
+    }
+    #chat-controls {
+        flex: initial;
+    }
+    section#chat {
+        opacity: 1;
+    }
+    #sidebar-tabs > .collapse{
+        min-width: 2rem;
+        width: 2rem;
+    }
+    .window-app {
+        filter: opacity(1);
+        max-width: 100% !important;
+        width: 100% !important;
+        min-width: 100% !important;
+        min-height: 100% !important;
+    }
+
+}
