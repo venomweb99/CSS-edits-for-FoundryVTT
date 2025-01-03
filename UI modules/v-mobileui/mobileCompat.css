@@ -1,13 +1,16 @@
-/* Styles for mobile use*/
 @media only screen and (max-width: 790px) {
     /* Styles for mobile */
     :root{
         --v11-fx: none;
+        --sidebar-width: 100% !important;
     }
-    #navigation,
-    #ui-left{
+    #navigation{
         width: 0px;
         display: none;
+    }
+    
+    #ui-left{
+        width: auto;
     }
     
     aside.sidebar.flexcol{
