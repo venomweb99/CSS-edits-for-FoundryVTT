@@ -17,7 +17,6 @@
     ],
     "description": "Mobile UI for Foundry VTT",
     "url": "https://github.com/venomweb99/CSS-edits-for-FoundryVTT",
-    "bugs": "https://github.com/venomweb99/CSS-edits-for-FoundryVTT/issues",
     "manifest": "https://raw.githubusercontent.com/venomweb99/CSS-edits-for-FoundryVTT/refs/heads/main/UI%20modules/v-mobileui/module.json",
     "download": "https://github.com/venomweb99/CSS-edits-for-FoundryVTT/raw/refs/heads/main/UI%20modules/v-mobileui.zip"
   }
